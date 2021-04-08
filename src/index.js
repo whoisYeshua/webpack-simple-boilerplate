@@ -8,7 +8,7 @@ import '@styles/styles.css'
 
 const post = new Post('Webpack Post Title test', WebpackLogo)
 
-$('pre').html(post.toString())
+$('pre').addClass('code').html(post.toString())
 
 // console.log('JSON:', json)
 // console.log('XML:', xml)
