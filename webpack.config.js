@@ -9,6 +9,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+console.log('IS DEV: ', isDev)
+console.log('ENV: ', process.env.NODE_ENV)
+
 const filename = ext => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`)
 const assetsFilename = () => (isDev ? `[base]` : `[contenthash][ext][query]`)
 
@@ -25,7 +28,7 @@ module.exports = {
         assetModuleFilename: `assets/${assetsFilename()}`,
     },
     resolve: {
-        extensions: ['.js', '.json', '.png'],
+        extensions: ['.js', '.json', '.png', '.css', '.scss'],
         alias: {
             '@assets': path.resolve(__dirname, 'src/assets'),
             '@models': path.resolve(__dirname, 'src/models'),
@@ -46,13 +49,15 @@ module.exports = {
             }),
             new CssMinimizerPlugin(),
         ],
+        runtimeChunk: 'single',
         splitChunks: {
             chunks: 'all',
         },
     },
     devServer: {
         port: 5550,
-        hot: isDev,
+        open: true,
+        hot: true,
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -81,12 +86,11 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                    },
-                    'css-loader',
-                ],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|jpg|gif)$/,
