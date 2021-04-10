@@ -9,6 +9,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+const filename = ext => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`)
+const assetsFilename = () => (isDev ? `[base]` : `[contenthash][ext][query]`)
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -17,9 +20,9 @@ module.exports = {
         analytics: './analytics.js',
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: filename('js'),
         path: path.resolve(__dirname, 'dist'),
-        assetModuleFilename: 'assets/[hash][ext][query]',
+        assetModuleFilename: `assets/${assetsFilename()}`,
     },
     resolve: {
         extensions: ['.js', '.json', '.png'],
@@ -66,12 +69,12 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, 'src/assets/trash'),
-                    to: path.resolve(__dirname, 'dist/assets'),
+                    to: path.resolve(__dirname, `dist/assets/${assetsFilename()}`),
                 },
             ],
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: filename('css'),
         }),
     ],
     module: {
