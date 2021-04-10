@@ -3,8 +3,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -28,12 +31,25 @@ module.exports = {
         },
     },
     optimization: {
+        minimize: isProd,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    format: {
+                        comments: false,
+                    },
+                },
+                extractComments: false,
+            }),
+            new CssMinimizerPlugin(),
+        ],
         splitChunks: {
             chunks: 'all',
         },
     },
     devServer: {
         port: 5550,
+        hot: isDev,
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -41,6 +57,9 @@ module.exports = {
             favicon: './assets/favicon.ico',
             template: './template.html',
             filename: 'index.html',
+            minify: {
+                collapseWhitespace: isProd,
+            },
         }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
@@ -59,7 +78,12 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    'css-loader',
+                ],
             },
             {
                 test: /\.(png|jpg|gif)$/,
