@@ -8,6 +8,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
+const target = isProd ? 'browserslist' : 'web'
 
 console.log('IS DEV: ', isDev)
 console.log('ENV: ', process.env.NODE_ENV)
@@ -16,6 +17,7 @@ const filename = ext => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`
 const assetsFilename = () => (isDev ? `[base]` : `[contenthash][ext][query]`)
 
 module.exports = {
+    target: target,
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
@@ -84,6 +86,11 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],

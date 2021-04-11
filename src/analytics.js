@@ -1,4 +1,4 @@
-const $ = require('jquery')
+const $ = require('jquery/dist/jquery.min')
 
 function createAnalytics() {
     let counter = 0
