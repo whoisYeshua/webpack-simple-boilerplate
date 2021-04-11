@@ -22,7 +22,7 @@ module.exports = {
     mode: 'development',
     entry: {
         main: './index.js',
-        analytics: './analytics.js',
+        analytics: './analytics.ts',
     },
     output: {
         filename: filename('js'),
@@ -88,6 +88,11 @@ module.exports = {
         rules: [
             {
                 test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
+            {
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 use: ['babel-loader'],
             },

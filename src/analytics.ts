@@ -1,10 +1,10 @@
-const $ = require('jquery/dist/jquery.min')
+import * as $ from 'jquery/dist/jquery.min'
 
-function createAnalytics() {
+function createAnalytics(): object {
     let counter = 0
-    let destroyed = false
+    let destroyed: boolean = false
 
-    const listener = () => counter++
+    const listener = (): number => counter++
     $(document).on('click', listener)
 
     return {
@@ -21,4 +21,4 @@ function createAnalytics() {
     }
 }
 
-window.analytics = createAnalytics()
+window['analytics'] = createAnalytics()
