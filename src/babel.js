@@ -9,3 +9,6 @@ class Util {
 }
 
 console.log('Util Id: ', Util.id)
+
+const unused = 42
+console.log(unused)

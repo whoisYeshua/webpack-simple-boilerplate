@@ -5,16 +5,40 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 const target = isProd ? 'browserslist' : 'web'
 
-console.log('IS DEV: ', isDev)
-console.log('ENV: ', process.env.NODE_ENV)
-
 const filename = ext => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`)
 const assetsFilename = () => (isDev ? `[base]` : `[contenthash][ext][query]`)
+const plugins = [
+    new HTMLWebpackPlugin({
+        title: 'Webpack',
+        favicon: './assets/favicon.ico',
+        template: './template.html',
+        filename: 'index.html',
+        minify: {
+            collapseWhitespace: isProd,
+        },
+    }),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+        patterns: [
+            {
+                from: path.resolve(__dirname, 'src/assets/trash'),
+                to: path.resolve(__dirname, `dist/assets/${assetsFilename()}`),
+            },
+        ],
+    }),
+    new MiniCssExtractPlugin({
+        filename: filename('css'),
+    }),
+]
+if (isDev) {
+    plugins.push(new ESLintPlugin())
+}
 
 module.exports = {
     target: target,
@@ -62,43 +86,11 @@ module.exports = {
         hot: true,
     },
     devtool: isDev ? 'source-map' : false,
-    plugins: [
-        new HTMLWebpackPlugin({
-            title: 'Webpack',
-            favicon: './assets/favicon.ico',
-            template: './template.html',
-            filename: 'index.html',
-            minify: {
-                collapseWhitespace: isProd,
-            },
-        }),
-        new CleanWebpackPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src/assets/trash'),
-                    to: path.resolve(__dirname, `dist/assets/${assetsFilename()}`),
-                },
-            ],
-        }),
-        new MiniCssExtractPlugin({
-            filename: filename('css'),
-        }),
-    ],
+    plugins: plugins,
     module: {
         rules: [
             {
-                test: /\.m?js$/,
-                exclude: /node_modules/,
-                use: ['babel-loader'],
-            },
-            {
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                use: ['babel-loader'],
-            },
-            {
-                test: /\.jsx$/,
+                test: /\.m?[tj]sx?$/,
                 exclude: /node_modules/,
                 use: ['babel-loader'],
             },
