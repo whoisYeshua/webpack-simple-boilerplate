@@ -61,6 +61,7 @@ module.exports = {
         open: true,
         hot: true,
     },
+    devtool: isDev ? 'source-map' : false,
     plugins: [
         new HTMLWebpackPlugin({
             title: 'Webpack',
