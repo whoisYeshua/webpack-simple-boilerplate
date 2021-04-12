@@ -21,7 +21,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './index.js',
+        main: './index.jsx',
         analytics: './analytics.ts',
     },
     output: {
@@ -93,6 +93,11 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
+            {
+                test: /\.jsx$/,
                 exclude: /node_modules/,
                 use: ['babel-loader'],
             },
