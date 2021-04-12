@@ -1,13 +1,25 @@
 {
-    "parser": "@babel/eslint-parser",
-    "env": {
-        "node": true,
-        "es6": true,
-        "jquery": true,
-        "browser": true
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "detect",
+      "flowVersion": "0.53"
     },
-    "rules": {
-        "no-unused-vars": "warn"
-    },
-    "extends": ["eslint:recommended"]
+    "propWrapperFunctions": ["forbidExtraProps", { "property": "freeze", "object": "Object" }, { "property": "myFavoriteWrapper" }],
+    "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }]
+  },
+  "rules": {
+    "no-unused-vars": "warn"
+  }
 }

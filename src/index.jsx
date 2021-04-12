@@ -11,19 +11,19 @@ import '@styles/styles'
 import '@styles/scss'
 
 const App = () => (
-    <div className="container">
-        <h1>Webpack Course</h1>
-        <hr />
-        <div className="logo" />
-        <hr />
-        <pre />
-        <hr />
-        <div className="card">
-            <h2>Scss</h2>
-        </div>
-        <hr />
-        <input type="text" placeholder="type" />
+  <div className="container">
+    <h1>Webpack Course</h1>
+    <hr />
+    <div className="logo" />
+    <hr />
+    <pre />
+    <hr />
+    <div className="card">
+      <h2>Scss</h2>
     </div>
+    <hr />
+    <input type="text" placeholder="type" />
+  </div>
 )
 
 render(<App />, document.getElementById('app'))
