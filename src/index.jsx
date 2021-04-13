@@ -1,4 +1,3 @@
-const $ = require('jquery/dist/jquery.min')
 import Post from '@models/Post'
 // import json from '@assets/json'
 // import xml from '@assets/data.xml'
@@ -9,6 +8,8 @@ import { render } from 'react-dom'
 import './babel'
 import '@styles/styles'
 import '@styles/scss'
+
+const $ = require('jquery/dist/jquery.min')
 
 const App = () => (
   <div className="container">
@@ -26,7 +27,7 @@ const App = () => (
   </div>
 )
 
-render(<App />, document.getElementById('app'))
+render(<App />, document.querySelector('#app'))
 
 const post = new Post('Webpack Post Title test', WebpackLogo)
 $('pre').addClass('code').html(post.toString())

@@ -6,20 +6,24 @@
     "jquery": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
-  "settings": {
-    "react": {
-      "createClass": "createReactClass",
-      "pragma": "React",
-      "fragment": "Fragment",
-      "version": "detect",
-      "flowVersion": "0.53"
-    },
-    "propWrapperFunctions": ["forbidExtraProps", { "property": "freeze", "object": "Object" }, { "property": "myFavoriteWrapper" }],
-    "linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }]
-  },
+  "extends": ["airbnb", "plugin:unicorn/recommended"],
+  "plugins": ["unicorn"],
   "rules": {
-    "no-unused-vars": "warn"
+    "semi": 0,
+    "no-console": "off",
+    "no-return-await": "warn",
+    "import/no-extraneous-dependencies": "warn",
+    "unicorn/no-static-only-class": "warn",
+    "import/no-unresolved": "warn",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "arrow-parens": ["warn", "as-needed"]
   }
 }

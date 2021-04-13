@@ -7,12 +7,12 @@ const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
-const isDev = process.env.NODE_ENV === 'development'
-const isProd = !isDev
-const target = isProd ? 'browserslist' : 'web'
+const isDevelopment = process.env.NODE_ENV === 'development'
+const isProduction = !isDevelopment
+const target = isProduction ? 'browserslist' : 'web'
 
-const filename = ext => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`)
-const assetsFilename = () => (isDev ? `[base]` : `[contenthash][ext][query]`)
+const filename = extension => (isDevelopment ? `[name].${extension}` : `[name].[contenthash].${extension}`)
+const assetsFilename = () => (isDevelopment ? '[base]' : '[contenthash][ext][query]')
 const plugins = [
   new HTMLWebpackPlugin({
     title: 'Webpack',
@@ -20,7 +20,7 @@ const plugins = [
     template: './template.html',
     filename: 'index.html',
     minify: {
-      collapseWhitespace: isProd,
+      collapseWhitespace: isProduction,
     },
   }),
   new CleanWebpackPlugin(),
@@ -36,12 +36,12 @@ const plugins = [
     filename: filename('css'),
   }),
 ]
-if (isDev) {
+if (isDevelopment) {
   plugins.push(new ESLintPlugin())
 }
 
 module.exports = {
-  target: target,
+  target,
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
@@ -63,7 +63,7 @@ module.exports = {
     },
   },
   optimization: {
-    minimize: isProd,
+    minimize: isProduction,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
@@ -85,12 +85,12 @@ module.exports = {
     open: true,
     hot: true,
   },
-  devtool: isDev ? 'source-map' : false,
-  plugins: plugins,
+  devtool: isDevelopment ? 'source-map' : false,
+  plugins,
   module: {
     rules: [
       {
-        test: /\.m?[tj]sx?$/,
+        test: /\.m?[jt]sx?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
