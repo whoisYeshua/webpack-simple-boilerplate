@@ -1,13 +1,13 @@
 $border: 1px solid #ccc;
 
 .card {
-    padding: 1rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-    border: $border;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: $border;
+  border-radius: 5px;
 
-    h2 {
-        text-align: center;
-        color: crimson;
-    }
+  h2 {
+    color: crimson;
+    text-align: center;
+  }
 }

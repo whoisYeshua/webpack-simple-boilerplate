@@ -4,8 +4,8 @@ async function start() {
 
 start().then(console.log)
 
-class Util {
-  static id = Date.now()
+const Util = {
+  id: Date.now(),
 }
 
 console.log('Util Id:', Util.id)
