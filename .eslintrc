@@ -9,12 +9,14 @@
   "extends": ["airbnb", "plugin:unicorn/recommended"],
   "plugins": ["unicorn"],
   "rules": {
-    "semi": 0,
+    "arrow-parens": ["warn", "as-needed"],
+    "comma-dangle": "off",
     "no-console": "off",
     "no-return-await": "warn",
+    "semi": 0,
     "import/no-extraneous-dependencies": "warn",
-    "unicorn/no-static-only-class": "warn",
     "import/no-unresolved": "warn",
+    "unicorn/no-static-only-class": "warn",
     "unicorn/filename-case": [
       "error",
       {
@@ -23,7 +25,6 @@
           "pascalCase": true
         }
       }
-    ],
-    "arrow-parens": ["warn", "as-needed"]
+    ]
   }
 }
