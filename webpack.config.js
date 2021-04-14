@@ -6,13 +6,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isProduction = !isDevelopment
 const target = isProduction ? 'browserslist' : 'web'
 
-const filename = extension => (isDevelopment ? `[name].${extension}` : `[name].[contenthash].${extension}`)
-const assetsFilename = () => (isDevelopment ? '[base]' : '[contenthash][ext][query]')
+const filename = extension =>
+  isDevelopment ? `[name].${extension}` : `[name].[contenthash].${extension}`
+const assetsFilename = () =>
+  isDevelopment ? '[base]' : '[contenthash][ext][query]'
+
 const plugins = [
   new HTMLWebpackPlugin({
     title: 'Webpack',
@@ -36,8 +40,13 @@ const plugins = [
     filename: filename('css'),
   }),
 ]
+
 if (isDevelopment) {
   plugins.push(new ESLintPlugin())
+}
+
+if (isProduction) {
+  plugins.push(new BundleAnalyzerPlugin())
 }
 
 module.exports = {
@@ -100,7 +109,12 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif)$/,
