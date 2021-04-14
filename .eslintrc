@@ -7,8 +7,8 @@
     "node": true
   },
   "ignorePatterns": ["dist", "node_modules"],
-  "extends": ["airbnb", "plugin:unicorn/recommended"],
-  "plugins": ["unicorn"],
+  "extends": ["airbnb", "plugin:unicorn/recommended", "prettier"],
+  "plugins": ["unicorn", "prettier"],
   "rules": {
     "arrow-parens": ["warn", "as-needed"],
     "comma-dangle": "off",
