@@ -11,11 +11,11 @@
     },
     "browserslist": "> 1%, not dead",
     "keywords": [
-        "js",
-        "javascript",
-        "webpack"
+        "webpack",
+        "webpack 5",
+        "webpack boilerplate"
     ],
-    "author": "whoisYeshua <alien1998@yandex.ru>",
+    "author": "whoisYeshua",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.13.15",
