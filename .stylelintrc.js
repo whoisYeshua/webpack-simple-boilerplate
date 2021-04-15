@@ -5,5 +5,6 @@ module.exports = {
     'stylelint-prettier/recommended',
   ],
   plugins: ['stylelint-order', 'stylelint-scss'],
+  ignoreFiles: ['dist/**', 'node_modules/**'],
   rules: {},
 }
