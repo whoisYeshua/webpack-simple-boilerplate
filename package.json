@@ -1,13 +1,13 @@
 {
-    "name": "webpack-course",
+    "name": "webpack-simple-boilerplate",
     "version": "1.0.0",
-    "description": "webpack 5 boilerplate (SASS, PostCSS, ESLint, Prettier, Styleint, Babel, React)",
+    "description": "webpack 5 boilerplate (SASS, PostCSS, ESLint, Prettier, Styleint, Babel, React, TS)",
     "private": true,
     "scripts": {
-        "dev": "cross-env NODE_ENV=development webpack --config config/webpack.dev.js",
-        "build": "webpack --config config/webpack.prod.js",
-        "watch": "cross-env NODE_ENV=development webpack --config config/webpack.dev.js --watch",
-        "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js"
+        "dev": "cross-env NODE_ENV=development webpack --config config/webpack.development.js",
+        "build": "webpack --config config/webpack.prodaction.js",
+        "watch": "cross-env NODE_ENV=development webpack --config config/webpack.development.js --watch",
+        "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.development.js"
     },
     "browserslist": "> 1%, not dead",
     "keywords": [
@@ -20,7 +20,6 @@
     "devDependencies": {
         "@babel/core": "^7.13.15",
         "@babel/eslint-parser": "^7.13.14",
-        "@babel/plugin-proposal-class-properties": "^7.13.0",
         "@babel/preset-env": "^7.13.15",
         "@babel/preset-react": "^7.13.13",
         "@babel/preset-typescript": "^7.13.0",

@@ -17,7 +17,6 @@
     "no-return-await": "warn",
     "semi": 0,
     "import/no-extraneous-dependencies": ["warn", { "devDependencies": true }],
-    "unicorn/no-static-only-class": "warn",
     "unicorn/filename-case": [
       "error",
       {
@@ -25,12 +24,6 @@
           "camelCase": true,
           "pascalCase": true
         }
-      }
-    ],
-    "unicorn/prevent-abbreviations": [
-      "error",
-      {
-        "checkFilenames": false
       }
     ]
   },

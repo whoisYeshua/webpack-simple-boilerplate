@@ -14,5 +14,17 @@ module.exports = merge(webpackConfiguration, {
     open: true,
     hot: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+    ],
+  },
   plugins: [new ESLintPlugin()],
 })

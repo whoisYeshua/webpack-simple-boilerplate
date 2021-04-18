@@ -4,8 +4,9 @@ async function start() {
 
 start().then(console.log)
 
-const Util = {
-  id: Date.now(),
+// eslint-disable-next-line unicorn/no-static-only-class
+class Util {
+  static id = Date.now()
 }
 
 console.log('Util Id:', Util.id)
