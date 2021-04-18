@@ -1,7 +1,7 @@
 {
     "name": "webpack-simple-boilerplate",
     "version": "1.0.0",
-    "description": "webpack 5 boilerplate (SASS, PostCSS, ESLint, Prettier, Styleint, Babel, React, TS)",
+    "description": "Webpack 5 boilerplate (SASS, PostCSS, ESLint, Prettier, Styleint, Babel, React, TS)",
     "private": true,
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack --config config/webpack.development.js",

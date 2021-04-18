@@ -146,10 +146,11 @@ One-time production build:
 
 ## Environment comparison
 
-Both environments use `webpack.config.js`, but each environment has its own features
+- **Common** - [webpack.config.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
+- **Development** - [webpack.development.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.development.js)
+- **Production** - [webpack.prodaction.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.prodaction.js)
 
-- **Development** - !URL
-- **Production** - !URL
+Both environments use `webpack.config.js`, but each environment has its own features:
 
 | Features                 | Development         | Production                  |
 | ------------------------ | ------------------- | --------------------------- |
@@ -169,6 +170,10 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 \*\* Due HMR/Live Reloading [broken](https://github.com/webpack/webpack-dev-server/issues/2758) with usage `browserslist`. Should be resolved in `webpack-dev-server@4.0.0`
 
 \*\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
+
+## To Do
+
+⬜ - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
 
 ## In addition
 
