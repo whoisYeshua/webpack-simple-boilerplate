@@ -5,7 +5,7 @@
     "private": true,
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack --config config/webpack.development.js",
-        "build": "webpack --config config/webpack.prodaction.js",
+        "build": "webpack --config config/webpack.production.js",
         "watch": "cross-env NODE_ENV=development webpack --config config/webpack.development.js --watch",
         "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.development.js"
     },

@@ -148,7 +148,7 @@ One-time production build:
 
 - **Common** - [webpack.config.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
 - **Development** - [webpack.development.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.development.js)
-- **Production** - [webpack.prodaction.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.prodaction.js)
+- **Production** - [webpack.production.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
 
 Both environments use `webpack.config.js`, but each environment has its own features:
 
@@ -170,6 +170,59 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 \*\* Due HMR/Live Reloading [broken](https://github.com/webpack/webpack-dev-server/issues/2758) with usage `browserslist`. Should be resolved in `webpack-dev-server@4.0.0`
 
 \*\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
+
+## Source
+
+**HTML** - `src/`
+
+**CSS** - `src/styles`
+
+**JS** - `src/`
+
+**Fonts** - `src/assets/fonts`
+
+**Other Assets**- `src/assets`
+
+## Useful tips
+
+- `.babelrc.json`
+
+  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle.
+
+  ```js
+  "presets": [
+    [
+      '@babel/preset-env',
+      {
+        useBuiltIns: 'usage',
+        corejs: '3.10', // The version string can be any supported core-js versions
+      }
+    ]
+  ]
+  ```
+
+- `webpack.production.js`
+
+  Set this options in `TerserPlugin` to remove comments from code and prevent `*LICENSE.txt` files creation.
+
+  ```js
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      })
+    ],
+  },
+  ```
+
+  - `webpack.config.js`
+
+  In production mode eg `HTMLWebpackPlugin` minify your HTML code by default
 
 ## To Do
 
