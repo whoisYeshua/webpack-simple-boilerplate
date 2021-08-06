@@ -195,7 +195,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: '3.10', // The version string can be any supported core-js versions
+        corejs: '3.16', // The version string can be any supported core-js versions
       }
     ]
   ]
