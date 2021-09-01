@@ -32,6 +32,7 @@ module.exports = {
       '@': paths.src,
     },
   },
+  target: 'browserslist',
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {

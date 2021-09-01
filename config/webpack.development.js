@@ -7,9 +7,8 @@ const paths = require('./paths')
 module.exports = merge(webpackConfiguration, {
   mode: 'development',
   devtool: 'source-map',
-  target: 'web',
   devServer: {
-    contentBase: paths.dist,
+    static: paths.dist,
     port: 5550,
     open: true,
     hot: true,

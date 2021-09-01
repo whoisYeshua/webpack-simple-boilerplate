@@ -25,7 +25,8 @@
           "pascalCase": true
         }
       }
-    ]
+    ],
+    "unicorn/prefer-module": "off"
   },
   "settings": {
     "import/resolver": {

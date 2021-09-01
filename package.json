@@ -39,7 +39,7 @@
         "eslint-import-resolver-webpack": "^0.13.0",
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-prettier": "^3.3.1",
+        "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.23.2",
         "eslint-plugin-react-hooks": "^4.2.0",
         "eslint-plugin-unicorn": "^35.0.0",
@@ -62,7 +62,7 @@
         "webpack": "^5.28.0",
         "webpack-bundle-analyzer": "^4.4.1",
         "webpack-cli": "^4.5.0",
-        "webpack-dev-server": "^3.11.2",
+        "webpack-dev-server": "^4.1.0",
         "webpack-merge": "^5.7.3",
         "xml-loader": "^1.2.1"
     },

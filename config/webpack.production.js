@@ -7,10 +7,9 @@ const webpackConfig = require('../webpack.config')
 
 module.exports = merge(webpackConfig, {
   mode: 'production',
-  target: 'browserslist',
   performance: {
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
+    maxEntrypointSize: 512_000,
+    maxAssetSize: 512_000,
   },
   optimization: {
     minimizer: [
