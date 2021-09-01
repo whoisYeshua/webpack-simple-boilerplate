@@ -26,7 +26,6 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 #### [Plugins](https://webpack.js.org/plugins/)
 
-- [`clean-webpack-plugin`](https://www.npmjs.com/package/clean-webpack-plugin) - is a webpack plugin to remove/clean your build folder(s)
 - [`copy-webpack-plugin`](https://webpack.js.org/plugins/copy-webpack-plugin/) - Copies individual files or entire directories, which already exist, to the build directory
 - [`html-webpack-plugin`](https://webpack.js.org/plugins/html-webpack-plugin/) - Generate HTML files from template
 - [`mini-css-extract-plugin`](https://webpack.js.org/plugins/mini-css-extract-plugin/) - Extract CSS into separate files
@@ -155,10 +154,9 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 | Features                 | Development         | Production                  |
 | ------------------------ | ------------------- | --------------------------- |
 | Devtool                  | ✅ - `source-map`\* | ❌                          |
-| Target\*\*               | ✅ - `web `         | ✅ - `browserslist `        |
 | devServer                | ✅                  | ❌                          |
 | ESLint                   | ✅                  | ❌                          |
-| CSS implementation\*\*\* | ✅ - `style-loader` | ✅ - `MiniCssExtractPlugin` |
+| CSS implementation\*\*   | ✅ - `style-loader` | ✅ - `MiniCssExtractPlugin` |
 | TerserPlugin             | ❌                  | ✅                          |
 | CssMinimizerPlugin       | ❌                  | ✅                          |
 | HtmlWebpackPlugin minify | ❌                  | ✅                          |
@@ -167,9 +165,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 \* You can set `eval-source-map` or other options to increase build speed, but in this case you should manualy set `sourceMap` to `true` in `css-loader`, `scss-loader` and `postcss-loader`.
 
-\*\* Due HMR/Live Reloading [broken](https://github.com/webpack/webpack-dev-server/issues/2758) with usage `browserslist`. Should be resolved in `webpack-dev-server@4.0.0`
-
-\*\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
+\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
 
 ## Source
 
