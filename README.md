@@ -76,7 +76,7 @@ A simple template that I made for myself, but maybe it will be useful to someone
   - [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) - This ESLint plugin enforces the Rules of Hooks.
   - [`eslint-plugin-jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) - Static AST checker for accessibility rules on JSX elements
 
-- [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) - urns off all rules that are unnecessary or might conflict with Prettier
+- [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier
 
 #### [Plugins](https://eslint.org/docs/user-guide/configuring/plugins#specifying-parser)
 
