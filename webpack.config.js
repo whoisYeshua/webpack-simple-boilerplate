@@ -1,6 +1,5 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const paths = require('./config/paths')
@@ -19,6 +18,7 @@ module.exports = {
     analytics: './analytics.ts',
   },
   output: {
+    clean: true,
     filename: filename('js'),
     path: paths.dist,
     assetModuleFilename: `assets/${assetsFilename()}`,
@@ -45,7 +45,6 @@ module.exports = {
       template: path.resolve(paths.src, 'template.html'),
       filename: 'index.html',
     }),
-    new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
