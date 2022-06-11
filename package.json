@@ -9,7 +9,6 @@
         "watch": "cross-env NODE_ENV=development webpack --config config/webpack.development.js --watch",
         "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.development.js"
     },
-    "browserslist": "> 1%, not dead",
     "keywords": [
         "webpack",
         "webpack 5",
