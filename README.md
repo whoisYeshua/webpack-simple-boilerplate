@@ -41,10 +41,12 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 #### [Presets](https://babeljs.io/docs/en/presets)
 
-- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with browserslist target in `package.json`:
+- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with `.browserslistrc`:
 
-  ```json
-  "browserslist": "> 1%, not dead"
+  ```
+  last 2 chrome versions
+  last 2 firefox versions
+  last 2 safari versions
   ```
 
 - [`@babel/preset-typescript`](https://babeljs.io/docs/en/babel-preset-typescript) - Preset for TypeScript
