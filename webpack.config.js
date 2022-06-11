@@ -24,7 +24,7 @@ module.exports = {
     assetModuleFilename: `assets/${assetsFilename()}`,
   },
   resolve: {
-    extensions: ['.js', '.json', '.png', '.css', '.scss'],
+    extensions: ['.js', '.json', '.png', '.webp', '.css', '.scss'],
     alias: {
       '@assets': path.resolve(paths.src, 'assets'),
       '@models': path.resolve(paths.src, 'models'),
@@ -58,12 +58,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?[jt]sx?$/,
+        test: /\.(([jt]sx)|([cm]?[jt]s))$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(webp|png|jpg|gif)$/,
         type: 'asset/resource',
       },
       {

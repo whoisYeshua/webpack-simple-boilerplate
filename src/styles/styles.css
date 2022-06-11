@@ -19,7 +19,7 @@ h1 {
   width: 200px;
   height: 200px;
   margin: 0 auto;
-  background-image: url('../assets/webpack-logo.png');
+  background-image: url('../assets/webpack-logo.webp');
   background-size: cover;
 }
 

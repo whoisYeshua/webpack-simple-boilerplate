@@ -4,7 +4,8 @@ import Post from '@models/Post'
 // import csv from '@assets/data.csv'
 import WebpackLogo from '@assets/webpack-logo'
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom/client'
+
 import './babel'
 import '@styles/styles'
 import '@styles/scss'
@@ -27,7 +28,12 @@ const App = () => (
   </div>
 )
 
-render(<App />, document.querySelector('#app'))
+const root = ReactDOM.createRoot(document.querySelector('#root'))
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
 
 const post = new Post('Webpack Post Title test', WebpackLogo)
 $('pre').addClass('code').html(post.toString())
