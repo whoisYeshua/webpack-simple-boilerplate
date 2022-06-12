@@ -27,6 +27,7 @@
         "packageDir": ["node_modules/webpack", "./"]
       }
     ],
+    "import/extensions": ["warn", "ignorePackages"],
     /* Allows write filenames in an camelCase and CebabCase style */
     "unicorn/filename-case": [
       "warn",

@@ -6,11 +6,11 @@ import WebpackLogo from '@assets/webpack-logo'
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 
-import './babel'
+import './babel.js'
 import '@styles/styles'
 import '@styles/scss'
 
-const $ = require('jquery/dist/jquery.min')
+import * as $ from 'jquery/dist/jquery.min'
 
 const App = () => {
   useEffect(() => {

@@ -1,10 +1,10 @@
-const { merge } = require('webpack-merge')
-const ESLintPlugin = require('eslint-webpack-plugin')
-const webpackConfiguration = require('../webpack.config')
+import { merge } from 'webpack-merge'
+import ESLintPlugin from 'eslint-webpack-plugin'
 
-const paths = require('./paths')
+import webpackConfiguration from '../webpack.config.js'
+import paths from './paths.js'
 
-module.exports = merge(webpackConfiguration, {
+const developmentConfig = merge(webpackConfiguration, {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
@@ -27,3 +27,5 @@ module.exports = merge(webpackConfiguration, {
   },
   plugins: [new ESLintPlugin()],
 })
+
+export default developmentConfig

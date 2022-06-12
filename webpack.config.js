@@ -1,8 +1,8 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+import path from 'node:path'
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
-const paths = require('./config/paths')
+import paths from './config/paths.js'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -82,4 +82,4 @@ const commonConfig = {
   },
 }
 
-module.exports = commonConfig
+export default commonConfig

@@ -1,11 +1,12 @@
-const { merge } = require('webpack-merge')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const webpackConfig = require('../webpack.config')
+import { merge } from 'webpack-merge'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-module.exports = merge(webpackConfig, {
+import webpackConfiguration from '../webpack.config.js'
+
+const productionConfig = merge(webpackConfiguration, {
   mode: 'production',
   performance: {
     maxEntrypointSize: 512_000,
@@ -48,3 +49,5 @@ module.exports = merge(webpackConfig, {
     new BundleAnalyzerPlugin(),
   ],
 })
+
+export default productionConfig
