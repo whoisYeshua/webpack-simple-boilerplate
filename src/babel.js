@@ -1,5 +1,6 @@
 async function start() {
-  return Promise.resolve('async is working')
+  const promise = Promise.resolve('async is working')
+  return promise
 }
 
 start().then(console.log)

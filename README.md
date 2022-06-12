@@ -4,8 +4,6 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 ## This template Features:
 
-[`cross-env`](https://www.npmjs.com/package/cross-env) - run scripts that set and use environment variables across platforms. Used to indicate a build in developer mode
-
 ### [Webpack](https://webpack.js.org/)
 
 - [`webpack`](https://www.npmjs.com/package/webpack) - Module and asset bundler
@@ -52,18 +50,18 @@ A simple template that I made for myself, but maybe it will be useful to someone
 - [`@babel/preset-typescript`](https://babeljs.io/docs/en/babel-preset-typescript) - Preset for TypeScript
 - [`@babel/preset-react`](https://babeljs.io/docs/en/babel-preset-react) - Preset for React
 
-#### [Plugins](https://babeljs.io/docs/en/plugins)
-
-- [`@babel/plugin-proposal-class-properties`](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) - This plugin transforms static class properties as well as properties declared with the property initializer syntax, [currently Stage 3 TC39](https://tc39.es/proposal-class-fields/unified.html) (You do not need to install this plugin. This plugin is included in _@babel/preset-env_)
-
 ### [PostCSS](https://postcss.org/)
 
 - [`PostCSS`](https://www.npmjs.com/package/postcss) - is a tool for transforming styles with JS plugins
 - [`Autoprefixer`](https://www.npmjs.com/package/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules.If you need more you can replace it with [`postcss-preset-env`](https://www.npmjs.com/package/postcss-preset-env) which includes autoprefixer
 
+### [EditorConfig](https://editorconfig.org/)
+
+- [`EditorConfig`](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) - is helper for maintain consistent coding styles across various editors and IDEs.
+
 ### [Prettier](https://prettier.io/)
 
-- [`Prettier`](https://www.npmjs.com/package/prettier) - is an opinionated code formatter
+- [`Prettier`](https://www.npmjs.com/package/prettier) - is an code formatter
 
 ### [ESlint](https://eslint.org/)
 
@@ -105,6 +103,10 @@ A simple template that I made for myself, but maybe it will be useful to someone
 - [`stylelint-scss`](https://www.npmjs.com/package/stylelint-scss) - is a collection of SCSS specific linting rules
 - [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules
 - [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier) - Runs Prettier as a Stylelint rule and reports differences as individual Stylelint issues.
+
+## Requirements
+
+Since some Webpack plugins supported `Node.js` version > `14.15`, you need [`16`](https://nodejs.org/en/) and higher to prepare for future changes.
 
 ## Installation
 
@@ -174,15 +176,15 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 ## Source
 
-**HTML** - `src/`
+**HTML** - `public/`
 
 **CSS** - `src/styles`
 
 **JS** - `src/`
 
-**Fonts** - `src/assets/fonts`
+**Fonts** - `public/assets/fonts`
 
-**Other Assets**- `src/assets`
+**Other Assets**- `public/assets`
 
 ## Useful tips
 

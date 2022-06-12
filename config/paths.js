@@ -1,6 +1,10 @@
-const path = require('path')
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
-module.exports = {
-  src: path.resolve(__dirname, '../src'),
-  dist: path.resolve(__dirname, '../dist'),
+const projectRootFolder = fileURLToPath(new URL('..', import.meta.url))
+
+export default {
+  src: path.resolve(projectRootFolder, 'src'),
+  public: path.resolve(projectRootFolder, 'public'),
+  dist: path.resolve(projectRootFolder, 'dist'),
 }
