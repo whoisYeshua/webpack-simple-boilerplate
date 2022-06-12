@@ -5,9 +5,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "cross-env NODE_ENV=development webpack --config config/webpack.development.js",
-        "watch": "cross-env NODE_ENV=development webpack --config config/webpack.development.js --watch",
-        "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.development.js",
+        "dev": "webpack --node-env=development --config config/webpack.development.js",
+        "watch": "webpack --node-env=development --config config/webpack.development.js --watch",
+        "start": "webpack serve --node-env=development --config config/webpack.development.js",
         "build": "webpack --config config/webpack.production.js"
     },
     "keywords": [
@@ -29,7 +29,6 @@
         "autoprefixer": "^10.2.5",
         "babel-loader": "^8.2.2",
         "copy-webpack-plugin": "^11.0.0",
-        "cross-env": "^7.0.3",
         "css-loader": "^6.2.0",
         "css-minimizer-webpack-plugin": "^4.0.0",
         "csv-loader": "^3.0.3",
