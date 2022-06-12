@@ -1,4 +1,4 @@
-export default class Post {
+export class PostContent {
   constructor(title, img) {
     this.title = title
     this.img = img

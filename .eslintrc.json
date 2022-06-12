@@ -8,8 +8,8 @@
   },
   "ignorePatterns": ["dist", "node_modules"],
   "extends": [
-    "airbnb",
-    "airbnb/hooks",
+    // "airbnb",
+    // "airbnb/hooks",
     "plugin:unicorn/recommended",
     "prettier"
   ],
@@ -20,14 +20,14 @@
      like terser-webpack-plugin
      ref: https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
      */
-    "import/no-extraneous-dependencies": [
-      "warn",
-      {
-        "devDependencies": true,
-        "packageDir": ["node_modules/webpack", "./"]
-      }
-    ],
-    "import/extensions": ["warn", "ignorePackages"],
+    // "import/no-extraneous-dependencies": [
+    //   "warn",
+    //   {
+    //     "devDependencies": true,
+    //     "packageDir": ["node_modules/webpack", "./"]
+    //   }
+    // ],
+    // "import/extensions": ["warn", "ignorePackages"],
     /* Allows write filenames in an camelCase and CebabCase style */
     "unicorn/filename-case": [
       "warn",
@@ -38,15 +38,20 @@
         }
       }
     ],
-    "unicorn/prefer-module": "off",
-    /* Set for react named & unnamed components only arrow functions type  */
-    "react/function-component-definition": [
-      "warn",
+    "unicorn/prevent-abbreviations": [
+      "error",
       {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
+        "ignore": ["args", "props"]
       }
     ]
+    /* Set for react named & unnamed components only arrow functions type  */
+    // "react/function-component-definition": [
+    //   "warn",
+    //   {
+    //     "namedComponents": "arrow-function",
+    //     "unnamedComponents": "arrow-function"
+    //   }
+    // ]
   },
   "settings": {
     "import/resolver": {

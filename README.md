@@ -8,7 +8,7 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 - [`webpack`](https://www.npmjs.com/package/webpack) - Module and asset bundler
 - [`webpack-cli`](https://www.npmjs.com/package/webpack-cli) - Command line interface for webpack
-- [`webpack-dev-server`](https://www.npmjs.com/package/webpack-dev-server) - Development server for webpack with live reloading (not for react currenty in my template)
+- [`webpack-dev-server`](https://www.npmjs.com/package/webpack-dev-server) - Development server for webpack with live reloading
 - [`webpack-merge`](https://www.npmjs.com/package/webpack-merge) - Combines a common configuration with a specific one for development or production
 
 #### [Loaders](https://webpack.js.org/loaders/)
@@ -29,8 +29,9 @@ A simple template that I made for myself, but maybe it will be useful to someone
 - [`mini-css-extract-plugin`](https://webpack.js.org/plugins/mini-css-extract-plugin/) - Extract CSS into separate files
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
-- [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is a ESLint plugin for webpack _(Only in development mode)_
 - [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
+- [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is a ESLint plugin for webpack _(Only in development mode)_
+- [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) - enable "Fast Refresh" (also previously known as Hot Reloading) for React components. Work closely together with [`react-refresh`](https://www.npmjs.com/package/react-refresh) _(Only in development mode)_
 
 ### [Babel](https://babeljs.io/)
 
@@ -49,6 +50,10 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 - [`@babel/preset-typescript`](https://babeljs.io/docs/en/babel-preset-typescript) - Preset for TypeScript
 - [`@babel/preset-react`](https://babeljs.io/docs/en/babel-preset-react) - Preset for React
+
+#### [Plugins](https://babeljs.io/docs/en/plugins)
+
+- [`react-refresh/babel`](https://www.npmjs.com/package/react-refresh) - This package implements the wiring necessary to integrate Fast Refresh (HMR) into Babel. Work closely together with [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) _(Only in development mode)_
 
 ### [PostCSS](https://postcss.org/)
 
@@ -133,7 +138,7 @@ Watcher (will update the build after each change):
   npm run watch
 ```
 
-Dev Server (provides you with a simple web server and the ability to use live reloading):
+Dev Server (provides you with a simple web server and the ability to use HMR):
 
 ```bash
   npm start
@@ -155,18 +160,19 @@ One-time production build:
 
 Both environments use `webpack.config.js`, but each environment has its own features:
 
-| Features                 | Development         | Production                  |
-| ------------------------ | ------------------- | --------------------------- |
-| Devtool                  | ✅ - `source-map`\* | ❌                          |
-| devServer                | ✅                  | ❌                          |
-| ESLint                   | ✅                  | ❌                          |
-| CSS implementation\*\*   | ✅ - `style-loader` | ✅ - `MiniCssExtractPlugin` |
-| TerserPlugin             | ❌                  | ✅                          |
-| CssMinimizerPlugin       | ❌                  | ✅                          |
-| HtmlWebpackPlugin minify | ❌                  | ✅                          |
-| BundleAnalyzerPlugin     | ❌                  | ✅                          |
-| Output files name        | Default             | Contenthash                 |
-| Favicon\*\*\*            | ❌                  | ✅                          |
+| Features                  | Development         | Production                  |
+| ------------------------- | ------------------- | --------------------------- |
+| Devtool                   | ✅ - `source-map`\* | ❌                          |
+| devServer                 | ✅                  | ❌                          |
+| ESLint                    | ✅                  | ❌                          |
+| CSS implementation\*\*    | ✅ - `style-loader` | ✅ - `MiniCssExtractPlugin` |
+| TerserPlugin              | ❌                  | ✅                          |
+| ReactRefreshWebpackPlugin | ❌                  | ✅                          |
+| CssMinimizerPlugin        | ❌                  | ✅                          |
+| HtmlWebpackPlugin minify  | ❌                  | ✅                          |
+| BundleAnalyzerPlugin      | ❌                  | ✅                          |
+| Output files name         | Default             | Contenthash                 |
+| Favicon\*\*\*             | ❌                  | ✅                          |
 
 \* You can set `eval-source-map` or other options to increase build speed, but in this case you should manualy set `sourceMap` to `true` in `css-loader`, `scss-loader` and `postcss-loader`.
 
@@ -188,19 +194,19 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 ## Useful tips
 
-- `.babelrc.json`
+- `babel.config.cjs`
 
   I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle.
 
   ```js
-  "presets": [
+  presets: [
     [
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: '3.16', // The version string can be any supported core-js versions
-      }
-    ]
+        corejs: '3.22', // The version string can be any supported core-js versions
+      },
+    ],
   ]
   ```
 
@@ -229,7 +235,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 ## To Do
 
-⬜ - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
+- [x] - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
 
 ## In addition
 
