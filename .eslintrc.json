@@ -1,0 +1,58 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "jquery": true,
+    "node": true
+  },
+  "ignorePatterns": ["dist", "node_modules"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:unicorn/recommended",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": "off",
+    /* Allow import dev dependecies & dependencies that are built into webpack
+     like terser-webpack-plugin
+     ref: https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
+     */
+    "import/no-extraneous-dependencies": [
+      "warn",
+      {
+        "devDependencies": true,
+        "packageDir": ["node_modules/webpack", "./"]
+      }
+    ],
+    /* Allows write filenames in an camelCase and CebabCase style */
+    "unicorn/filename-case": [
+      "warn",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ],
+    "unicorn/prefer-module": "off",
+    /* Set for react named & unnamed components only arrow functions type  */
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {},
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  }
+}

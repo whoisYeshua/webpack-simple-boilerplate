@@ -11,7 +11,7 @@ const filename = extension =>
 const assetsFilename = () =>
   isDevelopment ? '[base]' : '[contenthash][ext][query]'
 
-module.exports = {
+const commonConfig = {
   context: paths.src,
   entry: {
     main: './index.jsx',
@@ -24,9 +24,9 @@ module.exports = {
     assetModuleFilename: `assets/${assetsFilename()}`,
   },
   resolve: {
-    extensions: ['.js', '.json', '.png', '.webp', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.json', '.png', '.webp', '.css', '.scss'],
     alias: {
-      '@assets': path.resolve(paths.src, 'assets'),
+      '@assets': path.resolve(paths.public, 'assets'),
       '@models': path.resolve(paths.src, 'models'),
       '@styles': path.resolve(paths.src, 'styles'),
       '@': paths.src,
@@ -42,14 +42,14 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       title: 'Webpack',
-      favicon: path.resolve(paths.src, 'assets', 'favicon.ico'),
-      template: path.resolve(paths.src, 'template.html'),
+      favicon: path.resolve(paths.public, 'assets', 'favicon.ico'),
+      template: path.resolve(paths.public, 'index.html'),
       filename: 'index.html',
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(paths.src, 'assets', 'trash'),
+          from: path.resolve(paths.public, 'assets', 'trash'),
           to: path.resolve(paths.dist, 'assets', assetsFilename()),
         },
       ],
@@ -81,3 +81,5 @@ module.exports = {
     ],
   },
 }
+
+module.exports = commonConfig
