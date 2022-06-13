@@ -166,8 +166,8 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 | devServer                 | ✅                  | ❌                          |
 | ESLint                    | ✅                  | ❌                          |
 | CSS implementation\*\*    | ✅ - `style-loader` | ✅ - `MiniCssExtractPlugin` |
+| ReactRefreshWebpackPlugin | ✅                  | ❌                          |
 | TerserPlugin              | ❌                  | ✅                          |
-| ReactRefreshWebpackPlugin | ❌                  | ✅                          |
 | CssMinimizerPlugin        | ❌                  | ✅                          |
 | HtmlWebpackPlugin minify  | ❌                  | ✅                          |
 | BundleAnalyzerPlugin      | ❌                  | ✅                          |
