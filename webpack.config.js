@@ -1,6 +1,7 @@
 import path from 'node:path'
 import webpack from 'webpack'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
+// eslint-disable-next-line import/default
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 import paths from './config/webpack.paths.js'

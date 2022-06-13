@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import * as $ from 'jquery/dist/jquery.min'
 
 import WebpackLogo from '@assets/webpack-logo.webp'
-import { PostContent } from './PostContent.js'
+import { PostContent } from './PostContent'
 
 const Post = () => {
   useEffect(() => {

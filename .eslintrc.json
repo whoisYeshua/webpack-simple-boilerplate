@@ -11,6 +11,7 @@
     // "airbnb",
     // "airbnb/hooks",
     "eslint:recommended",
+    "plugin:import/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
@@ -20,18 +21,6 @@
   ],
   "rules": {
     "no-console": "off",
-    /* Allow import dev dependecies & dependencies that are built into webpack
-     like terser-webpack-plugin
-     ref: https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
-     */
-    // "import/no-extraneous-dependencies": [
-    //   "warn",
-    //   {
-    //     "devDependencies": true,
-    //     "packageDir": ["node_modules/webpack", "./"]
-    //   }
-    // ],
-    // "import/extensions": ["warn", "ignorePackages"],
     /* Allows write filenames in an camelCase and CebabCase style */
     "unicorn/filename-case": [
       "warn",
@@ -53,8 +42,12 @@
   "settings": {
     "import/resolver": {
       "node": {},
-      "webpack": {
-        "config": "webpack.config.js"
+      "alias": {
+        "map": [
+          ["@assets", "./public/assets"],
+          ["@styles", "./src/styles"],
+          ["@", "./src"]
+        ]
       }
     }
   }
