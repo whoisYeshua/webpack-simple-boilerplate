@@ -49,8 +49,8 @@ A simple template that I made for myself, but maybe it will be useful to someone
   last 2 safari versions
   ```
 
-- [`@babel/preset-typescript`](https://babeljs.io/docs/en/babel-preset-typescript) - Preset for TypeScript
 - [`@babel/preset-react`](https://babeljs.io/docs/en/babel-preset-react) - Preset for React
+- [`@babel/preset-typescript`](https://babeljs.io/docs/en/babel-preset-typescript) - Preset for TypeScript
 
 #### [Plugins](https://babeljs.io/docs/en/plugins)
 
@@ -72,27 +72,23 @@ A simple template that I made for myself, but maybe it will be useful to someone
 ### [ESlint](https://eslint.org/)
 
 - [`ESLint`](https://www.npmjs.com/package/eslint) - is a static code analysis tool for identifying problematic patterns.
+- [`@babel/eslint-parser`](https://www.npmjs.com/package/@babel/eslint-parser) - is a wrapper around the Babel parser that makes it compatible with ESLint. Needed for analysis code at webpack
 
 #### [Configuration Files](https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files)
-
-- [`eslint-config-airbnb`](https://www.npmjs.com/package/eslint-config-airbnb) - This package provides Airbnb's .eslintrc as an extensible shared config. It requires:
-
-  - [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import) - This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
-  - [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react) - React specific linting rules for ESLint
-  - [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) - This ESLint plugin enforces the Rules of Hooks.
-  - [`eslint-plugin-jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) - Static AST checker for accessibility rules on JSX elements
 
 - [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier
 
 #### [Plugins](https://eslint.org/docs/user-guide/configuring/plugins#specifying-parser)
 
-- [`@babel/eslint-parser`](https://www.npmjs.com/package/@babel/eslint-parser) - is a wrapper around the Babel parser that makes it compatible with ESLint. Needed for analysis code at webpack
+- [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import) - This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
+- [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react) - React specific linting rules for ESLint. I am also extends `react/jsx-runtime` for support [new JSX transform from React 17](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports).
+- [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) - This ESLint plugin enforces the Rules of Hooks.
+- [`eslint-plugin-jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) - Static AST checker for accessibility rules on JSX elements
 - [`eslint-plugin-unicorn`](https://www.npmjs.com/package/eslint-plugin-unicorn) - Various awesome ESLint rules
-- [`eslint-plugin-prettier`](https://www.npmjs.com/package/eslint-plugin-prettier) - Runs Prettier as an ESLint rule and reports differences as individual ESLint issues
 
 #### [Import issues](https://stackoverflow.com/questions/41769880/how-to-manually-add-a-path-to-be-resolved-in-eslintrc/42498220#42498220)
 
-- [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack) - Webpack-literate module resolution plugin for `eslint-plugin-import`
+- [`eslint-import-resolver-alias`](https://www.npmjs.com/package/eslint-import-resolver-alias) - Allows you to manually register aliases for paths, work as `import\resolver` for [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import). _I decided to get rid of [eslint-import-resolver-webpack](https://www.npmjs.com/package/eslint-import-resolver-webpack) since it didn't support ESM webpack config. In the future, I hope to be able to remove this dirty hack when aliases would be defined in `tsconfig.json` for webpack.config and for `eslint-plugin-import`_
 
 ### [Stylelint](https://stylelint.io/)
 
