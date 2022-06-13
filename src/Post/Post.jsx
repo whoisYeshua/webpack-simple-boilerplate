@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import * as $ from 'jquery/dist/jquery.min'
 
 import WebpackLogo from '@assets/webpack-logo.webp'
 import { PostContent } from './PostContent.js'
 
-const Post = props => {
+const Post = () => {
   useEffect(() => {
     const postContent = new PostContent('Webpack Post Title test', WebpackLogo)
 

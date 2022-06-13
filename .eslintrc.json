@@ -10,10 +10,14 @@
   "extends": [
     // "airbnb",
     // "airbnb/hooks",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
     "plugin:unicorn/recommended",
     "prettier"
   ],
-  "plugins": ["prettier"],
   "rules": {
     "no-console": "off",
     /* Allow import dev dependecies & dependencies that are built into webpack
@@ -43,15 +47,8 @@
       {
         "ignore": ["args", "props"]
       }
-    ]
-    /* Set for react named & unnamed components only arrow functions type  */
-    // "react/function-component-definition": [
-    //   "warn",
-    //   {
-    //     "namedComponents": "arrow-function",
-    //     "unnamedComponents": "arrow-function"
-    //   }
-    // ]
+    ],
+    "react/self-closing-comp": "error"
   },
   "settings": {
     "import/resolver": {
