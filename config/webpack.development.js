@@ -1,5 +1,6 @@
 import { merge } from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
+import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 import webpackConfiguration from '../webpack.config.js'
 import paths from './paths.js'
@@ -9,9 +10,9 @@ const developmentConfig = merge(webpackConfiguration, {
   devtool: 'source-map',
   devServer: {
     static: paths.dist,
+    hot: true,
     port: 5550,
     open: true,
-    hot: true,
   },
   module: {
     rules: [
@@ -25,7 +26,7 @@ const developmentConfig = merge(webpackConfiguration, {
       },
     ],
   },
-  plugins: [new ESLintPlugin()],
+  plugins: [new ESLintPlugin(), new ReactRefreshPlugin()],
 })
 
 export default developmentConfig

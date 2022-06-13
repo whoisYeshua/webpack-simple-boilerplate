@@ -1,7 +1,6 @@
 import path from 'node:path'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 import paths from './config/paths.js'
 
@@ -25,7 +24,7 @@ const commonConfig = {
     assetModuleFilename: `assets/${assetsFilename()}`,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.png', '.webp', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
     alias: {
       '@assets': path.resolve(paths.public, 'assets'),
       '@styles': path.resolve(paths.src, 'styles'),
@@ -40,7 +39,6 @@ const commonConfig = {
     },
   },
   plugins: [
-    isDevelopment && new ReactRefreshPlugin(),
     new HTMLWebpackPlugin({
       title: 'Webpack',
       favicon: path.resolve(paths.public, 'assets', 'favicon.ico'),
