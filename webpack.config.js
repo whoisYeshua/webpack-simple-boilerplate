@@ -1,4 +1,5 @@
 import path from 'node:path'
+import webpack from 'webpack'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
@@ -39,6 +40,7 @@ const commonConfig = {
     },
   },
   plugins: [
+    new webpack.ProgressPlugin(),
     new HTMLWebpackPlugin({
       title: 'Webpack',
       favicon: path.resolve(paths.public, 'assets', 'favicon.ico'),
