@@ -20,7 +20,7 @@ const babelConfig = api => {
       ],
       '@babel/preset-typescript',
     ],
-    // Applies the react-refresh Babel plugin on non-production modes only
+    // Applies the react-refresh Babel plugin on dev mode only
     ...(isDevelopment(api.env()) && { plugins: ['react-refresh/babel'] }),
   }
 }

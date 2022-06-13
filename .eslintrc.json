@@ -8,8 +8,6 @@
   },
   "ignorePatterns": ["dist", "node_modules"],
   "extends": [
-    // "airbnb",
-    // "airbnb/hooks",
     "eslint:recommended",
     "plugin:import/recommended",
     "plugin:react/recommended",
