@@ -2,7 +2,7 @@ import path from 'node:path'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
-import paths from './config/paths.js'
+import paths from './config/webpack.paths.js'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 

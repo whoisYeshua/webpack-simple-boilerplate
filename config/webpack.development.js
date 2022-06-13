@@ -3,7 +3,7 @@ import ESLintPlugin from 'eslint-webpack-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 import webpackConfiguration from '../webpack.config.js'
-import paths from './paths.js'
+import paths from './webpack.paths.js'
 
 const developmentConfig = merge(webpackConfiguration, {
   mode: 'development',
