@@ -13,12 +13,12 @@ const babelConfig = api => {
           corejs: '3.22',
         },
       ],
-      ['@babel/preset-typescript'],
-      // Enable development transform of React with new automatic runtime
+      // Enable development transform of React with new automatic runtime (https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
       [
         '@babel/preset-react',
         { development: isDevelopment(api.env()), runtime: 'automatic' },
       ],
+      '@babel/preset-typescript',
     ],
     // Applies the react-refresh Babel plugin on non-production modes only
     ...(isDevelopment(api.env()) && { plugins: ['react-refresh/babel'] }),
