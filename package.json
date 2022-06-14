@@ -8,7 +8,15 @@
         "dev": "webpack --node-env=development --config config/webpack.development.js",
         "watch": "webpack --node-env=development --config config/webpack.development.js --watch",
         "start": "webpack serve --node-env=development --config config/webpack.development.js",
-        "build": "webpack --config config/webpack.production.js"
+        "build": "webpack --config config/webpack.production.js",
+        "format": "npm run format:eslint && npm run format:prettier && npm run format:stylelint",
+        "format:eslint": "npm run lint:eslint -- --fix",
+        "format:prettier": "npm run lint:prettier -- --write",
+        "format:stylelint": "npm run lint:stylelint -- --fix",
+        "lint": "npm run lint:eslint && npm run lint:prettier && npm run lint:stylelint",
+        "lint:eslint": "eslint \"**/*.{js,ts,jsx,tsx,[cm][jt]s}\" --debug",
+        "lint:prettier": "prettier \"**/*.{json,js,ts,jsx,tsx,[cm][jt]s}\" --check",
+        "lint:stylelint": "stylelint \"src/**/*.{css,scss}\""
     },
     "keywords": [
         "webpack",
@@ -55,9 +63,9 @@
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-rational-order": "^0.1.2",
         "stylelint-config-standard": "^26.0.0",
+        "stylelint-config-standard-scss": "^4.0.0",
         "stylelint-order": "^5.0.0",
         "stylelint-prettier": "^2.0.0",
-        "stylelint-scss": "^4.2.0",
         "webpack": "^5.73.0",
         "webpack-bundle-analyzer": "^4.4.1",
         "webpack-cli": "^4.5.0",

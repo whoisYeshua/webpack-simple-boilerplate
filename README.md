@@ -2,7 +2,7 @@
 
 A simple template that I made for myself, but maybe it will be useful to someone.
 
-## This template Features:
+## ✨ This template Features:
 
 ### [Webpack](https://webpack.js.org/)
 
@@ -67,9 +67,9 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 ### [Prettier](https://prettier.io/)
 
-- [`Prettier`](https://www.npmjs.com/package/prettier) - is an code formatter
+- [`Prettier`](https://www.npmjs.com/package/prettier) - is an code formatter. Parse some [EditorConfig rules](https://prettier.io/docs/en/configuration.html#editorconfig)
 
-### [ESlint](https://eslint.org/)
+### [ESLint](https://eslint.org/)
 
 - [`ESLint`](https://www.npmjs.com/package/eslint) - is a static code analysis tool for identifying problematic patterns.
 - [`@babel/eslint-parser`](https://www.npmjs.com/package/@babel/eslint-parser) - is a wrapper around the Babel parser that makes it compatible with ESLint. Needed for analysis code at webpack
@@ -96,21 +96,21 @@ A simple template that I made for myself, but maybe it will be useful to someone
 
 #### [Configurations](https://stylelint.io/user-guide/configure#extends)
 
+- [`stylelint-config-standard-scss`](https://www.npmjs.com/package/stylelint-config-standard-scss) - Turns on SCSS support & some SCSS rules. By default extends `stylelint-config-standard` and `stylelint-config-recommended-scss`. _(At the moment, it does not use the most modern version of `stylelint-config-standard`, so it goes before `stylelint-config-standard`, for the possibility of redefinition)_
 - [`stylelint-config-standard`](https://www.npmjs.com/package/stylelint-config-standard) - Turns on additional rules to enforce the common stylistic conventions found within a handful of CSS styleguides
 - [`stylelint-config-rational-order`](https://www.npmjs.com/package/stylelint-config-rational-order) - Config that sorts related property declarations by grouping together in the rational order
-- [`stylelint-config-prettier`](https://www.npmjs.com/package/stylelint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier.
+- [`stylelint-config-prettier`](https://www.npmjs.com/package/stylelint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier. _Enabled with [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier)_
 
 #### [Plugins](https://stylelint.io/user-guide/configure#plugins)
 
-- [`stylelint-scss`](https://www.npmjs.com/package/stylelint-scss) - is a collection of SCSS specific linting rules
-- [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules
+- [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules. _Enabled with [`stylelint-config-rational-order`](https://www.npmjs.com/package/stylelint-config-rational-order)_
 - [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier) - Runs Prettier as a Stylelint rule and reports differences as individual Stylelint issues.
 
-## Requirements
+## ⚠️ Requirements ⚠️
 
 Since some Webpack plugins supported `Node.js` version > `14.15`, you need [`16`](https://nodejs.org/en/) and higher to prepare for future changes.
 
-## Installation
+## ⏬ Installation
 
 1. Clone or download the repo
 2. Browse the downloaded directory
@@ -119,7 +119,7 @@ Since some Webpack plugins supported `Node.js` version > `14.15`, you need [`16`
     npm i
    ```
 
-## Commands
+## ⏩ Commands
 
 ### Development environment
 
@@ -148,6 +148,32 @@ One-time production build:
 ```bash
   npm run build
 ```
+
+### Formatting & Linting commands
+
+Format & fix the code by ESLint, Prettier and Stylelint:
+
+```bash
+  npm run format
+```
+
+Only checks the code for compliance with rules by ESLint, Prettier and Stylelint:
+
+```bash
+  npm run lint
+```
+
+You can also use a specific formatter
+
+```bash
+  npm run lint:prettier # check for compliance with Prettier rules
+  # or
+  npm run lint:stylelint # check for compliance with Stylelint rules
+  # or
+  npm run format:eslint # format & fix the code with ESLint rules
+```
+
+Check out more commands at [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
 
 ## Environment comparison
 
@@ -189,7 +215,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 **Other Assets**- `public/assets`
 
-## Useful tips
+## Useful tips 💡
 
 - `babel.config.cjs`
 
@@ -201,7 +227,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: '3.22', // The version string can be any supported core-js versions
+        corejs: '3.23', // The version string can be any supported core-js versions
       },
     ],
   ]
@@ -230,7 +256,15 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
   In production mode eg `HTMLWebpackPlugin` minify your HTML code by default
 
-## To Do
+  - **Formatting & Linting commands**
+
+  _ESLint_ & _Prettier_ formatting works separately. So, when you run `npm run format:eslint` it will only fix _ESLint_ rules, but not apply Prettier rules formatting. If you want both run `npm run format:eslint && npm run format:prettier` or `npm run format`, which also includes _Stylelint_ formatting.
+
+  _Stylelint_ & _Prettier_ formatting works together. So, when you run `npm run fromat:stylelint` it will run _Stylelint_ rules check and fix and then run _Prettier_ formatting _(It works thanks to [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier))_. _Note: `npm run format:prettier` will not affect `css` or `scss` files, my Stylelint build uses Prettier under the hood as mentioned above._
+
+  To understand which extensions are used in each command, check out [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
+
+## 📝 To Do
 
 - [x] - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
 

@@ -2,6 +2,5 @@
   "arrowParens": "avoid",
   "semi": false,
   "singleQuote": true,
-  "bracketSameLine": true,
-  "editorconfig": true
+  "bracketSameLine": true
 }

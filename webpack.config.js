@@ -60,7 +60,7 @@ const commonConfig = {
   module: {
     rules: [
       {
-        test: /\.(([jt]sx)|([cm]?[jt]s))$/,
+        test: /\.([jt]sx|[cm]?[jt]s)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
