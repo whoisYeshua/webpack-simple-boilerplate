@@ -45,7 +45,8 @@
           ["@assets", "./public/assets"],
           ["@styles", "./src/styles"],
           ["@", "./src"]
-        ]
+        ],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"]
       }
     }
   }

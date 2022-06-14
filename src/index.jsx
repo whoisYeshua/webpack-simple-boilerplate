@@ -9,7 +9,7 @@ import Header from './Header.jsx'
 import Post from './Post'
 
 import './babel.js'
-import '@styles/styles'
+import '@styles/styles.css'
 import '@styles/scss'
 
 const App = () => (
