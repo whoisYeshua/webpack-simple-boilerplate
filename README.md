@@ -41,7 +41,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 #### [Presets](https://babeljs.io/docs/en/presets)
 
-- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with `.browserslistrc`:
+- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with [`.browserslistrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/6ee992cdf1dc75b17d0a8c2e104763ded218abef/.browserslistrc):
 
   ```
   last 2 chrome versions
@@ -58,20 +58,20 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 ### [PostCSS](https://postcss.org/)
 
-- [`PostCSS`](https://www.npmjs.com/package/postcss) - is a tool for transforming styles with JS plugins
-- [`Autoprefixer`](https://www.npmjs.com/package/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules.If you need more you can replace it with [`postcss-preset-env`](https://www.npmjs.com/package/postcss-preset-env) which includes autoprefixer
+- [`postcss`](https://www.npmjs.com/package/postcss) - is a tool for transforming styles with JS plugins
+- [`autoprefixer`](https://www.npmjs.com/package/autoprefixer) - PostCSS plugin to parse CSS and add vendor prefixes to CSS rules.If you need more you can replace it with [`postcss-preset-env`](https://www.npmjs.com/package/postcss-preset-env) which includes autoprefixer
 
 ### [EditorConfig](https://editorconfig.org/)
 
-- [`EditorConfig`](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) - is helper for maintain consistent coding styles across various editors and IDEs.
+- [`.editorconfig`](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) - is helper for maintain consistent coding styles across various editors and IDEs.
 
 ### [Prettier](https://prettier.io/)
 
-- [`Prettier`](https://www.npmjs.com/package/prettier) - is an code formatter. Parse some [EditorConfig rules](https://prettier.io/docs/en/configuration.html#editorconfig)
+- [`prettier`](https://www.npmjs.com/package/prettier) - is an code formatter. Also parse some [EditorConfig rules](https://prettier.io/docs/en/configuration.html#editorconfig)
 
 ### [ESLint](https://eslint.org/)
 
-- [`ESLint`](https://www.npmjs.com/package/eslint) - is a static code analysis tool for identifying problematic patterns.
+- [`eslint`](https://www.npmjs.com/package/eslint) - is a static code analysis tool for identifying problematic patterns.
 - [`@babel/eslint-parser`](https://www.npmjs.com/package/@babel/eslint-parser) - is a wrapper around the Babel parser that makes it compatible with ESLint. Needed for analysis code at webpack
 
 #### [Configuration Files](https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files)
@@ -106,9 +106,23 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 - [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules. _Enabled with [`stylelint-config-rational-order`](https://www.npmjs.com/package/stylelint-config-rational-order)_
 - [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier) - Runs Prettier as a Stylelint rule and reports differences as individual Stylelint issues.
 
+### CI
+
+- [`husky`](https://typicode.github.io/husky/#/) - Enable Git hooks, like `pre-commit`, `commit-msg` etc.
+
+- [`lint-staged`](https://github.com/okonet/lint-staged) - Run linters on git staged files. Work closely together with `husky` `pre-commit` hook. It has its own config, which is located in [`.lintstagedrc.json`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.lintstagedrc.json)
+
+- [`commitlint`](https://commitlint.js.org/#/) - Lint commit messages. Work closely together with `husky` `commit-msg` hook. It has its own config, which is located in [`.commitlintrc.json`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.commitlintrc.json)
+
+  Expanded by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) - Shareable `commitlint` config enforcing Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+- [`commitizen`](http://commitizen.github.io/cz-cli/) - is a tool designed to define a standard way of committing rules. It has its own config, which is located in [`.czrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.czrc). You can use it with `npm run cm`
+
+  Expanded by [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) - A commitizen propmpts adapter for the Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
 ## ⚠️ Requirements ⚠️
 
-Since some Webpack plugins supported `Node.js` version > `14.15`, you need [`16`](https://nodejs.org/en/) and higher to prepare for future changes.
+Since some Webpack plugins supported only `Node.js` version ≥ `14.15`, you need [`16`](https://nodejs.org/en/) and higher to prepare for future changes.
 
 ## ⏬ Installation
 
@@ -175,11 +189,23 @@ You can also use a specific formatter
 
 Check out more commands at [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
 
+### CI
+
+Create conventional commit:
+
+```bash
+  npm run cm
+```
+
+Because husky is used in the project, this creates a certain restriction on the naming of scripts, [described here](https://github.com/commitizen/cz-cli#optional-install-and-run-commitizen-locally).
+
+I personally prefer use [this VS Code Extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) for creating conventional commits.
+
 ## Environment comparison
 
-- **Common** - [webpack.config.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
-- **Development** - [webpack.development.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.development.js)
-- **Production** - [webpack.production.js](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
+- **Common** - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
+- **Development** - [`webpack.development.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.development.js)
+- **Production** - [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
 
 Both environments use `webpack.config.js`, but each environment has its own features:
 
@@ -267,6 +293,8 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 ## 📝 To Do
 
 - [x] - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
+
+- [] - Add semantic-release
 
 ## In addition
 
