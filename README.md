@@ -41,7 +41,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 #### [Presets](https://babeljs.io/docs/en/presets)
 
-- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with [`.browserslistrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/6ee992cdf1dc75b17d0a8c2e104763ded218abef/.browserslistrc):
+- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with [`.browserslistrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.browserslistrc):
 
   ```
   last 2 chrome versions
