@@ -1,6 +1,6 @@
 # Simple Webpack 5 Boilerplate and more
 
-A simple template that I made for myself, but maybe it will be useful to someone.
+I made a simple template for myself, but maybe it will be helpful to someone.
 
 ## ✨ This template Features:
 
@@ -30,8 +30,8 @@ A simple template that I made for myself, but maybe it will be useful to someone
 - [`ProgressPlugin`](https://webpack.js.org/plugins/progress-plugin/) - This plugin provides a way to customize how progress is reported during a compilation. (You do not need to install this plugin. _Webpack_ comes with this plugin out of the box.)
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
-- [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
-- [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is a ESLint plugin for webpack _(Only in development mode)_
+- [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize the size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
+- [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is an ESLint plugin for webpack _(Only in development mode)_
 - [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) - enable "Fast Refresh" (also previously known as Hot Reloading) for React components. Work closely together with [`react-refresh`](https://www.npmjs.com/package/react-refresh) _(Only in development mode)_
 
 ### [Babel](https://babeljs.io/)
@@ -151,13 +151,13 @@ One-time production build:
 
 ### Formatting & Linting commands
 
-Format & fix the code by ESLint, Prettier and Stylelint:
+Format & fix the code by ESLint, Prettier, and Stylelint:
 
 ```bash
   npm run format
 ```
 
-Only checks the code for compliance with rules by ESLint, Prettier and Stylelint:
+Only checks the code for compliance with rules by ESLint, Prettier, and Stylelint:
 
 ```bash
   npm run lint
@@ -197,11 +197,11 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 | Output files name         | Default             | Contenthash                 |
 | Favicon\*\*\*             | ❌                  | ✅                          |
 
-\* You can set `eval-source-map` or other options to increase build speed, but in this case you should manualy set `sourceMap` to `true` in `css-loader`, `scss-loader` and `postcss-loader`.
+\* You can set `eval-source-map` or other options to increase build speed, but in this case, you should manually set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
 
 \*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
 
-\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. Therefore, if this bug is not fixed in the near future, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).
+\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. Therefore, if this bug is not fixed soon, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).
 
 ## Source
 
@@ -219,7 +219,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 - `babel.config.cjs`
 
-  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle.
+  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle.
 
   ```js
   presets: [
@@ -235,7 +235,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 - `webpack.production.js`
 
-  Set this options in `TerserPlugin` to remove comments from code and prevent `*LICENSE.txt` files creation.
+  Set these options in `TerserPlugin` to remove comments from code and prevent `*LICENSE.txt` files creation.
 
   ```js
   optimization: {
@@ -272,6 +272,6 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 This template is based on the migration of [this example](https://www.youtube.com/watch?v=eSaF8NXeNsA&t=9554s) to Webpack 5 and also from these sources:
 
-- [webpack Boilerplate](https://github.com/taniarascia/webpack-boilerplate) - Sensible webpack 5 boilerplate using Babel, PostCSS and Sass with a hot dev server and an optimized production build.
-- [Webpack 5 Boilerplate Template](https://github.com/WeAreAthlon/frontend-webpack-boilerplate) - Simple starter webpack 5 project template supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer friendly tools.
+- [webpack Boilerplate](https://github.com/taniarascia/webpack-boilerplate) - Sensible webpack 5 boilerplate using Babel, PostCSS, and Sass with a hot dev server and an optimized production build.
+- [Webpack 5 Boilerplate Template](https://github.com/WeAreAthlon/frontend-webpack-boilerplate) - Simple starter webpack 5 project template supporting SASS/PostCSS, Babel ES7, browser syncing, code linting. Easy project setup having multiple features and developer-friendly tools.
 - [Create App](https://createapp.dev/) - Frontend build config generator
