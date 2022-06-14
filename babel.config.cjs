@@ -10,7 +10,7 @@ const babelConfig = api => {
         '@babel/preset-env',
         {
           useBuiltIns: 'usage',
-          corejs: '3.22',
+          corejs: '3.23',
         },
       ],
       // Enable development transform of React with new automatic runtime (https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
