@@ -104,7 +104,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 #### [Plugins](https://stylelint.io/user-guide/configure#plugins)
 
 - [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules. _Enabled with [`stylelint-config-rational-order`](https://www.npmjs.com/package/stylelint-config-rational-order)_
-- [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier) - Runs Prettier as a Stylelint rule and reports differences as individual Stylelint issues.
+- [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier) - Runs Prettier as a Stylelint rule and reports differences as individual Stylelint issues
 
 ### CI
 
@@ -114,11 +114,15 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 - [`commitlint`](https://commitlint.js.org/#/) - Lint commit messages. Work closely together with `husky` `commit-msg` hook. It has its own config, which is located in [`.commitlintrc.json`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.commitlintrc.json)
 
-  Expanded by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) - Shareable `commitlint` config enforcing Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+  Expanded by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) - Shareable `commitlint` config enforcing Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 - [`commitizen`](http://commitizen.github.io/cz-cli/) - is a tool designed to define a standard way of committing rules. It has its own config, which is located in [`.czrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.czrc). You can use it with `npm run cm`
 
-  Expanded by [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) - A commitizen propmpts adapter for the Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+  Expanded by [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) - A commitizen propmpts adapter for the Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+### [Plop](https://plopjs.com/)
+
+- [`plop`](https://www.npmjs.com/package/plop) - micro-generator framework that makes it easy to create files
 
 ## ⚠️ Requirements ⚠️
 
@@ -201,13 +205,21 @@ Because husky is used in the project, this creates a certain restriction on the 
 
 I personally prefer use [this VS Code Extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) for creating conventional commits.
 
+### Misc
+
+Generate React component:
+
+```bash
+npm run generate
+```
+
 ## Environment comparison
 
 - **Common** - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
 - **Development** - [`webpack.development.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.development.js)
 - **Production** - [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
 
-Both environments use `webpack.config.js`, but each environment has its own features:
+Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js), but each environment has its own features:
 
 | Features                  | Development         | Production                  |
 | ------------------------- | ------------------- | --------------------------- |
@@ -243,7 +255,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 ## Useful tips 💡
 
-- `babel.config.cjs`
+- [`babel.config.cjs`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/babel.config.cjs)
 
   I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle.
 
@@ -259,7 +271,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
   ]
   ```
 
-- `webpack.production.js`
+- [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
 
   Set these options in `TerserPlugin` to remove comments from code and prevent `*LICENSE.txt` files creation.
 
@@ -278,7 +290,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
   },
   ```
 
-  - `webpack.config.js`
+  - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
 
   In production mode eg `HTMLWebpackPlugin` minify your HTML code by default
 
@@ -294,7 +306,7 @@ Both environments use `webpack.config.js`, but each environment has its own feat
 
 - [x] - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
 
-- [] - Add semantic-release
+- [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
 ## In addition
 
