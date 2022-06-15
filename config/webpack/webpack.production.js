@@ -4,7 +4,7 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
-import webpackConfiguration from '../webpack.config.js'
+import webpackConfiguration from '../../webpack.config.js'
 
 const productionConfig = merge(webpackConfiguration, {
   mode: 'production',

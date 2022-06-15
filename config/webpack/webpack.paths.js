@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
-const projectRootFolder = fileURLToPath(new URL('..', import.meta.url))
+const projectRootFolder = fileURLToPath(new URL('../..', import.meta.url))
 
 export default {
   src: path.resolve(projectRootFolder, 'src'),

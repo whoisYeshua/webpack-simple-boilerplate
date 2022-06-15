@@ -4,7 +4,7 @@ import HTMLWebpackPlugin from 'html-webpack-plugin'
 // eslint-disable-next-line import/default
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
-import paths from './config/webpack.paths.js'
+import paths from './config/webpack/webpack.paths.js'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 

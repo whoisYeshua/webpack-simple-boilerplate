@@ -2,8 +2,15 @@ import { merge } from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
-import webpackConfiguration from '../webpack.config.js'
+import webpackConfiguration from '../../webpack.config.js'
 import paths from './webpack.paths.js'
+
+const cssModulesOptions = {
+  modules: {
+    auto: true,
+    localIdentName: '[name]__[local]--[hash:base64:5]',
+  },
+}
 
 const developmentConfig = merge(webpackConfiguration, {
   mode: 'development',
@@ -18,11 +25,26 @@ const developmentConfig = merge(webpackConfiguration, {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: cssModulesOptions,
+          },
+          'postcss-loader',
+        ],
       },
       {
         test: /\.s[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: cssModulesOptions,
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
