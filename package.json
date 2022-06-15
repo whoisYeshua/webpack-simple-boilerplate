@@ -10,6 +10,10 @@
   ],
   "license": "ISC",
   "author": "whoisYeshua",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whoisYeshua/webpack-simple-boilerplate.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "webpack --node-env=development --config config/webpack/webpack.development.js",
