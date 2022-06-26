@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom/client'
 // import xml from '@assets/data.xml'
 // import csv from '@assets/data.csv'
 
-import Input from './Input.jsx'
-import Header from './Header.jsx'
-import Post from './Post'
+import { Header, Input, Post } from './components'
 
 import './babel.js'
 import '@styles/styles.css'

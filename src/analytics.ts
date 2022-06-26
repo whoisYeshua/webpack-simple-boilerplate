@@ -22,4 +22,11 @@ function createAnalytics() {
   }
 }
 
+declare global {
+  // eslint-disable-next-line no-unused-vars
+  interface Window {
+    analytics: ReturnType<typeof createAnalytics>
+  }
+}
+
 window.analytics = createAnalytics()
