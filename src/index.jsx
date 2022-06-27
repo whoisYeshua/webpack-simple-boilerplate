@@ -6,9 +6,9 @@ import ReactDOM from 'react-dom/client'
 
 import { Header, Input, Post } from './components'
 
-import './babel.js'
+import './babel'
 import '@styles/styles.css'
-import '@styles/scss'
+import '@styles/scss.scss'
 
 const App = () => (
   <div className="container">

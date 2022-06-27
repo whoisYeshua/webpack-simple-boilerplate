@@ -1,5 +1,6 @@
 import path from 'node:path'
 import webpack from 'webpack'
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 // eslint-disable-next-line import/default
 import CopyWebpackPlugin from 'copy-webpack-plugin'
@@ -27,11 +28,12 @@ const commonConfig = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
-    alias: {
-      '@assets': path.resolve(paths.public, 'assets'),
-      '@styles': path.resolve(paths.src, 'styles'),
-      '@': paths.src,
-    },
+    // alias: {
+    //   '@assets': path.resolve(paths.public, 'assets'),
+    //   '@styles': path.resolve(paths.src, 'styles'),
+    //   '@': paths.src,
+    // },
+    plugins: [new TsconfigPathsPlugin()],
   },
   target: 'browserslist',
   optimization: {

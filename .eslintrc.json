@@ -11,6 +11,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
@@ -41,14 +42,16 @@
   "settings": {
     "import/resolver": {
       "node": {},
-      "alias": {
-        "map": [
-          ["@assets", "./public/assets"],
-          ["@styles", "./src/styles"],
-          ["@", "./src"]
-        ],
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"]
-      }
-    }
+      "typescript": {}
+      // "alias": {
+      //   "map": [
+      //     ["@assets", "./public/assets"],
+      //     ["@styles", "./src/styles"],
+      //     ["@", "./src"]
+      //   ],
+      //   "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"]
+      // }
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
   }
 }
