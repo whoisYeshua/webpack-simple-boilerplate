@@ -5,6 +5,7 @@ async function start() {
   return promise
 }
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 start().then(console.log)
 
 // eslint-disable-next-line unicorn/no-static-only-class

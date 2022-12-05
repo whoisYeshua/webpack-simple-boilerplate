@@ -12,7 +12,10 @@ const cssModulesOptions = {
   },
 }
 
-const developmentConfig = merge(webpackConfiguration, {
+console.log(process.env.NODE_ENV)
+
+/** @type {webpack.Configuration} */
+const developmentConfig = {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
@@ -49,6 +52,8 @@ const developmentConfig = merge(webpackConfiguration, {
     ],
   },
   plugins: [new ESLintPlugin(), new ReactRefreshPlugin()],
-})
+}
 
-export default developmentConfig
+const result = merge(webpackConfiguration, developmentConfig)
+
+export default result

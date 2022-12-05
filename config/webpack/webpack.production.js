@@ -6,7 +6,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
 
-const productionConfig = merge(webpackConfiguration, {
+/** @type {webpack.Configuration} */
+const productionConfig = {
   mode: 'production',
   performance: {
     maxEntrypointSize: 512_000,
@@ -48,6 +49,6 @@ const productionConfig = merge(webpackConfiguration, {
     }),
     new BundleAnalyzerPlugin(),
   ],
-})
+}
 
-export default productionConfig
+export default merge(webpackConfiguration, productionConfig)

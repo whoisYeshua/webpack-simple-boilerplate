@@ -9,11 +9,10 @@ import paths from './config/webpack/webpack.paths.js'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
-const filename = extension =>
-  isDevelopment ? `[name].${extension}` : `[name].[contenthash].${extension}`
 const assetsFilename = () =>
-  isDevelopment ? '[base]' : '[contenthash][ext][query]'
+  isDevelopment ? '[base]' : '[contenthash:8][ext][query]'
 
+/** @type {webpack.Configuration} */
 const commonConfig = {
   context: paths.src,
   entry: {
@@ -22,17 +21,12 @@ const commonConfig = {
   },
   output: {
     clean: true,
-    filename: filename('js'),
+    filename: isDevelopment ? `[name].js` : `[name].[contenthash:8].js`,
     path: paths.dist,
     assetModuleFilename: `assets/${assetsFilename()}`,
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
-    // alias: {
-    //   '@assets': path.resolve(paths.public, 'assets'),
-    //   '@styles': path.resolve(paths.src, 'styles'),
-    //   '@': paths.src,
-    // },
     plugins: [new TsconfigPathsPlugin()],
   },
   target: 'browserslist',
@@ -43,7 +37,7 @@ const commonConfig = {
     },
   },
   plugins: [
-    new webpack.ProgressPlugin(),
+    // new webpack.ProgressPlugin(),
     new HTMLWebpackPlugin({
       title: 'Webpack',
       favicon: path.resolve(paths.public, 'assets', 'favicon.ico'),

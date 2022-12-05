@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-
 import * as $ from 'jquery/dist/jquery.min'
 
 import WebpackLogo from '@assets/webpack-logo.webp'

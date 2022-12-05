@@ -40,6 +40,9 @@
     "react/self-closing-comp": "error"
   },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "node": {},
       "typescript": {}

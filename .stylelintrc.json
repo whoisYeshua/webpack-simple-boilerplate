@@ -5,5 +5,8 @@
     "stylelint-config-rational-order",
     "stylelint-prettier/recommended"
   ],
-  "ignoreFiles": ["dist/**", "node_modules/**"]
+  "ignoreFiles": ["dist/**", "node_modules/**"],
+  "rules": {
+    "import-notation": "string"
+  }
 }
