@@ -1,7 +1,7 @@
 import 'core-js/actual/array/group.js'
 
 async function start() {
-  const promise = Promise.resolve('async is working')
+  const promise = Promise.resolve('Promise is working')
   return promise
 }
 
@@ -12,7 +12,7 @@ class Util {
   static id = Date.now()
 }
 
-console.log('Util Id:', Util.id)
+console.log('Static Class field:', Util.id)
 
 const array = [1, 2, 3, 4, 5]
 
@@ -22,4 +22,4 @@ const newGroupArray = array.group(element => {
   return element % 2 === 0 ? 'even' : 'odd'
 })
 
-console.log(newGroupArray)
+console.log('Array group method:', newGroupArray)
