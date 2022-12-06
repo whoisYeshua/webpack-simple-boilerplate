@@ -1,8 +1,20 @@
-export class PostContent {
-  constructor(title, img) {
+interface IPostContent {
+  date: Date
+  title: string
+  img: string
+
+  toString(): string
+  get uppercaseTitle(): string
+}
+
+export class PostContent implements IPostContent {
+  date = new Date()
+  title
+  img
+
+  constructor(title: string, img: string) {
     this.title = title
     this.img = img
-    this.date = new Date()
   }
 
   toString() {

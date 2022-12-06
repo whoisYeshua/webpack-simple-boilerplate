@@ -233,7 +233,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 | HtmlWebpackPlugin minify  | ❌                  | ✅                          |
 | BundleAnalyzerPlugin      | ❌                  | ✅                          |
 | Output files name         | Default             | Contenthash                 |
-| Favicon\*\*\*             | ❌                  | ✅                          |
+| Favicon\*\*\*             | 🤔                  | ✅                          |
 
 \* You can set `eval-source-map` or other options to increase build speed, but in this case, you should manually set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
 
@@ -243,15 +243,21 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 ## Source
 
-**HTML** - `public/`
+**HTML** - `public/index.html`
 
-**CSS** - `src/styles`
+**JS/TS** - `src/`
 
-**JS** - `src/`
+**Global CSS** - `src/styles`
 
-**Fonts** - `public/assets/fonts`
+**Assets** - `src/assets` _- all assets that used directly in target code_
 
-**Other Assets**- `public/assets`
+> **Fonts** - `src/assets/fonts`
+>
+> **Images** - `src/assets/images`
+>
+> **Other Assets** - `src/assets/*`
+
+**Static files** - `public/static` _- files in this folder will be copy to dist root as it is (without any processing). Eg `robots.txt`._
 
 ## Useful tips 💡
 

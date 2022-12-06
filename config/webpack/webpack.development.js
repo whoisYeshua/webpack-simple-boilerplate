@@ -3,7 +3,7 @@ import ESLintPlugin from 'eslint-webpack-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
-import paths from './webpack.paths.js'
+import { paths } from './webpack.paths.js'
 
 const cssModulesOptions = {
   modules: {
@@ -11,8 +11,6 @@ const cssModulesOptions = {
     localIdentName: '[name]__[local]--[hash:base64:5]',
   },
 }
-
-console.log(process.env.NODE_ENV)
 
 /** @type {webpack.Configuration} */
 const developmentConfig = {

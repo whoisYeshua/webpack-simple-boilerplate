@@ -5,7 +5,7 @@ import HTMLWebpackPlugin from 'html-webpack-plugin'
 // eslint-disable-next-line import/default
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
-import paths from './config/webpack/webpack.paths.js'
+import { paths } from './config/webpack/webpack.paths.js'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -16,7 +16,7 @@ const assetsFilename = () =>
 const commonConfig = {
   context: paths.src,
   entry: {
-    main: './index.jsx',
+    main: './index.tsx',
     analytics: './analytics.ts',
   },
   output: {
@@ -37,22 +37,22 @@ const commonConfig = {
     },
   },
   plugins: [
-    // new webpack.ProgressPlugin(),
+    new webpack.ProgressPlugin(),
     new HTMLWebpackPlugin({
       title: 'Webpack',
-      favicon: path.resolve(paths.public, 'assets', 'favicon.ico'),
+      favicon: path.resolve(paths.public, 'favicon.ico'),
       template: path.resolve(paths.public, 'index.html'),
       filename: 'index.html',
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(paths.public, 'assets', 'trash'),
-          to: path.resolve(paths.dist, 'assets', assetsFilename()),
+          from: path.resolve(paths.public, 'static'),
+          to: paths.dist,
         },
       ],
     }),
-  ].filter(Boolean),
+  ],
   module: {
     rules: [
       {
