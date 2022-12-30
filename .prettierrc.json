@@ -2,5 +2,5 @@
   "arrowParens": "avoid",
   "semi": false,
   "singleQuote": true,
-  "bracketSameLine": true
+  "printWidth": 100,
 }
