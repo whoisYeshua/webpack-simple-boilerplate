@@ -44,16 +44,8 @@
       "version": "detect"
     },
     "import/resolver": {
-      "node": {},
-      "typescript": {}
-      // "alias": {
-      //   "map": [
-      //     ["@assets", "./public/assets"],
-      //     ["@styles", "./src/styles"],
-      //     ["@", "./src"]
-      //   ],
-      //   "extensions": [".js", ".jsx", ".ts", ".tsx", ".json", ".css", ".scss"]
-      // }
+      "node": true,
+      "typescript": true
     },
     "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
   }
