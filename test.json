@@ -1,0 +1,22 @@
+{
+  "res": [
+    {
+      "useTabs": false,
+      "tabWidth": 2,
+      "endOfLine": "lf",
+      "arrowParens": "avoid",
+      "semi": false,
+      "singleQuote": true,
+      "bracketSameLine": true
+    },
+    {
+      "arrowParens": "avoid",
+      "semi": false,
+      "singleQuote": true,
+      "bracketSameLine": true,
+      "endOfLine": "lf",
+      "tabWidth": 2,
+      "useTabs": false
+    }
+  ]
+}

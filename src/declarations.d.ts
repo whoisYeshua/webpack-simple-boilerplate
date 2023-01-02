@@ -1,4 +1,5 @@
 declare module '*.module.css'
 declare module '*.module.scss'
 declare module '@assets/images/*'
+declare module '@assets/data/*'
 declare module 'jquery/dist/jquery.min'
