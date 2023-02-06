@@ -124,7 +124,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 ## ⚠️ Requirements ⚠️
 
-Since some Webpack plugins supported only `Node.js` version ≥ `14.15`, you need [`Node.js 16`](https://nodejs.org/en/) and higher to prepare for future changes.
+Since some Webpack plugins supported only by `Node.js` version ≥ `14.15` and this boilerplate use [`lockfileVersion` 3](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json#lockfileversion), you need [`Node.js 16.13 and above`](https://nodejs.org/en/) to prepare for future changes.
 
 ## ⏬ Installation
 
@@ -151,7 +151,7 @@ Watcher (will update the build after each change):
   npm run watch
 ```
 
-Dev Server (provides you with a simple web server and the ability to use HMR):
+⭐ Dev Server (provides you with a simple web server and the ability to use HMR):
 
 ```bash
   npm start
@@ -159,7 +159,7 @@ Dev Server (provides you with a simple web server and the ability to use HMR):
 
 ### Production environment
 
-One-time production build:
+⭐ One-time production build:
 
 ```bash
   npm run build
