@@ -1,7 +1,0 @@
-{"_":[".\\babel.config.cjs"],"cache":false,"color":true,"editorconfig":true,"loglevel":"debug","configPrecedence":"cli-override","debugRepeat":0,"ignorePath":".prettierignore","plugins":[],"pluginSearchDirs":[],"__raw":{"_":[".\\babel.config.cjs"],"cache":false,"color":true,"editorconfig":true,"loglevel":"debug","config-precedence":"cli-override","debug-repeat":0,"ignore-path":".prettierignore","plugin":[],"plugin-search-dir":[]}}
-[debug] resolve config from 'babel.config.cjs'
-[debug] loaded options `
-{
-  "useTabs":false,
-"tabWidth":2,"endOfLine":"lf","arrowParens":"avoid","semi":false,"singleQuote":true,"bracketSameLine":true}`
-[debug] applied config-precedence (cli-override): {"arrowParens":"avoid","bracketSameLine":true,"endOfLine":"lf","semi":false,"singleQuote":true,"tabWidth":2,"useTabs":false}
