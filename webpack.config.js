@@ -9,8 +9,7 @@ import { paths } from './config/webpack/webpack.paths.js'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
-const assetsFilename = () =>
-  isDevelopment ? '[base]' : '[contenthash:8][ext][query]'
+const assetsFilename = () => (isDevelopment ? '[base]' : '[contenthash:8][ext][query]')
 
 /** @type {webpack.Configuration} */
 const commonConfig = {

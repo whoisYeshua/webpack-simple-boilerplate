@@ -8,14 +8,11 @@ const babelConfig = api => {
         '@babel/preset-env',
         {
           useBuiltIns: 'usage',
-          corejs: '3.26',
+          corejs: '3.27',
         },
       ],
       // Enable development transform of React with new automatic runtime (https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)
-      [
-        '@babel/preset-react',
-        { development: api.env('development'), runtime: 'automatic' },
-      ],
+      ['@babel/preset-react', { development: api.env('development'), runtime: 'automatic' }],
       '@babel/preset-typescript',
     ],
     // Applies the react-refresh Babel plugin on dev mode only
