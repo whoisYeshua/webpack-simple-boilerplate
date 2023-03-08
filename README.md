@@ -17,7 +17,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 - [`sass-loader`](https://webpack.js.org/loaders/sass-loader/) - Load Sass/SCSS and compile it to CSS
   - [`sass`](https://www.npmjs.com/package/sass) - is a pure JavaScript implementation of Sass
 - [`postcss-loader`](https://webpack.js.org/loaders/postcss-loader/) - Loader to process CSS with PostCSS
-- [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports
+- [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports & CSS modules
 - [`style-loader`](https://www.npmjs.com/package/style-loader) - Inject CSS into the DOM.
 - [`csv-loader`](https://www.npmjs.com/package/csv-loader) - The loader will translate csv files into JSON
 - [`xml-loader`](https://www.npmjs.com/package/xml-loader) - The loader will translate xml files into JSON
