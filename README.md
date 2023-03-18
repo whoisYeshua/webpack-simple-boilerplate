@@ -36,8 +36,9 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 ### [Babel](https://babeljs.io/)
 
-- [`@babel/core`](https://www.npmjs.com/package/@babel/core) - Babel compiler core
+- [`@babel/core`](https://babeljs.io/docs/babel-core) - Babel compiler core
 - [`core-js`](https://www.npmjs.com/package/core-js) - Modular standard library for JavaScript. Includes polyfills for ECMAScript up to 2021
+- [`@babel/runtime`](https://babeljs.io/docs/babel-runtime) - is a library that contains Babel modular runtime helpers _(such as createClass, regeneratorRuntime and other)_
 
 #### [Presets](https://babeljs.io/docs/en/presets)
 
@@ -55,6 +56,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 #### [Plugins](https://babeljs.io/docs/en/plugins)
 
 - [`react-refresh/babel`](https://www.npmjs.com/package/react-refresh) - This package implements the wiring necessary to integrate Fast Refresh (HMR) into Babel. Work closely together with [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) _(Only in development mode)_
+- [`@babel/plugin-transform-runtime`](https://babeljs.io/docs/babel-plugin-transform-runtime) - A plugin that enables the re-use of Babel's injected helper code (replace the direct function insertion into the code with import) to save on codesize.
 
 ### [PostCSS](https://postcss.org/)
 
