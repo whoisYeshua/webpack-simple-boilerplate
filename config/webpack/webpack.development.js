@@ -12,6 +12,10 @@ const cssModulesOptions = {
   },
 }
 
+const reactRefreshPluginOptions = {
+  esModule: true, // setting esm explicitly, since our project is esm and '@pmmmwh/react-refresh-webpack-plugin' failed infer type: 'module' from package.json
+}
+
 /** @type {webpack.Configuration} */
 const developmentConfig = {
   mode: 'development',
@@ -49,7 +53,7 @@ const developmentConfig = {
       },
     ],
   },
-  plugins: [new ESLintPlugin(), new ReactRefreshPlugin()],
+  plugins: [new ESLintPlugin(), new ReactRefreshPlugin(reactRefreshPluginOptions)],
 }
 
 const result = merge(webpackConfiguration, developmentConfig)
