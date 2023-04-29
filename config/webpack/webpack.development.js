@@ -15,7 +15,7 @@ const cssModulesOptions = {
 /** @type {webpack.Configuration} */
 const developmentConfig = {
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   devServer: {
     static: paths.dist,
     hot: true,
