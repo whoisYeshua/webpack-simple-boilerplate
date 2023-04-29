@@ -4,8 +4,7 @@ function createAnalytics() {
   let counter = 0
   let destroyed = false
 
-  // eslint-disable-next-line no-plusplus
-  const listener = (): number => counter++
+  const listener = () => counter++
   $(document).on('click', listener)
 
   return {
@@ -23,7 +22,6 @@ function createAnalytics() {
 }
 
 declare global {
-  // eslint-disable-next-line no-unused-vars
   interface Window {
     analytics: ReturnType<typeof createAnalytics>
   }

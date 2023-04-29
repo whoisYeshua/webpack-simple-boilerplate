@@ -6,8 +6,7 @@ import './babelTest'
 import '@styles/styles.css'
 import '@styles/scss.scss'
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-const rootElement = document.querySelector('#root')!
+const rootElement = document.querySelector('#root') as HTMLElement
 const root = ReactDOM.createRoot(rootElement)
 
 root.render(
