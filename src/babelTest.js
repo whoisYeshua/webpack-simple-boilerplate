@@ -1,5 +1,3 @@
-import 'core-js/actual/array/group.js'
-
 async function start() {
   const promise = Promise.resolve('Promise is working')
   return promise

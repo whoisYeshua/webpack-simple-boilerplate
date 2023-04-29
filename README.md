@@ -263,7 +263,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 - [`babel.config.cjs`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/babel.config.cjs)
 
-  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle.
+  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle. Additionaly i set [`proposals: true`](https://babeljs.io/docs/babel-preset-env#corejs), for `Array.prototype.group`, since not all major browsers currently support it _(29.04.2023)_.
 
   ```js
   presets: [
@@ -271,7 +271,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: '3.23', // The version string can be any supported core-js versions
+        corejs: { version: '3.30', proposals: true }, // The version string can be any supported core-js versions
       },
     ],
   ]
