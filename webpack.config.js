@@ -38,7 +38,7 @@ const commonConfig = {
   plugins: [
     new webpack.ProgressPlugin(),
     new HTMLWebpackPlugin({
-      title: 'Webpack',
+      title: 'Webpack Simple Boilerplate',
       favicon: path.resolve(paths.public, 'favicon.ico'),
       template: path.resolve(paths.public, 'index.html'),
       filename: 'index.html',
