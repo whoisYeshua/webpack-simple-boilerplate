@@ -1,3 +1,4 @@
+// @ts-check
 import { merge } from 'webpack-merge'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
@@ -6,7 +7,11 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
 
-/** @type {webpack.Configuration} */
+/**
+ * Webpack config for Production
+ *
+ * @type {import('webpack').Configuration}
+ */
 const productionConfig = {
   mode: 'production',
   performance: {

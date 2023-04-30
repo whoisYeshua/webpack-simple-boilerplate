@@ -1,3 +1,4 @@
+// @ts-check
 import { merge } from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
@@ -16,7 +17,11 @@ const reactRefreshPluginOptions = {
   esModule: true, // setting esm explicitly, since our project is esm and '@pmmmwh/react-refresh-webpack-plugin' failed infer type: 'module' from package.json
 }
 
-/** @type {webpack.Configuration} */
+/**
+ * Webpack config for Development
+ *
+ * @type {import('webpack').Configuration & import('webpack-dev-server').Configuration}
+ */
 const developmentConfig = {
   mode: 'development',
   devtool: 'eval-source-map',

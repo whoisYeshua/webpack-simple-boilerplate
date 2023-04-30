@@ -1,3 +1,12 @@
+// @ts-check
+
+/**
+ * Babel configuration.
+ *
+ * @see https://babeljs.io/docs/en/options
+ * @param {import('@babel/core').ConfigAPI} api
+ * @returns {import('@babel/core').TransformOptions}
+ */
 const babelConfig = api => {
   // This caches the Babel config (https://babeljs.io/docs/en/config-files#apicache:~:text=Since%20the%20actual%20callback%20result%20is%20used%20to%20check%20if%20the%20cache%20entry%20is%20valid%2C%20it%20is%20recommended%20that%3A)
   api.cache.using(() => process.env.NODE_ENV === 'development')

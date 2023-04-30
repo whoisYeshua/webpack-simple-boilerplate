@@ -1,12 +1,18 @@
-const requireField = fieldName => {
-  return value => {
-    if (String(value).length === 0) {
-      return fieldName + ' is required'
-    }
-    return true
+// @ts-check
+
+const requireField = (/** @type {string} */ fieldName) => (/** @type {string} */ value) => {
+  if (String(value).length === 0) {
+    return fieldName + ' is required'
   }
+  return true
 }
 
+/**
+ * Plop configuration
+ *
+ * @see https://plopjs.com/documentation/#plopfile-api
+ * @param {import('node-plop').NodePlopAPI} plop
+ */
 const plopfile = plop => {
   plop.setGenerator('component', {
     description: 'Create a reusable component',

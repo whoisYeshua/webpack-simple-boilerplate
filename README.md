@@ -126,7 +126,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 ## ⚠️ Requirements ⚠️
 
-Since some Webpack plugins supported only by `Node.js` version ≥ `14.15` and this boilerplate use [`lockfileVersion` 3](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json#lockfileversion), you need [`Node.js 16.13 and above`](https://nodejs.org/en/) to prepare for future changes.
+Since some Webpack and ESLint plugins supported only by `Node.js` version ≥ `14.17` and this boilerplate use [`lockfileVersion` 3](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json#lockfileversion), you need [`Node.js 16.13 and above`](https://nodejs.org/en/) to prepare for future changes.
 
 ## ⏬ Installation
 
@@ -216,26 +216,26 @@ npm run generate
 ## Environment comparison
 
 - **Common** - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
-- **Development** - [`webpack.development.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.development.js)
-- **Production** - [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
+- **Development** - [`webpack.development.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack/webpack.development.js)
+- **Production** - [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack/webpack.production.js)
 
 Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js), but each environment has its own features:
 
-| Features                  | Development         | Production                  |
-| ------------------------- | ------------------- | --------------------------- |
-| Devtool                   | ✅ - `source-map`\* | ❌                          |
-| devServer                 | ✅                  | ❌                          |
-| ESLint                    | ✅                  | ❌                          |
-| CSS implementation\*\*    | ✅ - `style-loader` | ✅ - `MiniCssExtractPlugin` |
-| ReactRefreshWebpackPlugin | ✅                  | ❌                          |
-| TerserPlugin              | ❌                  | ✅                          |
-| CssMinimizerPlugin        | ❌                  | ✅                          |
-| HtmlWebpackPlugin minify  | ❌                  | ✅                          |
-| BundleAnalyzerPlugin      | ❌                  | ✅                          |
-| Output files name         | Default             | Contenthash                 |
-| Favicon\*\*\*             | 🤔                  | ✅                          |
+| Features                  | Development              | Production                  |
+| ------------------------- | ------------------------ | --------------------------- |
+| Devtool                   | ✅ - `eval-source-map`\* | ❌                          |
+| devServer                 | ✅                       | ❌                          |
+| ESLint                    | ✅                       | ❌                          |
+| CSS implementation\*\*    | ✅ - `style-loader`      | ✅ - `MiniCssExtractPlugin` |
+| ReactRefreshWebpackPlugin | ✅                       | ❌                          |
+| TerserPlugin              | ❌                       | ✅                          |
+| CssMinimizerPlugin        | ❌                       | ✅                          |
+| HtmlWebpackPlugin minify  | ❌                       | ✅                          |
+| BundleAnalyzerPlugin      | ❌                       | ✅                          |
+| Output files name         | Default                  | Contenthash                 |
+| Favicon\*\*\*             | 🤔                       | ✅                          |
 
-\* You can set `eval-source-map` or other options to increase build speed, but in this case, you should manually set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
+\* You can set `eval` or `false` options to increase build speed, but in this case, you [should manually](https://webpack.js.org/loaders/css-loader/#sourcemap) set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
 
 \*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
 
@@ -313,6 +313,12 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 - [x] - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
 
 - [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
+
+- [] - Upgrade `stylelint` to `15.0.0`
+
+- [] - Add runtime tsc checks
+
+- [] - Add env webpack plugin
 
 ## In addition
 

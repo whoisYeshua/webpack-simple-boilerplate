@@ -1,3 +1,4 @@
+// @ts-check
 import path from 'node:path'
 import webpack from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
@@ -11,7 +12,11 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 const assetsFilename = () => (isDevelopment ? '[base]' : '[contenthash:8][ext][query]')
 
-/** @type {webpack.Configuration} */
+/**
+ * Common part of Webpack config. Not used alone
+ *
+ * @type {webpack.Configuration}
+ */
 const commonConfig = {
   context: paths.src,
   entry: {
