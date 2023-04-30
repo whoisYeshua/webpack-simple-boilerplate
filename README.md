@@ -98,13 +98,11 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 - [`stylelint-config-standard-scss`](https://www.npmjs.com/package/stylelint-config-standard-scss) - Turns on SCSS support & some SCSS rules. By default extends `stylelint-config-standard` and `stylelint-config-recommended-scss`. _(At the moment, it does not use the most modern version of `stylelint-config-standard`, so it goes before `stylelint-config-standard`, for the possibility of redefinition)_
 - [`stylelint-config-standard`](https://www.npmjs.com/package/stylelint-config-standard) - Turns on additional rules to enforce the common stylistic conventions found within a handful of CSS styleguides
-- [`stylelint-config-rational-order`](https://www.npmjs.com/package/stylelint-config-rational-order) - Config that sorts related property declarations by grouping together in the rational order
-- [`stylelint-config-prettier`](https://www.npmjs.com/package/stylelint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier. _Enabled with [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier)_
+- [`stylelint-config-recess-order`](https://www.npmjs.com/package/stylelint-config-recess-order) - Config that sorts related property declarations by grouping together in the rational order
 
 #### [Plugins](https://stylelint.io/user-guide/configure#plugins)
 
-- [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules. _Enabled with [`stylelint-config-rational-order`](https://www.npmjs.com/package/stylelint-config-rational-order)_
-- [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier) - Runs Prettier as a Stylelint rule and reports differences as individual Stylelint issues
+- [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules. _Enabled with [`stylelint-config-recess-order`](https://www.npmjs.com/package/stylelint-config-recess-order)_
 
 ### CI
 
@@ -320,9 +318,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
   - **Formatting & Linting commands**
 
-  _ESLint_ & _Prettier_ formatting works separately. So, when you run `npm run format:eslint` it will only fix _ESLint_ rules, but not apply Prettier rules formatting. If you want both run `npm run format:eslint && npm run format:prettier` or `npm run format`, which also includes _Stylelint_ formatting.
-
-  _Stylelint_ & _Prettier_ formatting works together. So, when you run `npm run fromat:stylelint` it will run _Stylelint_ rules check and fix and then run _Prettier_ formatting _(It works thanks to [`stylelint-prettier`](https://www.npmjs.com/package/stylelint-prettier))_. _Note: `npm run format:prettier` will not affect `css` or `scss` files, my Stylelint build uses Prettier under the hood as mentioned above._
+  _ESLint_ & _Prettier_ & _Stylelint_ formatting works separately. So, when you run `npm run format:eslint` it will only fix _ESLint_ rules, but not apply Prettier rules formatting. If you want both run `npm run format:eslint && npm run format:prettier` or `npm run format`, which also includes _Stylelint_ formatting.
 
   To understand which extensions are used in each command, check out [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
 
@@ -332,7 +328,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 - [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
-- [] - Upgrade `stylelint` to `15.0.0`
+- [x] - Upgrade `stylelint` to `15.0.0`
 
 - [] - Add runtime tsc checks
 

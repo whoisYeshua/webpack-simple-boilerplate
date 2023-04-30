@@ -7,8 +7,8 @@ body {
 
 .container {
   max-width: 1000px;
-  margin: 0 auto;
   padding-top: 2rem;
+  margin: 0 auto;
 }
 
 h1 {
@@ -30,8 +30,8 @@ h1 {
 
 .code:hover {
   padding: 0.5rem;
-  color: gainsboro;
   font-size: 1.05rem;
+  color: gainsboro;
   background-color: #16212f;
   border-radius: 0.25rem;
 }
