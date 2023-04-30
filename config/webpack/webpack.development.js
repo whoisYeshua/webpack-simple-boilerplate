@@ -1,6 +1,7 @@
 // @ts-check
 import { merge } from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
@@ -11,10 +12,6 @@ const cssModulesOptions = {
     auto: true,
     localIdentName: '[name]__[local]--[hash:base64:5]',
   },
-}
-
-const reactRefreshPluginOptions = {
-  esModule: true, // setting esm explicitly, since our project is esm and '@pmmmwh/react-refresh-webpack-plugin' failed infer type: 'module' from package.json
 }
 
 /**
@@ -58,7 +55,13 @@ const developmentConfig = {
       },
     ],
   },
-  plugins: [new ESLintPlugin(), new ReactRefreshPlugin(reactRefreshPluginOptions)],
+  plugins: [
+    new ESLintPlugin({
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }),
+    new ForkTsCheckerWebpackPlugin(),
+    new ReactRefreshPlugin(),
+  ],
 }
 
 const result = merge(webpackConfiguration, developmentConfig)

@@ -45,7 +45,6 @@
     "import/resolver": {
       "node": true,
       "typescript": true
-    },
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+    }
   }
 }

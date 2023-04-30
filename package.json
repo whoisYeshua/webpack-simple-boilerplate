@@ -35,7 +35,7 @@
     "lint:prettier": "prettier \"**/*.{json,css,scss,js,ts,jsx,tsx,[cm][jt]s}\" --check",
     "lint:typescript": "tsc --noEmit",
     "debug:eslint": "eslint --print-config \"./src/index.tsx\" > eslint-output-config.json",
-    "debug:stylelint": "stylelint \"src/styles/styles.css\" --print-config > stylelint-output-config3.json",
+    "debug:stylelint": "stylelint \"src/styles/styles.css\" --print-config > stylelint-output-config.json",
     "debug:prettier": "prettier \"./src/index.tsx\" --loglevel debug",
     "cm": "cz",
     "prepare": "husky install"
@@ -81,6 +81,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unicorn": "^46.0.0",
     "eslint-webpack-plugin": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.3.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.1",

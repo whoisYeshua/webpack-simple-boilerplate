@@ -32,6 +32,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
 - [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize the size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
 - [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is an ESLint plugin for webpack _(Only in development mode)_
+- [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) - Webpack plugin that runs typescript type checker on a separate process _(Only in development mode)_
 - [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) - enable "Fast Refresh" (also previously known as Hot Reloading) for React components. Work closely together with [`react-refresh`](https://www.npmjs.com/package/react-refresh) _(Only in development mode)_
 
 ### [Babel](https://babeljs.io/)
@@ -191,7 +192,7 @@ You can also use a specific formatter
 
 Check out more commands at [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
 
-### CI
+### Misc
 
 Debug result ESLint config (output `eslint-output-config.json`):
 
@@ -211,6 +212,12 @@ Debug result Prettier config (cli output):
   npm run debug:prettier
 ```
 
+Generate React component:
+
+```bash
+npm run generate
+```
+
 Create conventional commit:
 
 ```bash
@@ -221,13 +228,6 @@ Because husky is used in the project, this creates a certain restriction on the 
 
 I personally prefer use [this VS Code Extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) for creating conventional commits.
 
-### Misc
-
-Generate React component:
-
-```bash
-npm run generate
-```
 
 ## Environment comparison
 
@@ -242,6 +242,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 | Devtool                   | ✅ - `eval-source-map`\* | ❌                          |
 | devServer                 | ✅                       | ❌                          |
 | ESLint                    | ✅                       | ❌                          |
+| TS checks                 | ✅                       | ❌                          |
 | CSS implementation\*\*    | ✅ - `style-loader`      | ✅ - `MiniCssExtractPlugin` |
 | ReactRefreshWebpackPlugin | ✅                       | ❌                          |
 | TerserPlugin              | ❌                       | ✅                          |
@@ -315,6 +316,8 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
   - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
 
   In production mode eg `HTMLWebpackPlugin` minify your HTML code by default
+
+  I'm decide to remove [`context`](https://webpack.js.org/configuration/entry-context/#context) field from config, since [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) & [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) incorrectly infer root directory, while set context to `src` folder.
 
   - **Formatting & Linting commands**
 

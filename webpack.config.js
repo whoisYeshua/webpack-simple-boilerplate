@@ -18,10 +18,9 @@ const assetsFilename = () => (isDevelopment ? '[base]' : '[contenthash:8][ext][q
  * @type {webpack.Configuration}
  */
 const commonConfig = {
-  context: paths.src,
   entry: {
-    main: './index.tsx',
-    analytics: './analytics.ts',
+    main: path.resolve(paths.src, 'index.tsx'),
+    analytics: path.resolve(paths.src, 'analytics.ts'),
   },
   output: {
     clean: true,
