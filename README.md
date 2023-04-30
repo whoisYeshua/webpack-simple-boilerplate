@@ -195,6 +195,24 @@ Check out more commands at [`package.json` scripts section](https://github.com/w
 
 ### CI
 
+Debug result ESLint config (output `eslint-output-config.json`):
+
+```bash
+  npm run debug:eslint
+```
+
+Debug result Stylelint config (output `stylelint-output-config.json`):
+
+```bash
+  npm run debug:stylelint
+```
+
+Debug result Prettier config (cli output):
+
+```bash
+  npm run debug:prettier
+```
+
 Create conventional commit:
 
 ```bash

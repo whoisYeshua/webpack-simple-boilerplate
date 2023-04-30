@@ -1,4 +1,14 @@
-.DS_Store
+# dependencies
+node_modules
+
+# build
+dist
+
+# code editors
 .idea
-/node_modules
-/dist
+.vscode
+
+# misc
+.DS_Store
+eslint-output-config.json
+stylelint-output-config.json

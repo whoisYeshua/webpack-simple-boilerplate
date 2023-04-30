@@ -14,3 +14,5 @@ dist
 
 # misc
 .DS_Store
+eslint-output-config.json
+stylelint-output-config.json
