@@ -1,0 +1,5 @@
+.svg-background {
+  height: 90px;
+  background-image: url('@assets/images/svgr.svg?url');
+  background-repeat: no-repeat;
+}

@@ -18,7 +18,8 @@ I made a simple template for myself, but maybe it will be helpful to someone.
   - [`sass`](https://www.npmjs.com/package/sass) - is a pure JavaScript implementation of Sass
 - [`postcss-loader`](https://webpack.js.org/loaders/postcss-loader/) - Loader to process CSS with PostCSS
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports & CSS modules
-- [`style-loader`](https://www.npmjs.com/package/style-loader) - Inject CSS into the DOM.
+- [`style-loader`](https://www.npmjs.com/package/style-loader) - Inject CSS into the DOM
+- [`@svgr/webpack`](https://www.npmjs.com/package/style-loader) - Webpack loader for SVG
 - [`csv-loader`](https://www.npmjs.com/package/csv-loader) - The loader will translate csv files into JSON
 - [`xml-loader`](https://www.npmjs.com/package/xml-loader) - The loader will translate xml files into JSON
 
@@ -270,13 +271,36 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 > **Fonts** - `src/assets/fonts`
 >
-> **Images** - `src/assets/images`
+> **Images/SVG** - `src/assets/images`
 >
 > **Other Assets** - `src/assets/*`
 
 **Static files** - `public/static` _- files in this folder will be copy to dist root as it is (without any processing). Eg `robots.txt`._
 
 ## Useful tips 💡
+
+- SVG import
+
+  To import SVG as a React component, use deafult svg extension:
+
+  ```js
+  import SvgComponent from '@assets/images/example.svg' // props => React.createElement("svg",...
+  ```
+
+  to import SVG as an asset (url), add resource query (`?url`) to svg extension:
+
+  in _TSX/JSX/JS/TS_ files:
+
+  ```js
+  import svgSrc from '@assets/images/example.svg?url' // data:image/svg+xml;base64,PHN2ZyB4bW...
+  ```
+
+  in _CSS/SCSS_ files:
+  ```css
+  .svg {
+    background-image: url('@assets/images/example.svg?url'); /* data:image/svg+xml;base64,PHN2ZyB4bW...*/
+  }
+  ```
 
 - [`babel.config.cjs`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/babel.config.cjs)
 
