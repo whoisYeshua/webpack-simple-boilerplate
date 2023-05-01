@@ -64,7 +64,7 @@ const commonConfig = {
         use: ['babel-loader'],
       },
       {
-        test: /\.(webp|png|jpg|gif)$/,
+        test: /\.(avif|webp|png|jpg|gif)$/,
         type: 'asset/resource',
       },
       {

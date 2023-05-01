@@ -329,13 +329,15 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 - [x] - Add React Hot Reloading support - [`react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
 
-- [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
-
 - [x] - Upgrade `stylelint` to `15.0.0`
 
-- [] - Add runtime tsc checks
+- [x] - Add runtime tsc checks
+
+- [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
 - [] - Add env webpack plugin
+
+- [] - Add SVG loader
 
 ## In addition
 
