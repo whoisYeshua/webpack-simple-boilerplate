@@ -357,11 +357,12 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 - [x] - Add runtime tsc checks
 
+- [x] - Add SVG loader
+
 - [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
 - [] - Add env webpack plugin
 
-- [] - Add SVG loader
 
 ## In addition
 
