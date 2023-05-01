@@ -1,7 +1,7 @@
 {
   "extends": [
-    "stylelint-config-standard-scss",
     "stylelint-config-standard",
+    "stylelint-config-standard-scss",
     "stylelint-config-recess-order"
   ],
   "ignoreFiles": ["dist/**", "node_modules/**"],

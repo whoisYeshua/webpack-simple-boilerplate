@@ -1,13 +1,25 @@
 $border: 1px solid #ccc;
 
-.card {
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scss-card {
+  @include flex-center;
+
   padding: 1rem;
   margin-top: 1rem;
   border: $border;
   border-radius: 5px;
 
   h2 {
-    color: crimson;
     text-align: center;
+    background: linear-gradient(45deg, #fecfef, #ff9a9e);
+    background-repeat: repeat;
+    background-clip: text;
+    background-size: 100%;
+    -webkit-text-fill-color: transparent;
   }
 }

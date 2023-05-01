@@ -15,8 +15,8 @@ export const App = () => (
     <hr />
     <Post />
     <hr />
-    <div className="card">
-      <h2>Scss</h2>
+    <div className="scss-card">
+      <h2>SCSS CARD</h2>
     </div>
     <hr />
     <Header />
