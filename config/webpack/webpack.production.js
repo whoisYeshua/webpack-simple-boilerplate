@@ -7,6 +7,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
 
+const isCi = process.env.CI
+
 /**
  * Webpack config for Production
  *
@@ -47,7 +49,10 @@ const productionConfig = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: isCi ? 'static' : 'server',
+      reportFilename: '../bundle-report.html', // (to project root dir) relative to a bundle output directory
+    }),
   ],
 }
 

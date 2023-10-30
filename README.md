@@ -126,18 +126,18 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
   ##### Plugins
 
-  - `@semantic-release/commit-analyzer` - plugin to analyze commits with conventional-changelog. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
+  - [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer) - plugin to analyze commits with conventional-changelog. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
     > [!NOTE]
     > Since this is project-specific, I've decided to label the "chore" type as a patch release (`{ "type": "chore", "release": "patch" }`), which is typically used for updating packages To allow for the possibility of "chore" breaking releases, add the following rule above (`{ "type": "chore", "release": "patch" }`) for correct rule applies. If you want to use deafult preset settings, you could delete this two lines.
-  - `@semantic-release/release-notes-generator` - plugin to generate changelog content with conventional-changelog _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
-  - `@semantic-release/changelog` - plugin to create or update a changelog file
-  - `@semantic-release/npm` - plugin to publish a npm package and bump version in `package.json`
+  - [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator) - plugin to generate changelog content with conventional-changelog _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
+  - [`@semantic-release/changelog`](https://github.com/semantic-release/changelog) - plugin to create or update a changelog file
+  - [`@semantic-release/npm`](https://github.com/semantic-release/npm) - plugin to publish a npm package and bump version in `package.json`
 
     > [!NOTE]
     > Since this project is not a package for publication. This plugin is only needed to update the version in package.json ([this is regulated by `private: true` in package.json](https://github.com/semantic-release/npm#options))
 
-  - `@semantic-release/github` - plugin to publish a GitHub release and comment on released Pull Requests/Issues. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_
-  - `@semantic-release/git` - plugin to commit release assets \ tag version to the project's git repository
+  - [`@semantic-release/github`](https://github.com/semantic-release/github) - plugin to publish a GitHub release and comment on released Pull Requests/Issues. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_
+  - [`@semantic-release/git`](https://github.com/semantic-release/git) - plugin to commit release assets \ tag version to the project's git repository
 
   ##### Preset
 
