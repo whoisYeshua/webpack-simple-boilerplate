@@ -11,5 +11,5 @@ bundle-report.html
 
 # misc
 .DS_Store
-eslint-output-config.json
-stylelint-output-config.json
+eslint-output-config*.json
+stylelint-output-config*.json
