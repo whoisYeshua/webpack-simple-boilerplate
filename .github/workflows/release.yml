@@ -1,0 +1,39 @@
+name: Release workflow
+
+on:
+  push:
+    branches: [master, alpha, beta]
+  pull_request:
+    branches: [master, alpha, beta]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+
+    steps:
+      - name: Checkout to the repository 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install 🔧
+        run: npm ci
+
+      - name: Build 🏗️
+        run: npm run build
+
+      - name: Start Semantic Release
+        run: HUSKY=0 npx semantic-release # disable git hooks for @semantic-release/git plugin commits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

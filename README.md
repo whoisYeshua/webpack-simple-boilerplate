@@ -1,6 +1,6 @@
 # Simple Webpack 5 Boilerplate and more
 
-I made a simple template for myself, but maybe it will be helpful to someone.
+I made a simple template for myself, but maybe it could be helpful for others.
 
 ## ✨ This template Features:
 
@@ -39,12 +39,12 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 ### [Babel](https://babeljs.io/)
 
 - [`@babel/core`](https://babeljs.io/docs/babel-core) - Babel compiler core
-- [`core-js`](https://www.npmjs.com/package/core-js) - Modular standard library for JavaScript. Includes polyfills for ECMAScript up to 2021
+- [`core-js`](https://www.npmjs.com/package/core-js) - Modular standard library for JavaScript. Includes polyfills for ECMAScript
 - [`@babel/runtime`](https://babeljs.io/docs/babel-runtime) - is a library that contains Babel modular runtime helpers _(such as createClass, regeneratorRuntime and other)_. Work closely together with [`@babel/plugin-transform-runtime`](https://babeljs.io/docs/babel-plugin-transform-runtime)
 
 #### [Presets](https://babeljs.io/docs/en/presets)
 
-- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with [`.browserslistrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.browserslistrc):
+- [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms (and optionally, browser polyfills) are needed by your target environment(s). Interacts with [`.browserslistrc`](./.browserslistrc):
 
   ```
   last 2 chrome versions
@@ -108,17 +108,40 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 ### CI
 
-- [`husky`](https://typicode.github.io/husky/#/) - Enable Git hooks, like `pre-commit`, `commit-msg` etc.
+- [`husky`](https://typicode.github.io/husky/#/) - Enable Git hooks, like `pre-commit`, `commit-msg` etc
 
-- [`lint-staged`](https://github.com/okonet/lint-staged) - Run linters on git staged files. Work closely together with `husky` `pre-commit` hook. It has its own config, which is located in [`.lintstagedrc.json`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.lintstagedrc.json)
+- [`lint-staged`](https://github.com/okonet/lint-staged) - Run linters on git staged files. Work closely together with `husky` `pre-commit` hook. It has its own config, which is located in [`.lintstagedrc.json`](./.lintstagedrc.json)
 
-- [`commitlint`](https://commitlint.js.org/#/) - Lint commit messages. Work closely together with `husky` `commit-msg` hook. It has its own config, which is located in [`.commitlintrc.json`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.commitlintrc.json)
+- [`commitlint`](https://commitlint.js.org/#/) - Lint commit messages. Work closely together with `husky` `commit-msg` hook. It has its own config, which is located in [`.commitlintrc.json`](./.commitlintrc.json)
 
-  Expanded by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) - Shareable `commitlint` config enforcing Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+  Expanded by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) - Shareable `commitlint` config enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
-- [`commitizen`](http://commitizen.github.io/cz-cli/) - is a tool designed to define a standard way of committing rules. It has its own config, which is located in [`.czrc`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/.czrc). You can use it with `npm run cm`
+- [`commitizen`](http://commitizen.github.io/cz-cli/) - is a tool designed to define a standard way of committing rules. It has its own config, which is located in [`.czrc`](./.czrc). You can use it with `npm run cm`
 
   Expanded by [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) - A commitizen propmpts adapter for the Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+
+- #### [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
+
+  Automates the whole package release workflow including: determining the next version number, generating the release notes, and upgrading the package version. It has its own config, which is located in [`.releaserc.json`](./.releaserc.json) - [config description](https://semantic-release.gitbook.io/semantic-release/usage/configuration). This package is primarily used in a [CI environment](./.github/workflows/release.yml)
+
+  ##### Plugins
+
+  - `@semantic-release/commit-analyzer` - plugin to analyze commits with conventional-changelog. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
+    > [!NOTE]
+    > Since this is project-specific, I've decided to label the "chore" type as a patch release (`{ "type": "chore", "release": "patch" }`), which is typically used for updating packages To allow for the possibility of "chore" breaking releases, add the following rule above (`{ "type": "chore", "release": "patch" }`) for correct rule applies. If you want to use deafult preset settings, you could delete this two lines.
+  - `@semantic-release/release-notes-generator` - plugin to generate changelog content with conventional-changelog _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
+  - `@semantic-release/changelog` - plugin to create or update a changelog file
+  - `@semantic-release/npm` - plugin to publish a npm package and bump version in `package.json`
+
+    > [!NOTE]
+    > Since this project is not a package for publication. This plugin is only needed to update the version in package.json ([this is regulated by `private: true` in package.json](https://github.com/semantic-release/npm#options))
+
+  - `@semantic-release/github` - plugin to publish a GitHub release and comment on released Pull Requests/Issues. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_
+  - `@semantic-release/git` - plugin to commit release assets \ tag version to the project's git repository
+
+  ##### Preset
+
+  - [`conventional-changelog-conventionalcommits`](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-conventionalcommits) - same preset that used for `commitizen` (`cz-conventional-changelog`) and `commitlint` (`@commitlint/config-conventional`). Since I have overridden the angular preset used by semantic-release by default, it must be declared in direct dependencies.
 
 ### [Plop](https://plopjs.com/)
 
@@ -126,7 +149,7 @@ I made a simple template for myself, but maybe it will be helpful to someone.
 
 ## ⚠️ Requirements ⚠️
 
-Since some Webpack and ESLint plugins supported only by `Node.js` version ≥ `14.17` and this boilerplate use [`lockfileVersion` 3](https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json#lockfileversion), you need [`Node.js 16.13 and above`](https://nodejs.org/en/) to prepare for future changes.
+Since some Webpack, ESLint plugins or other dev tools like (`semantic-release`) require `Node.js` version ≥ `18.17`. you need [`Node.js 18.17 and above`](https://nodejs.org/en/) to prepare for future changes. Check recommended version in [.nvmrc](./.nvmrc)
 
 ## ⏬ Installation
 
@@ -191,7 +214,7 @@ You can also use a specific formatter
   npm run format:eslint # format & fix the code with ESLint rules
 ```
 
-Check out more commands at [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
+Check out more commands at [`package.json` scripts section](./package.json#L7).
 
 ### Misc
 
@@ -219,6 +242,23 @@ Generate React component:
 npm run generate
 ```
 
+Localy check your next release:
+
+```bash
+npm run semantic-release:local-check
+```
+
+It may be necessary to temporarily remove `@semantic-release/github` plugin from
+[`.releaserc.json`](./.releaserc.json)
+
+> If you want to get a more relevant check (with sync to your GitHub repository state), you could run this:
+>
+> ```bash
+> GH_TOKEN=<YOUR_TOKEN> npx semantic-release --dry-run --no-ci
+> ```
+>
+> [Getting GH_TOKEN instruction](https://docs.github.com/en/enterprise-server@3.6/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+
 Create conventional commit:
 
 ```bash
@@ -229,14 +269,13 @@ Because husky is used in the project, this creates a certain restriction on the 
 
 I personally prefer use [this VS Code Extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits) for creating conventional commits.
 
-
 ## Environment comparison
 
-- **Common** - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
-- **Development** - [`webpack.development.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack/webpack.development.js)
-- **Production** - [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack/webpack.production.js)
+- **Common** - [`webpack.config.js`](./webpack.config.js)
+- **Development** - [`webpack.development.js`](./config/webpack/webpack.development.js)
+- **Production** - [`webpack.production.js`](./config/webpack/webpack.production.js)
 
-Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js), but each environment has its own features:
+Both environments use [`webpack.config.js`](./webpack.config.js), but each environment has its own features:
 
 | Features                  | Development              | Production                  |
 | ------------------------- | ------------------------ | --------------------------- |
@@ -296,13 +335,14 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
   ```
 
   in _CSS/SCSS_ files:
+
   ```css
   .svg {
     background-image: url('@assets/images/example.svg?url'); /* data:image/svg+xml;base64,PHN2ZyB4bW...*/
   }
   ```
 
-- [`babel.config.cjs`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/babel.config.cjs)
+- [`babel.config.cjs`](./babel.config.cjs)
 
   I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle. Additionaly i set [`proposals: true`](https://babeljs.io/docs/babel-preset-env#corejs), for `Array.prototype.group`, since not all major browsers currently support it _(29.04.2023)_.
 
@@ -318,9 +358,9 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
   ]
   ```
 
-- [`webpack.production.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/config/webpack.production.js)
+- [`webpack.production.js`](./config/webpack.production.js)
 
-  Set these options in `TerserPlugin` to remove comments from code and prevent `*LICENSE.txt` files creation.
+  Set these options in `TerserPlugin` to remove comments from code and prevent `LICENSE.txt` files creation.
 
   ```js
   optimization: {
@@ -337,7 +377,7 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
   },
   ```
 
-  - [`webpack.config.js`](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/webpack.config.js)
+  - [`webpack.config.js`](./webpack.config.js)
 
   In production mode eg `HTMLWebpackPlugin` minify your HTML code by default
 
@@ -347,7 +387,41 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
   _ESLint_ & _Prettier_ & _Stylelint_ formatting works separately. So, when you run `npm run format:eslint` it will only fix _ESLint_ rules, but not apply Prettier rules formatting. If you want both run `npm run format:eslint && npm run format:prettier` or `npm run format`, which also includes _Stylelint_ formatting.
 
-  To understand which extensions are used in each command, check out [`package.json` scripts section](https://github.com/whoisYeshua/webpack-simple-boilerplate/blob/master/package.json#L7).
+  To understand which extensions are used in each command, check out [`package.json` scripts section](./package.json#L7).
+
+  - **CI**
+
+  If you wish to make a prerelease, you can begin working in the `alpha` or `beta` branches.
+
+  If you need to bypass the git commit hooks, use the `-n` or `--no-verify` option. For example:
+
+  ```bash
+  git commit -n -m "message" # or git commit --no-verify -m "message"
+  ```
+
+  If you need to bypass `husky` checks, pass the environment variable `HUSKY=0`. For example (macOS/Linux):
+
+  ```bash
+  HUSKY=0 git commit -m "message" # or for Windows: cross-env HUSKY=0 git commit -m "message"
+  ```
+
+  If you want to skip `semantic-release` checks for commit, you could add scope - `no-release`. For example:
+
+  ```bash
+  git commit -m "chore(no-release): message"
+  ```
+
+  If you want to skip [`release job`](<(./.github/workflows/release.yml)>) for commit, you could add `[skip ci]` text in your commit message. For example:
+
+  ```bash
+  git commit -m "chore: message [skip ci]"
+  ```
+
+  If you want ti skip all above:
+
+  ```bash
+  git commit -n -m "chore(no-release): message [skip ci]"
+  ```
 
 ## 📝 To Do
 
@@ -359,10 +433,9 @@ Both environments use [`webpack.config.js`](https://github.com/whoisYeshua/webpa
 
 - [x] - Add SVG loader
 
-- [] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
+- [x] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
 - [] - Add env webpack plugin
-
 
 ## In addition
 
