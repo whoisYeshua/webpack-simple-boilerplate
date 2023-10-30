@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.0.0...v1.0.1) (2023-10-30)
+
+
+### Other changes
+
+* change debug output file pattern for `.gitignore` ([797738c](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/797738ce14ae458cecf25b2acd483dd846c4efad))
+
 ## 1.0.0 (2023-10-30)
 
 
