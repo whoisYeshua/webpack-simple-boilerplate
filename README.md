@@ -282,21 +282,21 @@ I personally prefer use [this VS Code Extension](https://marketplace.visualstudi
 
 Both environments use [`webpack.config.js`](./webpack.config.js), but each environment has its own features:
 
-| Features                  | Development              | Production                  |
-| ------------------------- | ------------------------ | --------------------------- |
-| Devtool                   | ✅ - `eval-source-map`\* | ❌                          |
-| devServer                 | ✅                       | ❌                          |
-| ESLint                    | ✅                       | ❌                          |
-| TS checks                 | ✅                       | ❌                          |
-| CSS implementation\*\*    | ✅ - `style-loader`      | ✅ - `MiniCssExtractPlugin` |
-| Proxy backend requests    | ✅ - `devServer.proxy`   | ❌                          |
-| ReactRefreshWebpackPlugin | ✅                       | ❌                          |
-| TerserPlugin              | ❌                       | ✅                          |
-| CssMinimizerPlugin        | ❌                       | ✅                          |
-| HtmlWebpackPlugin minify  | ❌                       | ✅                          |
-| BundleAnalyzerPlugin      | ❌                       | ✅                          |
-| Output files name         | Default                  | Contenthash                 |
-| Favicon\*\*\*             | 🤔                       | ✅                          |
+| Features                  | Development                    | Production                  |
+| ------------------------- | ------------------------------ | --------------------------- |
+| Devtool                   | ✅ - `eval-source-map`\*       | ❌                          |
+| devServer                 | ✅                             | ❌                          |
+| ESLint                    | ✅                             | ❌                          |
+| TS checks                 | ✅                             | ❌                          |
+| CSS implementation\*\*    | ✅ - `style-loader`            | ✅ - `MiniCssExtractPlugin` |
+| Proxy backend requests    | ✅ - `Webpack devServer.proxy` | ✅ - `NGINX proxy_pass`     |
+| ReactRefreshWebpackPlugin | ✅                             | ❌                          |
+| TerserPlugin              | ❌                             | ✅                          |
+| CssMinimizerPlugin        | ❌                             | ✅                          |
+| HtmlWebpackPlugin minify  | ❌                             | ✅                          |
+| BundleAnalyzerPlugin      | ❌                             | ✅                          |
+| Output files name         | Default                        | Contenthash                 |
+| Favicon\*\*\*             | 🤔                             | ✅                          |
 
 \* You can set `eval` or `false` options to increase build speed, but in this case, you [should manually](https://webpack.js.org/loaders/css-loader/#sourcemap) set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
 
