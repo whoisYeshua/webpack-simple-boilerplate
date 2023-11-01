@@ -1,3 +1,17 @@
+## [1.1.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.0.1...v1.1.0) (2023-11-01)
+
+
+### ✨ Features
+
+* add `EnvironmentPlugin` and example for it ([cb8fbc1](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/cb8fbc1562b7cece09e1b6e3e1e825609810a4c1))
+* add backend `proxy` for dev builds ([1e9ba36](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/1e9ba36edc01aff8329a0f050879b2cfb5f46d97))
+* add Docker & nginx ([6660704](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/6660704003aae2142c154b85e3edc731a04b9476))
+
+
+### Other changes
+
+* update dependencies ([afa3e62](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/afa3e62393c27c3b89547621e74d858b97688c62))
+
 ## [1.0.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.0.0...v1.0.1) (2023-10-30)
 
 
