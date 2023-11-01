@@ -148,7 +148,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 ## ⚠️ Requirements ⚠️
 
-Since some Webpack, ESLint plugins or other dev tools like (`semantic-release`) require `Node.js` version ≥ `18.17`. you need [`Node.js 18.17 and above`](https://nodejs.org/en/) to prepare for future changes. Check recommended version in [.nvmrc](./.nvmrc)
+Since some Webpack, ESLint plugins or other dev tools like (`semantic-release`) require `Node.js` version ≥ `18.17`. you need [`Node.js 18.17 and above`](https://nodejs.org/en/) to prepare for future changes. Check recommended version in [.nvmrc](./.nvmrc). You also may need [Docker](https://www.docker.com/get-started/), if you want run production build
 
 ## ⏬ Installation
 
@@ -183,10 +183,16 @@ Watcher (will update the build after each change):
 
 ### Production environment
 
-⭐ One-time production build:
+⭐ One-time production build with Bundle Analazer stats:
 
 ```bash
   npm run build
+```
+
+Run production build insdide docker on http://localhost/ (you might need start Docker before run this command):
+
+```bash
+  docker compose up -d --build
 ```
 
 ### Formatting & Linting commands
