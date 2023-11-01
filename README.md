@@ -29,6 +29,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 - [`html-webpack-plugin`](https://webpack.js.org/plugins/html-webpack-plugin/) - Generate HTML files from template
 - [`mini-css-extract-plugin`](https://webpack.js.org/plugins/mini-css-extract-plugin/) - Extract CSS into separate files
 - [`ProgressPlugin`](https://webpack.js.org/plugins/progress-plugin/) - This plugin provides a way to customize how progress is reported during a compilation. (You do not need to install this plugin. _Webpack_ comes with this plugin out of the box.). You can also replace this plugin with [`webpackbar`](https://www.npmjs.com/package/webpackbar) which has more friendly UI.
+- [`EnvironmentPlugin`](https://webpack.js.org/plugins/environment-plugin/) - inject `process.env` variables in your output code. (You do not need to install this plugin. _Webpack_ comes with this plugin out of the box.). You can also replace this plugin with [`webpack.DefinePlugin`](https://webpack.js.org/plugins/define-plugin) if you need more control over inserted values.
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
 - [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize the size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
@@ -433,7 +434,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 - [x] - Add [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
-- [] - Add env webpack plugin
+- [x] - Add env webpack plugin
 
 ## In addition
 

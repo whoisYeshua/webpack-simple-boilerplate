@@ -1,6 +1,7 @@
 .card-data {
   display: flex;
   flex-direction: column;
+  min-height: 8.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid lightgrey;
   border-radius: 0.5rem;
@@ -8,4 +9,15 @@
 
 .card-data:hover {
   box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
+}
+
+.loading {
+  background-color: #e2e8f0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
 }

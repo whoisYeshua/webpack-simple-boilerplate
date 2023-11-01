@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.23.2",
+    "clsx": "^2.0.0",
     "core-js": "^3.33.2",
     "jquery": "^3.7.1",
     "normalize.css": "^8.0.1",

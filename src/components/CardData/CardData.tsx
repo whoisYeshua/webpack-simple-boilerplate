@@ -1,17 +1,17 @@
+import clsx from 'clsx'
 import styles from './CardData.module.css'
 
 interface CardDataProperties {
-  title: string
-  example: string
+  title?: string | null
+  body?: string | null
+  loading?: boolean
 }
 
-const CardData = ({ title, example }: CardDataProperties) => {
+const CardData = ({ title, body, loading }: CardDataProperties) => {
   return (
-    <div className={styles['card-data']}>
+    <div className={clsx(styles['card-data'], loading && styles['loading'])}>
       <h2>{title}</h2>
-      <p>
-        Example: <span>{example}</span>
-      </p>
+      <p>{body}</p>
     </div>
   )
 }
