@@ -13,9 +13,7 @@ interface Post {
 const PostData = () => {
   const [count, setCount] = useState(1)
 
-  const { data, error, isFetching } = useFetch<Post>(
-    `https://jsonplaceholder.typicode.com/todos/${count}`,
-  )
+  const { data, error, isFetching } = useFetch<Post>(`/api/todos/${count}`)
 
   const title = data ? data.title : error ? error.name : null
   const body = data ? `UserId: ${data.userId}, PostId: ${data.id}` : error ? error.message : null

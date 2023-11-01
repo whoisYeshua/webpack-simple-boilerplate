@@ -27,6 +27,13 @@ const developmentConfig = {
     hot: true,
     port: 5550,
     open: true,
+    proxy: {
+      '/api': {
+        target: 'https://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '' },
+      },
+    },
   },
   module: {
     rules: [

@@ -283,6 +283,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 | ESLint                    | ✅                       | ❌                          |
 | TS checks                 | ✅                       | ❌                          |
 | CSS implementation\*\*    | ✅ - `style-loader`      | ✅ - `MiniCssExtractPlugin` |
+| Proxy backend requests    | ✅ - `devServer.proxy`   | ❌                          |
 | ReactRefreshWebpackPlugin | ✅                       | ❌                          |
 | TerserPlugin              | ❌                       | ✅                          |
 | CssMinimizerPlugin        | ❌                       | ✅                          |
@@ -295,7 +296,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 \*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
 
-\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. Therefore, if this bug is not fixed soon, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).
+\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. ~~Therefore, if this bug is not fixed soon, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).~~
 
 ## Source
 
