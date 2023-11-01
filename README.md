@@ -98,13 +98,11 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 #### [Configurations](https://stylelint.io/user-guide/configure#extends)
 
-- [`stylelint-config-standard-scss`](https://www.npmjs.com/package/stylelint-config-standard-scss) - Turns on SCSS support & some SCSS rules. By default extends `stylelint-config-standard` and `stylelint-config-recommended-scss`. _(At the moment, it does not use the most modern version of `stylelint-config-standard`, so it goes before `stylelint-config-standard`, for the possibility of redefinition)_
-- [`stylelint-config-standard`](https://www.npmjs.com/package/stylelint-config-standard) - Turns on additional rules to enforce the common stylistic conventions found within a handful of CSS styleguides
+- [`stylelint-config-standard-scss`](https://www.npmjs.com/package/stylelint-config-standard-scss) - Turns on SCSS support & some SCSS rules. By default extends `stylelint-config-standard` and `stylelint-config-recommended-scss`.
+- [`stylelint-config-standard`](https://www.npmjs.com/package/stylelint-config-standard) - Turns on additional rules to enforce the common stylistic conventions found within a handful of CSS styleguides.
+  > [!NOTE]
+  > Since the `stylelint-config-standard-scss` package extends the `stylelint-config-standard` package, using both may be redundant and problematic. It could result in having two versions of the same dependency in your project, which can cause issues if you update only one of them. However, it can still be useful to have access to new rules provided by this package. Make sure to pay attention to this in your project.
 - [`stylelint-config-recess-order`](https://www.npmjs.com/package/stylelint-config-recess-order) - Config that sorts related property declarations by grouping together in the rational order
-
-#### [Plugins](https://stylelint.io/user-guide/configure#plugins)
-
-- [`stylelint-order`](https://www.npmjs.com/package/stylelint-order) - is a plugin pack of order-related linting rules. _Enabled with [`stylelint-config-recess-order`](https://www.npmjs.com/package/stylelint-config-recess-order)_
 
 ### CI
 
@@ -344,7 +342,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 - [`babel.config.cjs`](./babel.config.cjs)
 
-  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle. Additionaly i set [`proposals: true`](https://babeljs.io/docs/babel-preset-env#corejs), for `Array.prototype.group`, since not all major browsers currently support it _(29.04.2023)_.
+  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle. Additionaly i set [`proposals: true`](https://babeljs.io/docs/babel-preset-env#corejs), for `Object.groupBy`, since not all major browsers currently support it _(31.10.2023)_.
 
   ```js
   presets: [
@@ -352,7 +350,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: { version: '3.30', proposals: true }, // The version string can be any supported core-js versions
+        corejs: { version: '3.33', proposals: true }, // The version string can be any supported core-js versions
       },
     ],
   ]

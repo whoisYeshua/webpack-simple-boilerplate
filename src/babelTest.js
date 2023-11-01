@@ -15,9 +15,9 @@ console.log('Static Class field:', Util.id)
 
 const array = [1, 2, 3, 4, 5]
 
-// group groups items by arbitrary key. Use deprecated Stage 3 propsal Array.prototype.group. In future replace with Object.groupBy - https://github.com/zloirock/core-js/pull/1256
+// group items by arbitrary key
 // In this case, we're grouping by even/odd keys
-const newGroupArray = array.group(element => {
+const newGroupArray = Object.groupBy(array, element => {
   return element % 2 === 0 ? 'even' : 'odd'
 })
 

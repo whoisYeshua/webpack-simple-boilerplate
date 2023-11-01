@@ -25,7 +25,7 @@ export class PostContent implements IPostContent {
         img: this.img,
       },
       undefined,
-      2
+      2,
     )
   }
 
