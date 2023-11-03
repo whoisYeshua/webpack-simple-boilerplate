@@ -2,7 +2,7 @@
   "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
-    "es2022": true,
+    "es2024": true,
     "jquery": true,
     "node": true
   },
