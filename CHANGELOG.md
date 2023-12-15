@@ -1,3 +1,16 @@
+## [1.1.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.1.0...v1.1.1) (2023-12-15)
+
+
+### 📚 Documentation
+
+* **README:** add info about proxy in Environment comparison table ([d1d76ec](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/d1d76ecebd5b85275a9c606404e075a91eb9d234))
+
+
+### Other changes
+
+* **no-release:** update ESLint env target to `es2024` ([e473acc](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/e473acc974b85aa205530a40717176db2ed9d457))
+* update dependencies ([6498e2a](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/6498e2a83cba352dead15fe599edfcf780a1967b))
+
 ## [1.1.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.0.1...v1.1.0) (2023-11-01)
 
 
