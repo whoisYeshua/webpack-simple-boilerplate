@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.1.1...v1.2.0) (2024-02-21)
+
+
+### ✨ Features
+
+* update dependencies ([93b3c33](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/93b3c33df56c18b59a8768e3a1a45f7cf3b91c14))
+
 ## [1.1.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.1.0...v1.1.1) (2023-12-15)
 
 
