@@ -3,9 +3,6 @@ import styles from './SvgExample.module.css'
 import svgSrc from '@assets/images/svgr.svg?url'
 import SvgComponent from '@assets/images/svgr.svg'
 
-console.log(svgSrc)
-console.log(SvgComponent)
-
 const SvgExample = () => {
   return (
     <div>

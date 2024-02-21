@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import * as $ from 'jquery/dist/jquery.min'
+import { $ } from 'jquery'
 
 import WebpackLogo from '@assets/images/webpack-logo.avif'
 import { PostContent } from './PostContent'

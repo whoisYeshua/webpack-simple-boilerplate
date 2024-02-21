@@ -1,4 +1,4 @@
-import * as $ from 'jquery/dist/jquery.min'
+import { $ } from 'jquery'
 
 function createAnalytics() {
   let counter = 0

@@ -22,3 +22,12 @@ const newGroupArray = Object.groupBy(array, element => {
 })
 
 console.log('Array group method:', newGroupArray)
+
+const arrayIterator = array.values()
+
+arrayIterator
+  .map(v => v * 2)
+  .map(v => v + 1)
+  .take(2)
+  // eslint-disable-next-line unicorn/no-array-for-each
+  .forEach((v, index) => console.log(`Iterator helper for index [${index}] - value: ${v}`))
