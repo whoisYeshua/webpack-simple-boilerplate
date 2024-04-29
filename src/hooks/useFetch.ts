@@ -88,7 +88,7 @@ export function useFetch<T = unknown>(url?: string, options?: RequestInit): Stat
     // Use the cleanup function for avoiding a possibly...
     // ...state update after the component was unmounted
     return () => {
-      abortController.abort()
+      abortController.abort(`Abort fetch for ${url} due component unmount`)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url])
