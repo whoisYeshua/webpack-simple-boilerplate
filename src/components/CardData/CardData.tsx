@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import styles from './CardData.module.css'
+import * as styles from './CardData.module.css'
 
 interface CardDataProperties {
   title?: string | null

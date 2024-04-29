@@ -1,5 +1,5 @@
 /* eslint-disable import/no-duplicates */
-import styles from './SvgExample.module.css'
+import * as styles from './SvgExample.module.css'
 import svgSrc from '@assets/images/svgr.svg?url'
 import SvgComponent from '@assets/images/svgr.svg'
 
