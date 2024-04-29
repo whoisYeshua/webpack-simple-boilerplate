@@ -1,3 +1,15 @@
+## [1.3.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.2.0...v1.3.0) (2024-04-29)
+
+
+### ✨ Features
+
+* update dependencies ([1890e14](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/1890e148f519be86c3e2c2b4291777326b1e78ea))
+
+
+### 🐛 Bug Fixes
+
+* console log error for aborting request without reason ([3dbfe16](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/3dbfe167c2b3f66bcd52e9223d8400b8beab5ccf))
+
 ## [1.2.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.1.1...v1.2.0) (2024-02-21)
 
 
