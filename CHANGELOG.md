@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.3.1...v1.4.0) (2025-03-17)
+
+
+### ✨ Features
+
+* update dependencies (`react` 19 & `eslint` to flat config and 9) ([51c1508](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/51c1508c22e03761a10a74cdc578af7146e007b8))
+
 ## [1.3.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.3.0...v1.3.1) (2024-09-16)
 
 
