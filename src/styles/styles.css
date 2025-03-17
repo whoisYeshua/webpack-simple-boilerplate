@@ -28,8 +28,8 @@ h1 {
 
 .code {
   overflow: hidden;
-  color: darkcyan;
   text-overflow: ellipsis;
+  color: darkcyan;
   transition: all 0.2s ease-in;
 }
 

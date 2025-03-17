@@ -3,7 +3,6 @@ import path from 'node:path'
 import webpack from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
-// eslint-disable-next-line import/default
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 import { paths } from './config/webpack/webpack.paths.js'

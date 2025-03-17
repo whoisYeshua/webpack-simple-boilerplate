@@ -22,9 +22,8 @@ function createAnalytics() {
 }
 
 declare global {
-  interface Window {
-    analytics: ReturnType<typeof createAnalytics>
-  }
+  // eslint-disable-next-line no-var -- ambient module
+  var analytics: ReturnType<typeof createAnalytics>
 }
 
-window.analytics = createAnalytics()
+globalThis.analytics = createAnalytics()

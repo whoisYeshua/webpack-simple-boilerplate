@@ -7,11 +7,11 @@ async function start() {
 start().then(console.log)
 
 // eslint-disable-next-line unicorn/no-static-only-class
-class Util {
+class Utilities {
   static id = Date.now()
 }
 
-console.log('Static Class field:', Util.id)
+console.log('Static Class field:', Utilities.id)
 
 const array = [1, 2, 3, 4, 5]
 
