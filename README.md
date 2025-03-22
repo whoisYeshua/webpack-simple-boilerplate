@@ -77,7 +77,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 ### [ESLint](https://eslint.org/)
 
 - [`eslint`](https://www.npmjs.com/package/eslint) - is a static code analysis tool for identifying problematic patterns.
-- [`@typescript-eslint/parser`](https://www.npmjs.com/package/@typescript-eslint/parser) - allow ESLint to lint TypeScript files.
+- [`typescript-eslint`](https://www.npmjs.com/package/@typescript-eslint/parser) - allow ESLint to lint TypeScript files.
 
 #### [Configuration Files](https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files)
 
@@ -85,9 +85,8 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 #### [Plugins](https://eslint.org/docs/user-guide/configuring/plugins#specifying-parser)
 
-- [`@typescript-eslint/eslint-plugin`](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin) - An ESLint plugin which provides lint rules for TypeScript codebases.
 - [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import) - This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
-  - [`eslint-import-resolver-typescript`](https://www.npmjs.com/package/eslint-import-resolver-typescript) - This plugin adds TypeScript support to `eslint-plugin-import`
+  - [`eslint-import-resolver-typescript`](https://www.npmjs.com/package/eslint-import-resolver-typescript) - This resolver plugin adds TypeScript support to `eslint-plugin-import`
 - [`eslint-plugin-react`](https://www.npmjs.com/package/eslint-plugin-react) - React specific linting rules for ESLint. I am also extends `react/jsx-runtime` for support [new JSX transform from React 17](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports).
 - [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) - This ESLint plugin enforces the Rules of Hooks.
 - [`eslint-plugin-jsx-a11y`](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) - Static AST checker for accessibility rules on JSX elements.

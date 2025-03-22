@@ -42,27 +42,18 @@ const config = tseslint.config(
     rules: {
       'no-console': 'off',
       '@typescript-eslint/no-non-null-assertion': 'warn',
+      'react/self-closing-comp': 'error',
       'unicorn/no-null': 'off',
       'unicorn/filename-case': ['warn', { cases: { camelCase: true, pascalCase: true } }],
       'unicorn/prevent-abbreviations': ['error', { ignore: ['args', 'props'] }],
-      'react/self-closing-comp': 'error',
     },
     languageOptions: {
       ecmaVersion: 'latest',
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-        ...globals.jquery,
-      },
+      globals: { ...globals.node, ...globals.browser, ...globals.jquery },
     },
     settings: {
-      react: {
-        version: 'detect',
-      },
-      'import/resolver': {
-        node: true,
-        typescript: true,
-      },
+      react: { version: 'detect' },
+      'import/resolver': { typescript: true },
     },
   },
 )
