@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.0...v1.4.1) (2025-03-22)
+
+
+### Other changes
+
+* update `eslint`, `typescript-eslint` and `eslint-import-resolver-typescript` ([ab433e6](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/ab433e63a89fd61726758ab71bff84824042e9f4))
+
 ## [1.4.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.3.1...v1.4.0) (2025-03-17)
 
 
