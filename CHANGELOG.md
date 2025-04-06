@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.2...v1.4.3) (2025-04-06)
+
+
+### Other changes
+
+* remove unused `.eslintrc.json` file and update stylelint deps ([f8a774b](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/f8a774b7d7e76c0d3f0933c18a406b9e84b09d3b))
+
 ## [1.4.2](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.1...v1.4.2) (2025-04-04)
 
 
