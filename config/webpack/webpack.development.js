@@ -66,6 +66,7 @@ const developmentConfig = {
   plugins: [
     new ESLintPlugin({
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      failOnError: false, // Setting this to true (default) will cause the dev server to fail completely if there are lint errors. Only a full server restart (Ctrl + C) will recover from this state
     }),
     new ForkTsCheckerWebpackPlugin(),
     new ReactRefreshPlugin(),

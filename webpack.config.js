@@ -41,7 +41,6 @@ const commonConfig = {
   plugins: [
     new webpack.ProgressPlugin(),
     new webpack.EnvironmentPlugin({
-      NODE_ENV: undefined, // Use undefined for variables that must be provided during bundling
       EXPERIMENTAL_SHOW_POST_COMPONENT: true,
     }),
     new HTMLWebpackPlugin({
