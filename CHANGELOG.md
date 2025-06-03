@@ -1,3 +1,15 @@
+## [1.4.6](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.5...v1.4.6) (2025-06-03)
+
+
+### 🐛 Bug Fixes
+
+* update webpack configuration for `ESLintPlugin` in development ([a08fe66](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/a08fe666157d2fdba2c09133a787ce63ea556ada))
+
+
+### 🔁 CI
+
+* add GitHub Actions for setup, build, and deployment ([482f4a1](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/482f4a108a3e5a0901e0fc1396feda884040189f))
+
 ## [1.4.5](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.4...v1.4.5) (2025-06-03)
 
 
