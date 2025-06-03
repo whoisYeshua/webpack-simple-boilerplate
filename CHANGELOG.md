@@ -1,3 +1,10 @@
+## [1.4.5](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.4...v1.4.5) (2025-06-03)
+
+
+### Other changes
+
+* update Node.js version requirement and bump dependencies ([ad5c72b](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/ad5c72b3ee8c99aea90dc5b31518eccc28f9e4d9))
+
 ## [1.4.4](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.3...v1.4.4) (2025-05-11)
 
 
