@@ -21,17 +21,8 @@ jobs:
       - name: Checkout to the repository 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install 🔧
-        run: npm ci
-
-      - name: Build 🏗️
-        run: npm run build
+      - name: Setup and Build
+        uses: ./.github/actions/setup-and-build
 
       - name: Start Semantic Release
         run: HUSKY=0 npx semantic-release # disable git hooks for @semantic-release/git plugin commits
