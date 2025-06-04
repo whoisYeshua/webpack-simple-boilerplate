@@ -33,6 +33,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
 - [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize the size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
+- [`@sentry/webpack-plugin`](https://www.npmjs.com/package/@sentry/webpack-plugin) - Automatically upload source maps to Sentry and create releases for error tracking and performance monitoring _(Only in production mode)_
 - [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is an ESLint plugin for webpack _(Only in development mode)_
 - [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) - Webpack plugin that runs typescript type checker on a separate process _(Only in development mode)_
 - [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) - enable "Fast Refresh" (also previously known as Hot Reloading) for React components. Work closely together with [`react-refresh`](https://www.npmjs.com/package/react-refresh) _(Only in development mode)_
@@ -157,6 +158,29 @@ Since some Webpack, ESLint plugins or other dev tools like (`stylelint-config-st
    ```bash
     npm i
    ```
+
+## 🔧 Sentry Configuration (Optional)
+
+This template includes [Sentry](https://sentry.io/) integration for error tracking and performance monitoring in production builds. To enable Sentry features, you need to configure the following environment variables:
+
+### Setup Steps
+
+1. **Create a Sentry account** and project at [sentry.io](https://sentry.io/)
+
+2. **Create environment configuration file** rename `.env.example` to `.env` in the project root
+3. **Fill your Sentry configuration values:**
+
+   - **`SENTRY_AUTH_TOKEN`**: Create an auth token at `https://sentry.io/orgredirect/organizations/:orgslug/settings/auth-tokens/` with "Project: Read & Write" and "Release: Admin" permissions
+   - **`SENTRY_ORG`**: Your organization slug (found in your Sentry URL)
+   - **`SENTRY_PROJECT`**: Your project slug (found in your Sentry project settings)
+
+4. **Configure GitHub Actions (Optional)**: If you want Sentry integration to work in your CI/CD pipeline:
+   - Go to your repository **Settings** → **Secrets and variables** → **Actions**
+   - Add the following **Repository secrets**:
+     - `SENTRY_AUTH_TOKEN`: Your Sentry auth token
+     - `SENTRY_ORG`: Your organization slug
+     - `SENTRY_PROJECT`: Your project slug
+   - The GitHub Actions workflows will automatically use these secrets during production builds
 
 ## ⏩ Commands
 
@@ -283,25 +307,28 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 | Features                  | Development                    | Production                  |
 | ------------------------- | ------------------------------ | --------------------------- |
-| Devtool                   | ✅ - `eval-source-map`\*       | ❌                          |
+| devtool                   | ✅ - `eval-source-map`\*       | ❌ - `source-map`\*\*       |
 | devServer                 | ✅                             | ❌                          |
 | ESLint                    | ✅                             | ❌                          |
 | TS checks                 | ✅                             | ❌                          |
-| CSS implementation\*\*    | ✅ - `style-loader`            | ✅ - `MiniCssExtractPlugin` |
+| CSS implementation\*\*\*  | ✅ - `style-loader`            | ✅ - `MiniCssExtractPlugin` |
 | Proxy backend requests    | ✅ - `Webpack devServer.proxy` | ✅ - `NGINX proxy_pass`     |
 | ReactRefreshWebpackPlugin | ✅                             | ❌                          |
 | TerserPlugin              | ❌                             | ✅                          |
 | CssMinimizerPlugin        | ❌                             | ✅                          |
 | HtmlWebpackPlugin minify  | ❌                             | ✅                          |
 | BundleAnalyzerPlugin      | ❌                             | ✅                          |
+| SentryWebpackPlugin       | ❌                             | ✅                          |
 | Output files name         | Default                        | Contenthash                 |
-| Favicon\*\*\*             | 🤔                             | ✅                          |
+| Favicon\*\*\*\*           | 🤔                             | ✅                          |
 
 \* You can set `eval` or `false` options to increase build speed, but in this case, you [should manually](https://webpack.js.org/loaders/css-loader/#sourcemap) set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
 
-\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
+\*\* Source maps are deleted after uploading to the Sentry server, so they are not included in the final bundle
 
-\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. ~~Therefore, if this bug is not fixed soon, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).~~
+\*\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
+
+\*\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. ~~Therefore, if this bug is not fixed soon, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).~~
 
 ## Source
 

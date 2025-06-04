@@ -4,6 +4,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { sentryWebpackPlugin } from '@sentry/webpack-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
 
@@ -16,6 +17,7 @@ const isCi = process.env.CI
  */
 const productionConfig = {
   mode: 'production',
+  devtool: 'source-map',
   performance: {
     maxEntrypointSize: 512_000,
     maxAssetSize: 512_000,
@@ -52,6 +54,15 @@ const productionConfig = {
     new BundleAnalyzerPlugin({
       analyzerMode: isCi ? 'static' : 'server',
       reportFilename: '../bundle-report.html', // (to project root dir) relative to a bundle output directory
+    }),
+    sentryWebpackPlugin({
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+      org: process.env.SENTRY_ORG,
+      project: process.env.SENTRY_PROJECT,
+      sourcemaps: {
+        filesToDeleteAfterUpload: '**/*.map',
+      },
+      telemetry: false,
     }),
   ],
 }

@@ -1,0 +1,10 @@
+.sentry-button {
+  padding: 0.5rem 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  background-color: #452650;
+  border: none;
+  border-radius: 0.5rem;
+}
