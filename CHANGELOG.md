@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.6...v1.5.0) (2025-06-04)
+
+
+### ✨ Features
+
+* integrate Sentry for error tracking and performance monitoring ([00ef6da](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/00ef6da861b0021514f1253807fa53954e7b8679))
+
 ## [1.4.6](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.4.5...v1.4.6) (2025-06-03)
 
 
