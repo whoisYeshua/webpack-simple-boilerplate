@@ -1,4 +1,4 @@
-import { Header, Input, Post, CardData, SvgExample, PostData } from './components'
+import { Header, Input, Post, CardData, SvgExample, PostData, SentryErrors } from './components'
 import json from '@assets/data/data.json'
 import xml from '@assets/data/data.xml'
 import csv from '@assets/data/data.csv'
@@ -27,5 +27,6 @@ export const App = () => (
     <CardData title={xml.root.title} body={`Example: ${xml.root.example}`} />
     <CardData title={csv[1][0]} body={`Example: ${String(csv[1][1])}`} />
     {EXPERIMENTAL_SHOW_POST_COMPONENT && <PostData />}
+    <SentryErrors />
   </div>
 )

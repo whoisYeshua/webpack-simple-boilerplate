@@ -6,6 +6,7 @@ import CardData from './CardData'
 import Input from './Input'
 import Header from './Header'
 import Post from './Post'
+import SentryErrors from './SentryErrors'
 
 export {
   /* PLOP_INJECT_EXPORT */
@@ -15,4 +16,5 @@ export {
   Input,
   Header,
   Post,
+  SentryErrors,
 }
