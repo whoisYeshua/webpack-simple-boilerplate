@@ -22,7 +22,6 @@ function createAnalytics() {
 }
 
 declare global {
-  // eslint-disable-next-line no-var -- ambient module
   var analytics: ReturnType<typeof createAnalytics>
 }
 

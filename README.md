@@ -148,7 +148,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 ## ⚠️ Requirements ⚠️
 
-Since some Webpack, ESLint plugins or other dev tools like (`stylelint-config-standard-scss`) require `Node.js` version ≥ `20.17`. you need [`Node.js 20.17 and above`](https://nodejs.org/en/) to prepare for future changes. Check recommended version in [.nvmrc](./.nvmrc). You also may need [Docker](https://www.docker.com/get-started/), if you want run production build
+Since some Webpack, ESLint plugins or other dev tools like (`stylelint-config-recess-order`) require `Node.js` version ≥ `20.19`. you need [`Node.js 20.19 and above`](https://nodejs.org/en/) to prepare for future changes. Check recommended version in [.nvmrc](./.nvmrc). You also may need [Docker](https://www.docker.com/get-started/), if you want run production build
 
 ## ⏬ Installation
 

@@ -31,3 +31,5 @@ arrayIterator
   .take(2)
   // eslint-disable-next-line unicorn/no-array-for-each
   .forEach((v, index) => console.log(`Iterator helper for index [${index}] - value: ${v}`))
+
+console.log('sumPrecise for array of [1, 2]', Math.sumPrecise([1, 2]))
