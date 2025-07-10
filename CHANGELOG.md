@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.1...v1.5.2) (2025-07-10)
+
+
+### Other changes
+
+* last migration step to ESM and update dependencies ([c460113](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/c460113eab0afac1e14905ba4d98444f8a2b63aa))
+
 ## [1.5.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.0...v1.5.1) (2025-06-12)
 
 
