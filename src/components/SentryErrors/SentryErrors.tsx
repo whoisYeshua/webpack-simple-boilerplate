@@ -1,7 +1,6 @@
-import { Component, type ErrorInfo, useState, type ReactNode } from 'react'
+import { Component, useState, type ReactNode } from 'react'
 
 import * as styles from './SentryErrors.module.css'
-import { captureReactException } from '@sentry/react'
 
 console.log('styles', styles)
 
@@ -52,9 +51,8 @@ class ErrorBoundary extends Component<{ children: ReactNode }> {
     return { hasError: true }
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch() {
     console.log('😄 Neares ErrorBoundary caught error2')
-    captureReactException(error, errorInfo)
   }
 
   render() {
