@@ -5,10 +5,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "webpack --node-env development --config config/webpack/webpack.development.js",
+    "dev": "webpack --config-node-env development --config config/webpack/webpack.development.js",
     "watch": "npm run dev -- --watch",
-    "start": "webpack serve --node-env development --config config/webpack/webpack.development.js",
-    "build": "webpack --node-env production --config config/webpack/webpack.production.js",
+    "start": "webpack serve --config-node-env development --config config/webpack/webpack.development.js",
+    "build": "webpack --config-node-env production --config config/webpack/webpack.production.js",
     "generate": "plop",
     "format": "npm run format:eslint && npm run format:stylelint && npm run format:prettier",
     "format:eslint": "npm run lint:eslint -- --fix",
