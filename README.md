@@ -161,7 +161,7 @@ Since some Webpack, ESLint plugins or other dev tools like (`stylelint-config-re
 
 ## 🔧 Sentry Configuration (Optional)
 
-This template includes [Sentry](https://sentry.io/) integration for error tracking and performance monitoring in production builds. To enable Sentry features, you need to configure the following environment variables:
+This template includes [Sentry](https://sentry.io/) integration for error tracking and performance monitoring in production builds. The DSN is now read from environment variables (no hardcoded DSN in the repo). To enable Sentry features, configure the following:
 
 ### Setup Steps
 
@@ -174,8 +174,9 @@ This template includes [Sentry](https://sentry.io/) integration for error tracki
     - **`SENTRY_AUTH_TOKEN`**: Create an auth token at `https://sentry.io/orgredirect/organizations/:orgslug/settings/auth-tokens/` with "Project: Read & Write" and "Release: Admin" permissions
     - **`SENTRY_ORG`**: Your organization slug (found in your Sentry URL)
     - **`SENTRY_PROJECT`**: Your project slug (found in your Sentry project settings)
+    - **`SENTRY_DSN`**: Project DSN (from Project Settings → Client Keys)
     
-  + Add `.env` file to build pipe, like: `"build": "node --env-file=.env ./node_modules/webpack-cli/bin/cli.js --config-node-env production --config config/webpack/webpack.production.js",` or pass values dirctly `SENTRY_AUTH_TOKEN=yourtoken SENTRY_ORG=yourorg SENTRY_PROJECT=yourproj npm run build` - unix example
+  + Add `.env` file to build pipe, like: `"build": "node --env-file=.env ./node_modules/webpack-cli/bin/cli.js --config-node-env production --config config/webpack/webpack.production.js",` or pass values directly `SENTRY_AUTH_TOKEN=yourtoken SENTRY_ORG=yourorg SENTRY_PROJECT=yourproj SENTRY_DSN=yourdsn npm run build` (Unix example)
 3. **Configure GitHub Actions (Optional)**: If you want Sentry integration to work in your CI/CD pipeline:
    - Go to your repository **Settings** → **Secrets and variables** → **Actions**
    - Add the following **Repository secrets**:
@@ -183,6 +184,7 @@ This template includes [Sentry](https://sentry.io/) integration for error tracki
    - Add the following **Repository variables**:
      - `SENTRY_ORG`: Your organization slug
      - `SENTRY_PROJECT`: Your project slug
+     - `SENTRY_DSN`: Your Sentry DSN
    - The GitHub [Deploy Action workflow](.github/workflows/deploy.yml) will use these secret & values during production builds
 
 ## ⏩ Commands

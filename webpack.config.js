@@ -42,6 +42,7 @@ const commonConfig = {
     new webpack.ProgressPlugin(),
     new webpack.EnvironmentPlugin({
       EXPERIMENTAL_SHOW_POST_COMPONENT: true,
+      SENTRY_DSN: process.env.SENTRY_DSN ?? '',
     }),
     new HTMLWebpackPlugin({
       title: 'Webpack Simple Boilerplate',
