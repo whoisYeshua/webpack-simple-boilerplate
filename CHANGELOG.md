@@ -1,3 +1,21 @@
+## [1.5.5](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.4...v1.5.5) (2025-08-10)
+
+
+### 🐛 Bug Fixes
+
+* enhance Sentry integration by moving DSN configuration to env ([a159f79](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/a159f79bff42ddd66c0ebb79437f052b073f3990))
+* remove Sentry double capture for errors ([66ec021](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/66ec02137d0f4e13d5ea3f3589c10bfedfde55ba))
+
+
+### 🛠 Code Refactor
+
+* remove unnecessary TypeScript error suppression in ESLint configuration ([49b2e3e](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/49b2e3e9774cb4f37b9934958c3fdf6c38277210))
+
+
+### Other changes
+
+* move `@sentry/webpack-plugin` to devDependencies ([ddd7ed8](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/ddd7ed8b7010d50aa10d8c481632f78d0bd2bea6))
+
 ## [1.5.4](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.3...v1.5.4) (2025-08-10)
 
 
