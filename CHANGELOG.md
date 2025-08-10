@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.2...v1.5.3) (2025-08-10)
+
+
+### Other changes
+
+* update dependencies and Babel configuration ([c3d6bb7](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/c3d6bb7e717487969d4321151b9ce780b9bd1315))
+
 ## [1.5.2](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.1...v1.5.2) (2025-07-10)
 
 
