@@ -1,3 +1,15 @@
+## [1.5.4](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.3...v1.5.4) (2025-08-10)
+
+
+### 🐛 Bug Fixes
+
+* correct node env script commands in `package.json` for webpack CLI ([ce83c65](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/ce83c65c4b238dcbde9de6e4c438738e045b8ac9))
+
+
+### 📚 Documentation
+
+* update README and GitHub Actions for Sentry configuration ([9cd0b2a](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/9cd0b2ab0ac9b114507552c1ae78c81378c4d80c))
+
 ## [1.5.3](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.2...v1.5.3) (2025-08-10)
 
 
