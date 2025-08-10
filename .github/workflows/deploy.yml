@@ -36,6 +36,10 @@ jobs:
 
       - name: Setup and Build
         uses: ./.github/actions/setup-and-build
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ vars.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ vars.SENTRY_PROJECT }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -167,20 +167,23 @@ This template includes [Sentry](https://sentry.io/) integration for error tracki
 
 1. **Create a Sentry account** and project at [sentry.io](https://sentry.io/)
 
-2. **Create environment configuration file** rename `.env.example` to `.env` in the project root
-3. **Fill your Sentry configuration values:**
+2. **_Local step_. Create environment configuration file**. Rename [`.env.example`](./.env.example) to `.env` in the project root
+  
+  + **Fill your Sentry configuration values:**
 
-   - **`SENTRY_AUTH_TOKEN`**: Create an auth token at `https://sentry.io/orgredirect/organizations/:orgslug/settings/auth-tokens/` with "Project: Read & Write" and "Release: Admin" permissions
-   - **`SENTRY_ORG`**: Your organization slug (found in your Sentry URL)
-   - **`SENTRY_PROJECT`**: Your project slug (found in your Sentry project settings)
-
-4. **Configure GitHub Actions (Optional)**: If you want Sentry integration to work in your CI/CD pipeline:
+    - **`SENTRY_AUTH_TOKEN`**: Create an auth token at `https://sentry.io/orgredirect/organizations/:orgslug/settings/auth-tokens/` with "Project: Read & Write" and "Release: Admin" permissions
+    - **`SENTRY_ORG`**: Your organization slug (found in your Sentry URL)
+    - **`SENTRY_PROJECT`**: Your project slug (found in your Sentry project settings)
+    
+  + Add `.env` file to build pipe, like: `"build": "node --env-file=.env ./node_modules/webpack-cli/bin/cli.js --config-node-env production --config config/webpack/webpack.production.js",` or pass values dirctly `SENTRY_AUTH_TOKEN=yourtoken SENTRY_ORG=yourorg SENTRY_PROJECT=yourproj npm run build` - unix example
+3. **Configure GitHub Actions (Optional)**: If you want Sentry integration to work in your CI/CD pipeline:
    - Go to your repository **Settings** → **Secrets and variables** → **Actions**
    - Add the following **Repository secrets**:
      - `SENTRY_AUTH_TOKEN`: Your Sentry auth token
+   - Add the following **Repository variables**:
      - `SENTRY_ORG`: Your organization slug
      - `SENTRY_PROJECT`: Your project slug
-   - The GitHub Actions workflows will automatically use these secrets during production builds
+   - The GitHub [Deploy Action workflow](.github/workflows/deploy.yml) will use these secret & values during production builds
 
 ## ⏩ Commands
 
