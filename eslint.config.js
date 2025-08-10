@@ -1,7 +1,6 @@
 // @ts-check
 import jseslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
-// @ts-expect-error -- no d.ts files
 import importPlugin from 'eslint-plugin-import'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
