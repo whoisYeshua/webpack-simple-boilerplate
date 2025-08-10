@@ -30,7 +30,6 @@
   "dependencies": {
     "@babel/runtime": "7.28.2",
     "@sentry/react": "10.3.0",
-    "@sentry/webpack-plugin": "4.0.2",
     "clsx": "2.1.1",
     "core-js": "3.45.0",
     "jquery": "4.0.0-beta.2",
@@ -49,6 +48,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "0.6.1",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
+    "@sentry/webpack-plugin": "4.0.2",
     "@svgr/webpack": "8.1.0",
     "@types/babel__core": "7.20.5",
     "@types/node": "20.19.0",
