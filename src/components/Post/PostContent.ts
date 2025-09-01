@@ -8,7 +8,7 @@ interface IPostContent {
 }
 
 export class PostContent implements IPostContent {
-  date = new Date()
+  date = process.env.BUILD_TIME ? new Date(process.env.BUILD_TIME) : new Date()
   title
   img
 
