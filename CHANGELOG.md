@@ -1,3 +1,11 @@
+## [1.5.6](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.5...v1.5.6) (2025-09-01)
+
+
+### Other changes
+
+* add build time to environment variables ([9657e37](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/9657e37e4c69e28123cd109289d18b7c46dcc975))
+* update dependencies ([2a7f96d](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/2a7f96d73cba5fc7346819ba293c3e10a73b1163))
+
 ## [1.5.5](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.4...v1.5.5) (2025-08-10)
 
 
