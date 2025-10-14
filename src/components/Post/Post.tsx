@@ -1,16 +1,19 @@
-import { useEffect } from 'react'
-import { $ } from 'jquery'
+import { useEffect, useRef } from 'react'
 
 import WebpackLogo from '@assets/images/webpack-logo.avif'
 import { PostContent } from './PostContent'
 
 const Post = () => {
+  const preReference = useRef<HTMLPreElement | null>(null)
   useEffect(() => {
+    const preElement = preReference.current
+    if (!preElement) return
     const postContent = new PostContent('Webpack Post Title test', WebpackLogo)
 
-    $('pre').addClass('code').html(postContent.toString())
+    preElement.classList.add('code')
+    preElement.innerHTML = postContent.toString()
   }, [])
-  return <pre />
+  return <pre ref={preReference} />
 }
 
 export default Post

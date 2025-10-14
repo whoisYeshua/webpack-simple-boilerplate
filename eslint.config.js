@@ -48,7 +48,7 @@ const config = defineConfig(
     },
     languageOptions: {
       ecmaVersion: 'latest',
-      globals: { ...globals.node, ...globals.browser, ...globals.jquery },
+      globals: { ...globals.node, ...globals.browser },
     },
     settings: {
       react: { version: 'detect' },

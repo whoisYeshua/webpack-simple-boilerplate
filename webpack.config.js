@@ -16,10 +16,7 @@ const assetsFilename = () => (isDevelopment ? '[base]' : '[contenthash:8][ext][q
  * @type {webpack.Configuration}
  */
 const commonConfig = {
-  entry: {
-    main: path.resolve(paths.src, 'index.tsx'),
-    analytics: path.resolve(paths.src, 'analytics.ts'),
-  },
+  entry: path.resolve(paths.src, 'index.tsx'),
   output: {
     clean: true,
     filename: isDevelopment ? `[name].js` : `[name].[contenthash:8].bundle.js`,
@@ -34,7 +31,6 @@ const commonConfig = {
   target: 'browserslist',
   optimization: {
     chunkIds: 'named',
-    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
       cacheGroups: {

@@ -20,8 +20,6 @@ I made a simple template for myself, but maybe it could be helpful for others.
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports & CSS modules
 - [`style-loader`](https://www.npmjs.com/package/style-loader) - Inject CSS into the DOM
 - [`@svgr/webpack`](https://www.npmjs.com/package/style-loader) - Webpack loader for SVG
-- [`csv-loader`](https://www.npmjs.com/package/csv-loader) - The loader will translate csv files into JSON
-- [`xml-loader`](https://www.npmjs.com/package/xml-loader) - The loader will translate xml files into JSON
 
 #### [Plugins](https://webpack.js.org/plugins/)
 

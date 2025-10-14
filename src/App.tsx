@@ -1,11 +1,5 @@
 import { Header, Input, Post, CardData, SvgExample, PostData, SentryErrors } from './components'
-import json from '@assets/data/data.json'
-import xml from '@assets/data/data.xml'
-import csv from '@assets/data/data.csv'
-
-console.log('json', json)
-console.log('xml', xml)
-console.log('csv', csv)
+import json from '@assets/data/data.json' with { type: 'json' }
 
 const EXPERIMENTAL_SHOW_POST_COMPONENT = JSON.parse(
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -24,8 +18,6 @@ export const App = () => (
     <Input />
     <SvgExample />
     <CardData title={json.title} body={`Example: ${String(json.example)}`} />
-    <CardData title={xml.root.title} body={`Example: ${xml.root.example}`} />
-    <CardData title={csv[1][0]} body={`Example: ${String(csv[1][1])}`} />
     {EXPERIMENTAL_SHOW_POST_COMPONENT && <PostData />}
     <SentryErrors />
   </div>
