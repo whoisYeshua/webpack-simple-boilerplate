@@ -3,7 +3,6 @@ import path from 'node:path'
 import webpack from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
-import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 import { paths } from './config/webpack/webpack.paths.js'
 
@@ -23,7 +22,8 @@ const commonConfig = {
   },
   output: {
     clean: true,
-    filename: isDevelopment ? `[name].js` : `[name].[contenthash:8].js`,
+    filename: isDevelopment ? `[name].js` : `[name].[contenthash:8].bundle.js`,
+    chunkFilename: isDevelopment ? `[name].js` : `[name].[contenthash:8].chunk.js`,
     path: paths.dist,
     assetModuleFilename: `assets/${assetsFilename()}`,
   },
@@ -33,9 +33,20 @@ const commonConfig = {
   },
   target: 'browserslist',
   optimization: {
+    chunkIds: 'named',
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
+      cacheGroups: {
+        // React and react-rotuer
+        react: {
+          test: /[/\\]node_modules[/\\](react|react-dom|scheduler|react-router|react-router-dom|@remix-run)[/\\]/,
+          name: 'react-vendor',
+          chunks: 'all',
+          priority: 2, // this chunk will take priority over other chunks, if they will be presented later
+          enforce: true,
+        },
+      },
     },
   },
   plugins: [
@@ -50,14 +61,10 @@ const commonConfig = {
       favicon: path.resolve(paths.public, 'favicon.ico'),
       template: path.resolve(paths.public, 'index.html'),
       filename: 'index.html',
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(paths.public, 'static'),
-          to: paths.dist,
-        },
-      ],
+      templateParameters: {
+        descriptionContent:
+          'ESM Webpack 5 boilerplate (SASS, PostCSS, ESLint, Prettier, Styleint, husky, Babel, React, TS) also Docker and NGINX',
+      },
     }),
   ],
   module: {

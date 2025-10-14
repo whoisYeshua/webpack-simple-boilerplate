@@ -25,11 +25,11 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 #### [Plugins](https://webpack.js.org/plugins/)
 
-- [`copy-webpack-plugin`](https://webpack.js.org/plugins/copy-webpack-plugin/) - Copies individual files or entire directories, which already exist, to the build directory
 - [`html-webpack-plugin`](https://webpack.js.org/plugins/html-webpack-plugin/) - Generate HTML files from template
 - [`mini-css-extract-plugin`](https://webpack.js.org/plugins/mini-css-extract-plugin/) - Extract CSS into separate files
 - [`ProgressPlugin`](https://webpack.js.org/plugins/progress-plugin/) - This plugin provides a way to customize how progress is reported during a compilation. (You do not need to install this plugin. _Webpack_ comes with this plugin out of the box.). You can also replace this plugin with [`webpackbar`](https://www.npmjs.com/package/webpackbar) which has more friendly UI.
 - [`EnvironmentPlugin`](https://webpack.js.org/plugins/environment-plugin/) - inject `process.env` variables in your output code. (You do not need to install this plugin. _Webpack_ comes with this plugin out of the box.). You can also replace this plugin with [`webpack.DefinePlugin`](https://webpack.js.org/plugins/define-plugin) if you need more control over inserted values.
+- [`copy-webpack-plugin`](https://webpack.js.org/plugins/copy-webpack-plugin/) - Copies individual files or entire directories, which already exist, to the build directory _(Only in production mode)_
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
 - [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize the size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
@@ -312,8 +312,10 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 | Features                  | Development                    | Production                  |
 | ------------------------- | ------------------------------ | --------------------------- |
-| devtool                   | ✅ - `eval-source-map`\*       | ❌ - `source-map`\*\*       |
+| devtool                   | ✅ - `inline-nosources-cheap-source-map`\* | ❌ - `source-map`\*\*       |
 | devServer                 | ✅                             | ❌                          |
+| historyApiFallback        | ✅                             | ❌                          |
+| stats configuration       | ✅ - minimal                  | ❌                          |
 | ESLint                    | ✅                             | ❌                          |
 | TS checks                 | ✅                             | ❌                          |
 | CSS implementation\*\*\*  | ✅ - `style-loader`            | ✅ - `MiniCssExtractPlugin` |
@@ -324,7 +326,8 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 | HtmlWebpackPlugin minify  | ❌                             | ✅                          |
 | BundleAnalyzerPlugin      | ❌                             | ✅                          |
 | SentryWebpackPlugin       | ❌                             | ✅                          |
-| Output files name         | Default                        | Contenthash                 |
+| CopyWebpackPlugin         | ❌                             | ✅                          |
+| Output files name         | Default                        | Contenthash with .bundle/.chunk suffixes |
 | Favicon\*\*\*\*           | 🤔                             | ✅                          |
 
 \* You can set `eval` or `false` options to increase build speed, but in this case, you [should manually](https://webpack.js.org/loaders/css-loader/#sourcemap) set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
@@ -351,7 +354,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 >
 > **Other Assets** - `src/assets/*`
 
-**Static files** - `public/static` _- files in this folder will be copy to dist root as it is (without any processing). Eg `robots.txt`._
+**Static files** - `public/static` _- files in this folder will be copied to the `dist` root as is (without any processing) during production builds only. During development, `devServer` will look at the `public/static` folder. E.g., `robots.txt`._
 
 ## Useful tips 💡
 

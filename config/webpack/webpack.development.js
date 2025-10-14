@@ -1,4 +1,5 @@
 // @ts-check
+import path from 'node:path'
 import { merge } from 'webpack-merge'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
@@ -17,16 +18,17 @@ const cssModulesOptions = {
 /**
  * Webpack config for Development
  *
- * @type {import('webpack').Configuration & import('webpack-dev-server').Configuration}
+ * @type {import('webpack').Configuration}
  */
 const developmentConfig = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'inline-nosources-cheap-source-map',
   devServer: {
-    static: paths.dist,
+    open: true,
+    static: path.resolve(paths.public, 'static'),
     hot: true,
     port: 5550,
-    open: true,
+    historyApiFallback: true, // Enables fallback to index.html for all routes. Required for proper client-side routing in SPA
     proxy: [
       {
         context: ['/api'],
@@ -69,8 +71,9 @@ const developmentConfig = {
       failOnError: false, // Setting this to true (default) will cause the dev server to fail completely if there are lint errors. Only a full server restart (Ctrl + C) will recover from this state
     }),
     new ForkTsCheckerWebpackPlugin(),
-    new ReactRefreshPlugin(),
+    new ReactRefreshPlugin({ overlay: false }),
   ],
+  stats: 'minimal',
 }
 
 const result = merge(webpackConfiguration, developmentConfig)

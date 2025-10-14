@@ -1,12 +1,15 @@
 // @ts-check
+import path from 'node:path'
 import { merge } from 'webpack-merge'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { sentryWebpackPlugin } from '@sentry/webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 import webpackConfiguration from '../../webpack.config.js'
+import { paths } from './webpack.paths.js'
 
 const isCi = process.env.CI
 
@@ -23,6 +26,7 @@ const productionConfig = {
     maxAssetSize: 512_000,
   },
   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
@@ -48,8 +52,17 @@ const productionConfig = {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(paths.public, 'static'),
+          to: paths.dist,
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:8].css',
+      filename: '[name].[contenthash:8].bundle.css',
+      chunkFilename: '[name].[contenthash:8].chunk.css',
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: isCi ? 'static' : 'server',
