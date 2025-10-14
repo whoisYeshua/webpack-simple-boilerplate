@@ -127,7 +127,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
   - [`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer) - plugin to analyze commits with conventional-changelog. _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
     > [!NOTE]
-    > Since this is project-specific, I've decided to label the "chore" type as a patch release (`{ "type": "chore", "release": "patch" }`), which is typically used for updating packages To allow for the possibility of "chore" breaking releases, add the following rule above (`{ "type": "chore", "release": "patch" }`) for correct rule applies. If you want to use deafult preset settings, you could delete this two lines.
+    > Since this is project-specific, I've decided to label the "chore" type as a patch release (`{ "type": "chore", "release": "patch" }`), which is typically used for updating packages To allow for the possibility of "chore" breaking releases, add the following rule above (`{ "type": "chore", "release": "patch" }`) for correct rule applies. If you want to use default preset settings, you could delete this two lines.
   - [`@semantic-release/release-notes-generator`](https://github.com/semantic-release/release-notes-generator) - plugin to generate changelog content with conventional-changelog _(You do not need to install this plugin. semantic-release comes with this plugin out of the box)_. Expanded by `conventional-changelog-conventionalcommits`
   - [`@semantic-release/changelog`](https://github.com/semantic-release/changelog) - plugin to create or update a changelog file
   - [`@semantic-release/npm`](https://github.com/semantic-release/npm) - plugin to publish a npm package and bump version in `package.json`
@@ -217,7 +217,7 @@ Watcher (will update the build after each change):
   npm run build
 ```
 
-Run production build insdide docker on http://localhost/ (you might need start Docker before run this command):
+Run production build inside docker on http://localhost/ (you might need start Docker before run this command):
 
 ```bash
   docker compose up -d --build
@@ -275,7 +275,7 @@ Generate React component:
 npm run generate
 ```
 
-Localy check your next release:
+Locally check your next release:
 
 ```bash
 npm run semantic-release:local-check
@@ -357,7 +357,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 - SVG import
 
-  To import SVG as a React component, use deafult svg extension:
+  To import SVG as a React component, use default svg extension:
 
   ```js
   import SvgComponent from '@assets/images/example.svg' // props => React.createElement("svg",...
