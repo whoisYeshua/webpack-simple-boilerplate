@@ -7,10 +7,10 @@ import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
-import { globalIgnores } from 'eslint/config'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 
-const config = tseslint.config(
+const config = defineConfig(
   globalIgnores([
     // dependencies
     'package.json',
@@ -33,7 +33,7 @@ const config = tseslint.config(
   importPlugin.flatConfigs.typescript,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
-  reactHooksPlugin.configs['recommended-latest'],
+  reactHooksPlugin.configs.flat['recommended-latest'],
   jsxA11yPlugin.flatConfigs.recommended,
   eslintPluginUnicorn.configs.recommended,
   eslintConfigPrettier,
