@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { useFetch } from '@hooks'
-import { CardData } from '@components'
+import CardData from '../CardData'
 
 interface Post {
   userId?: number
