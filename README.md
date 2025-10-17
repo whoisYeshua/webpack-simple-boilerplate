@@ -30,7 +30,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 - [`copy-webpack-plugin`](https://webpack.js.org/plugins/copy-webpack-plugin/) - Copies individual files or entire directories, which already exist, to the build directory _(Only in production mode)_
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
 - [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
-- [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) - Visualize the size of webpack output files with an interactive zoomable treemap _(Only in production mode)_
+- [`@rsdoctor/webpack-plugin`](https://rsdoctor.rs/) - Visualize the building process _(Only in production mode)_
 - [`@sentry/webpack-plugin`](https://www.npmjs.com/package/@sentry/webpack-plugin) - Automatically upload source maps to Sentry and create releases for error tracking and performance monitoring _(Only in production mode)_
 - [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is an ESLint plugin for webpack _(Only in development mode)_
 - [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) - Webpack plugin that runs typescript type checker on a separate process _(Only in development mode)_

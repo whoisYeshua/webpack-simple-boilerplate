@@ -1,7 +1,7 @@
 // @ts-check
 import path from 'node:path'
 import { merge } from 'webpack-merge'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import rsdoctor from '@rsdoctor/webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -11,7 +11,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
 import webpackConfiguration from '../../webpack.config.js'
 import { paths } from './webpack.paths.js'
 
-const isCi = process.env.CI
+const isCi = process.env.CI === 'true'
 
 /**
  * Webpack config for Production
@@ -64,9 +64,9 @@ const productionConfig = {
       filename: '[name].[contenthash:8].bundle.css',
       chunkFilename: '[name].[contenthash:8].chunk.css',
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: isCi ? 'static' : 'server',
-      reportFilename: '../bundle-report.html', // (to project root dir) relative to a bundle output directory
+    new rsdoctor.RsdoctorWebpackPlugin({
+      disableClientServer: isCi,
+      mode: isCi ? 'brief' : 'normal',
     }),
     sentryWebpackPlugin({
       authToken: process.env.SENTRY_AUTH_TOKEN,
