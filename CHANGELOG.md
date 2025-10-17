@@ -1,3 +1,27 @@
+## [1.5.7](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.6...v1.5.7) (2025-10-17)
+
+
+### 🐛 Bug Fixes
+
+* correct typos in comments and documentation ([0d553e4](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/0d553e48bb7c5af195dcee67e1ac9efc744d3c87))
+
+
+### 🛠 Code Refactor
+
+* add lazy loading example ([16d2f11](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/16d2f1139da4915f9489e248cb1c3ba2bee49b53))
+* remove jQuery dependency and modernize asset handling ([ab3be6f](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/ab3be6fd6bfeb4ced3d0041c17b225feb9b882ef))
+
+
+### 📦 Build
+
+* migrate to `@rsdoctor/webpack-plugin` from `webpack-bundle-analyzer` ([0431d7a](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/0431d7ad3f698176102001c2612cd2d7479de918))
+
+
+### Other changes
+
+* improve webpack configuration and build optimization ([b4b8545](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/b4b85450450af83791aed32f94c73ce50bb3e1bc))
+* update dependencies and use defineConfig in `eslint.config.js` ([6598bd0](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/6598bd0fec9a1dfbb961fb4f3d5d7920467bf064))
+
 ## [1.5.6](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.5...v1.5.6) (2025-09-01)
 
 
