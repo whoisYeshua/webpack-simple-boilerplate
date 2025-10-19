@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.7...v1.6.0) (2025-10-19)
+
+
+### ✨ Features
+
+* update dependencies for `@sentry/react`, `eslint`, and `stylelint-config-recess-order` ([c978741](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/c978741ccfe41010e7d6fdced59c803cbc71f675))
+
 ## [1.5.7](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.5.6...v1.5.7) (2025-10-17)
 
 

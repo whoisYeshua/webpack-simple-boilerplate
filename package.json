@@ -1,6 +1,6 @@
 {
   "name": "webpack-simple-boilerplate",
-  "version": "1.5.7",
+  "version": "1.6.0",
   "description": "Webpack 5 boilerplate (SCSS, PostCSS, ESLint, Prettier, Styleint, Babel, React, TS)",
   "private": true,
   "type": "module",
