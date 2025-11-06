@@ -1,7 +1,7 @@
 // @ts-check
 import path from 'node:path'
 import { merge } from 'webpack-merge'
-import rsdoctor from '@rsdoctor/webpack-plugin'
+import { RsdoctorWebpackPlugin } from '@rsdoctor/webpack-plugin'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -64,7 +64,7 @@ const productionConfig = {
       filename: '[name].[contenthash:8].bundle.css',
       chunkFilename: '[name].[contenthash:8].chunk.css',
     }),
-    new rsdoctor.RsdoctorWebpackPlugin({
+    new RsdoctorWebpackPlugin({
       disableClientServer: isCi,
       mode: isCi ? 'brief' : 'normal',
     }),
