@@ -80,7 +80,7 @@
     [
       "@semantic-release/github",
       {
-        "assets": [{ "path": "dist/.rsdoctor/rsdoctor-report.html", "label": "Bundle report" }]
+        "assets": [{ "path": "dist/rsdoctor-report.html", "label": "Bundle report" }]
       }
     ],
     "@semantic-release/git"
