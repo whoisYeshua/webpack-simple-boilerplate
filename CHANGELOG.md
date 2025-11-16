@@ -1,3 +1,15 @@
+## [1.6.2](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.6.1...v1.6.2) (2025-11-16)
+
+
+### 📦 Build
+
+* fix size report path upgrading to new version of @rsdoctor/webpack-plugin in 1.6.1 ([f6484f6](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/f6484f641b4adf1c73fd891fee6c8692754bf245))
+
+
+### Other changes
+
+* update dependencies in package.json ([7ab5800](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/7ab580078d28e97a8692d6e7e554afab1b8c7f69))
+
 ## [1.6.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.6.0...v1.6.1) (2025-11-06)
 
 
