@@ -1,3 +1,15 @@
+## [1.7.0](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.6.3...v1.7.0) (2025-12-14)
+
+
+### ✨ Features
+
+* add Sentry release tracking and improve error handling ([fe033c5](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/fe033c5fcaf8292ad3990344b88e112ebf579fe3))
+
+
+### Other changes
+
+* update dependencies ([958875a](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/958875a24f103d7a41f54cdd8c838f6431df5042))
+
 ## [1.6.3](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.6.2...v1.6.3) (2025-11-30)
 
 
