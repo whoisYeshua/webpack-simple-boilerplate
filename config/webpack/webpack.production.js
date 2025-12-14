@@ -66,7 +66,9 @@ const productionConfig = {
     }),
     new RsdoctorWebpackPlugin({
       disableClientServer: isCi,
-      mode: isCi ? 'brief' : 'normal',
+      output: {
+        mode: isCi ? 'brief' : 'normal',
+      },
     }),
     sentryWebpackPlugin({
       authToken: process.env.SENTRY_AUTH_TOKEN,
@@ -74,6 +76,9 @@ const productionConfig = {
       project: process.env.SENTRY_PROJECT,
       sourcemaps: {
         filesToDeleteAfterUpload: '**/*.map',
+      },
+      release: {
+        name: process.env.RELEASE_TAG,
       },
       telemetry: false,
     }),

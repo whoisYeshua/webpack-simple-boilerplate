@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useRef } from 'react'
+import { captureException } from '@sentry/react'
 
 interface State<T> {
   data?: T
@@ -74,7 +75,7 @@ export function useFetch<T = unknown>(url?: string, options?: RequestInit): Stat
 
         dispatch({ type: 'fetched', payload: data })
       } catch (error) {
-        console.log(error)
+        captureException(error)
         if (error instanceof Error) {
           if (error.name === 'AbortError') return
 
