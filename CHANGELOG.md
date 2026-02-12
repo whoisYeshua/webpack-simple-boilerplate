@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.1...v1.7.2) (2026-02-12)
+
+
+### Other changes
+
+* update dependencies and align core-js in babel config ([be687ac](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/be687ac9d702c8a336614f3d479082a2e04167cd))
+
 ## [1.7.1](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.0...v1.7.1) (2026-01-15)
 
 
