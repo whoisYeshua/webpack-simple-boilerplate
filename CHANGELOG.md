@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.2...v1.7.3) (2026-02-19)
+
+
+### Other changes
+
+* update dependencies ([a764dc2](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/a764dc224855c73bc9962def575b69764e503846))
+
 ## [1.7.2](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.1...v1.7.2) (2026-02-12)
 
 
