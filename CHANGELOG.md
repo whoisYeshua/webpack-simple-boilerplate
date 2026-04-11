@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.4...v1.7.5) (2026-04-11)
+
+
+### Other changes
+
+* update GitHub Actions to use latest versions of setup-node and checkout actions ([099caf6](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/099caf6f5e2bb03f48a40ce6979eb6086f3e905f))
+
 ## [1.7.4](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.3...v1.7.4) (2026-04-11)
 
 
