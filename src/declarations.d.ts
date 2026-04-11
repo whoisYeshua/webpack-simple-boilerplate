@@ -1,4 +1,6 @@
+declare module '*.css'
 declare module '*.module.css'
+declare module '*.scss'
 declare module '*.module.scss'
 declare module '@assets/images/*'
 declare module '@assets/data/*'

@@ -6,8 +6,8 @@ import { reactErrorHandler } from '@sentry/react'
 import { App } from './App'
 
 import './babelTest'
-import '@styles/styles.css'
-import '@styles/scss.scss'
+import './styles/styles.css'
+import './styles/scss.scss'
 
 const rootElement = document.querySelector('#root') as HTMLElement
 const root = ReactDOM.createRoot(rootElement, {
