@@ -10,6 +10,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    outputs:
+      release_tag: ${{ steps.release_tag.outputs.release_tag }}
 
     permissions:
       contents: write # to be able to publish a GitHub release
@@ -25,6 +27,25 @@ jobs:
         uses: ./.github/actions/setup-and-build
 
       - name: Start Semantic Release
+        if: ${{ github.event_name == 'push' }}
         run: HUSKY=0 npx semantic-release # disable git hooks for @semantic-release/git plugin commits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve release tag
+        if: ${{ github.event_name == 'push' && github.ref_name == 'master' }}
+        id: release_tag
+        shell: bash
+        run: |
+          git fetch origin master --tags
+          version="$(git show origin/master:package.json | node -p "JSON.parse(require('node:fs').readFileSync(0, 'utf8')).version")"
+          echo "release_tag=v$version" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: release
+    if: ${{ github.event_name == 'push' && github.ref_name == 'master' && needs.release.outputs.release_tag != '' }}
+    uses: ./.github/workflows/deploy.yml
+    with:
+      release_tag: ${{ needs.release.outputs.release_tag }}
+    secrets:
+      sentry_auth_token: ${{ secrets.SENTRY_AUTH_TOKEN }}

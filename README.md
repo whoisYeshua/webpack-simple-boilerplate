@@ -183,7 +183,7 @@ This template includes [Sentry](https://sentry.io/) integration for error tracki
      - `SENTRY_ORG`: Your organization slug
      - `SENTRY_PROJECT`: Your project slug
      - `SENTRY_DSN`: Your Sentry DSN
-   - The GitHub [Deploy Action workflow](.github/workflows/deploy.yml) will use these secret & values during production builds
+   - The GitHub [Deploy workflow](./.github/workflows/deploy.yml) is called from [Release workflow](./.github/workflows/release.yml), reads repository variables directly, and uses these values during production builds on `master`
 
 ## ⏩ Commands
 
