@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.3...v1.7.4) (2026-04-11)
+
+
+### Other changes
+
+* update dependencies and migrate to TypeScript 6 ([aaf2200](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/aaf2200fda3870dafa9dbbab04550354a05854cd))
+
 ## [1.7.3](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.2...v1.7.3) (2026-02-19)
 
 
