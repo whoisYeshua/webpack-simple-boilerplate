@@ -33,3 +33,5 @@ arrayIterator
   .forEach((v, index) => console.log(`Iterator helper for index [${index}] - value: ${v}`))
 
 console.log('sumPrecise for array of [1, 2, 3, 4, 5]', Math.sumPrecise(array))
+
+console.log('Iterator.zip:', Iterator.zip([['A', 'B', 'C', 'D', 'E'], arrayIterator]).toArray())
