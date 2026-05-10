@@ -1,3 +1,15 @@
+## [1.7.6](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.5...v1.7.6) (2026-05-10)
+
+
+### 🔁 CI
+
+* simplify release and deploy workflows ([c844aa4](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/c844aa42e942e86b6f0537d7ed0707005f0ab410))
+
+
+### Other changes
+
+* update dependencies and improve babel configuration ([6cecfcb](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/6cecfcb0d0af8ec0a002d3aff6d7c4311f35729c))
+
 ## [1.7.5](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.4...v1.7.5) (2026-04-11)
 
 
