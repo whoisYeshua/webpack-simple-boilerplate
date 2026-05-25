@@ -19,7 +19,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 - [`postcss-loader`](https://webpack.js.org/loaders/postcss-loader/) - Loader to process CSS with PostCSS
 - [`css-loader`](https://webpack.js.org/loaders/css-loader/) - Resolve CSS imports & CSS modules
 - [`style-loader`](https://www.npmjs.com/package/style-loader) - Inject CSS into the DOM
-- [`@svgr/webpack`](https://www.npmjs.com/package/style-loader) - Webpack loader for SVG
+- [`@svgr/webpack`](https://github.com/gregberge/svgr/tree/main/packages/webpack) - Webpack loader for SVG
 
 #### [Plugins](https://webpack.js.org/plugins/)
 
@@ -29,7 +29,7 @@ I made a simple template for myself, but maybe it could be helpful for others.
 - [`EnvironmentPlugin`](https://webpack.js.org/plugins/environment-plugin/) - inject `process.env` variables in your output code. (You do not need to install this plugin. _Webpack_ comes with this plugin out of the box.). You can also replace this plugin with [`webpack.DefinePlugin`](https://webpack.js.org/plugins/define-plugin) if you need more control over inserted values.
 - [`copy-webpack-plugin`](https://webpack.js.org/plugins/copy-webpack-plugin/) - Copies individual files or entire directories, which already exist, to the build directory _(Only in production mode)_
 - [`css-minimizer-webpack-plugin`](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) - Optimize and minimize CSS assets _(Only in production mode)_
-- [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript (You do not need to install this plugin. _Webpack v5_ comes with the latest terser-webpack-plugin out of the box.) _(Only in production mode)_
+- [`terser-webpack-plugin`](https://webpack.js.org/plugins/terser-webpack-plugin/) - This plugin uses terser to minify your JavaScript. You do not need to install it explicitly because _Webpack v5_ includes it for production minimization, but this project imports it directly to customize minification options. _(Only in production mode)_
 - [`@rsdoctor/webpack-plugin`](https://rsdoctor.rs/) - Visualize the building process _(Only in production mode)_
 - [`@sentry/webpack-plugin`](https://www.npmjs.com/package/@sentry/webpack-plugin) - Automatically upload source maps to Sentry and create releases for error tracking and performance monitoring _(Only in production mode)_
 - [`eslint-webpack-plugin`](https://webpack.js.org/plugins/eslint-webpack-plugin/) - is an ESLint plugin for webpack _(Only in development mode)_
@@ -67,22 +67,23 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 ### [EditorConfig](https://editorconfig.org/)
 
-- [`.editorconfig`](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) - is helper for maintain consistent coding styles across various editors and IDEs.
+- [`.editorconfig`](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties) - is a helper for maintaining consistent coding styles across various editors and IDEs.
 
 ### [Prettier](https://prettier.io/)
 
-- [`prettier`](https://www.npmjs.com/package/prettier) - is an code formatter. Also parse some [EditorConfig rules](https://prettier.io/docs/en/configuration.html#editorconfig)
+- [`prettier`](https://www.npmjs.com/package/prettier) - is a code formatter. Also parses some [EditorConfig rules](https://prettier.io/docs/en/configuration.html#editorconfig)
 
 ### [ESLint](https://eslint.org/)
 
 - [`eslint`](https://www.npmjs.com/package/eslint) - is a static code analysis tool for identifying problematic patterns.
-- [`typescript-eslint`](https://www.npmjs.com/package/@typescript-eslint/parser) - allow ESLint to lint TypeScript files.
+- [`typescript-eslint`](https://www.npmjs.com/package/typescript-eslint) - TypeScript support for ESLint (parser and recommended rules for the flat config).
 
-#### [Configuration Files](https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files)
+#### [Flat config](https://eslint.org/docs/latest/use/configure/configuration-files)
 
-- [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier
 
-#### [Plugins](https://eslint.org/docs/user-guide/configuring/plugins#specifying-parser)
+- [`eslint-config-prettier`](https://www.npmjs.com/package/eslint-config-prettier) - Turns off all rules that are unnecessary or might conflict with Prettier.
+
+#### [Plugins](https://eslint.org/docs/latest/use/configure/plugins)
 
 - [`eslint-plugin-import`](https://www.npmjs.com/package/eslint-plugin-import) - This plugin intends to support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
   - [`eslint-import-resolver-typescript`](https://www.npmjs.com/package/eslint-import-resolver-typescript) - This resolver plugin adds TypeScript support to `eslint-plugin-import`
@@ -111,11 +112,11 @@ I made a simple template for myself, but maybe it could be helpful for others.
 
 - [`commitlint`](https://commitlint.js.org/#/) - Lint commit messages. Work closely together with `husky` `commit-msg` hook. It has its own config, which is located in [`.commitlintrc.json`](./.commitlintrc.json)
 
-  Expanded by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) - Shareable `commitlint` config enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+  Extended by [`@commitlint/config-conventional`](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional) - Shareable `commitlint` config enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 - [`commitizen`](http://commitizen.github.io/cz-cli/) - is a tool designed to define a standard way of committing rules. It has its own config, which is located in [`.czrc`](./.czrc). You can use it with `npm run cm`
 
-  Expanded by [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) - A commitizen propmpts adapter for the Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+  Extended by [`cz-conventional-changelog`](https://www.npmjs.com/package/cz-conventional-changelog) - A Commitizen prompts adapter for the Angular version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 - #### [`semantic-release`](https://semantic-release.gitbook.io/semantic-release/)
 
@@ -174,7 +175,17 @@ This template includes [Sentry](https://sentry.io/) integration for error tracki
     - **`SENTRY_PROJECT`**: Your project slug (found in your Sentry project settings)
     - **`SENTRY_DSN`**: Project DSN (from Project Settings → Client Keys)
     
-  + Add `.env` file to build pipe, like: `"build": "node --env-file=.env ./node_modules/webpack-cli/bin/cli.js --config-node-env production --config config/webpack/webpack.production.js",` or pass values directly `SENTRY_AUTH_TOKEN=yourtoken SENTRY_ORG=yourorg SENTRY_PROJECT=yourproj SENTRY_DSN=yourdsn npm run build` (Unix example)
+  + The default `build` script does not load `.env` automatically. To use a local `.env` file, extend the script in `package.json`, for example:
+
+    ```json
+    "build": "node --env-file-if-exists=.env ./node_modules/.bin/webpack --config-node-env production --config config/webpack/webpack.production.js"
+    ```
+
+    Or pass variables inline (Unix example):
+
+    ```bash
+    SENTRY_AUTH_TOKEN=yourtoken SENTRY_ORG=yourorg SENTRY_PROJECT=yourproj SENTRY_DSN=yourdsn npm run build
+    ```
 3. **Configure GitHub Actions (Optional)**: If you want Sentry integration to work in your CI/CD pipeline:
    - Go to your repository **Settings** → **Secrets and variables** → **Actions**
    - Add the following **Repository secrets**:
@@ -209,7 +220,7 @@ Watcher (will update the build after each change):
 
 ### Production environment
 
-⭐ One-time production build with Bundle Analazer stats:
+⭐ One-time production build with RsdoctorWebpackPlugin stats:
 
 ```bash
   npm run build
@@ -229,18 +240,20 @@ Format & fix the code by ESLint, Prettier, and Stylelint:
   npm run format
 ```
 
-Only checks the code for compliance with rules by ESLint, Prettier, and Stylelint:
+Only checks the code for compliance with rules by ESLint, Prettier, Stylelint, and TypeScript (`tsc --noEmit`):
 
 ```bash
   npm run lint
 ```
 
-You can also use a specific formatter
+You can also use a specific formatter or checker
 
 ```bash
   npm run lint:prettier # check for compliance with Prettier rules
   # or
   npm run lint:stylelint # check for compliance with Stylelint rules
+  # or
+  npm run lint:typescript # TypeScript type check without emit
   # or
   npm run format:eslint # format & fix the code with ESLint rules
 ```
@@ -249,7 +262,7 @@ Check out more commands at [`package.json` scripts section](./package.json#L7).
 
 ### Misc
 
-Debug result ESLint config (output `eslint-output-config.json`):
+Debug result ESLint config (output `eslint-output-config-ts.json`):
 
 ```bash
   npm run debug:eslint
@@ -322,11 +335,10 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 | TerserPlugin              | ❌                             | ✅                          |
 | CssMinimizerPlugin        | ❌                             | ✅                          |
 | HtmlWebpackPlugin minify  | ❌                             | ✅                          |
-| BundleAnalyzerPlugin      | ❌                             | ✅                          |
+| RsdoctorWebpackPlugin     | ❌                             | ✅                          |
 | SentryWebpackPlugin       | ❌                             | ✅                          |
 | CopyWebpackPlugin         | ❌                             | ✅                          |
 | Output files name         | Default                        | Contenthash with .bundle/.chunk suffixes |
-| Favicon\*\*\*\*           | 🤔                             | ✅                          |
 
 \* You can set `eval` or `false` options to increase build speed, but in this case, you [should manually](https://webpack.js.org/loaders/css-loader/#sourcemap) set `sourceMap` to `true` in `css-loader`, `scss-loader`, and `postcss-loader`.
 
@@ -334,7 +346,6 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
 \*\*\* `mini-css-extract-plugin` is more often used in **production** mode to get separate css files. For **development** mode (including `webpack-dev-server`) we use `style-loader`, because it injects CSS into the DOM using multiple `style` tags and works faster.
 
-\*\*\*\* In previous commits, I refused to use the clean-webpack-output plugin because I noticed the presence of a native function that appeared in Webpack _5.20+_ `output.clean`. Unfortunately, it has certain [problems](https://github.com/jantimon/html-webpack-plugin/issues/1639) with the favicon. ~~Therefore, if this bug is not fixed soon, I will return to the previous version (especially since this plugin [was updated recently](https://github.com/johnagan/clean-webpack-plugin/releases/tag/v4.0.0)).~~
 
 ## Source
 
@@ -380,9 +391,9 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
   }
   ```
 
-- [`babel.config.cjs`](./babel.config.cjs)
+- [`babel.config.js`](./babel.config.js)
 
-  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle. Additionaly i set [`proposals: true`](https://babeljs.io/docs/babel-preset-env#corejs), for `Object.groupBy`, since not all major browsers currently support it _(31.10.2023)_.
+  I set `useBuiltIns: 'usage'` which automatically detects the polyfills needed to be based on the language features used in your source code. This ensures only the minimum amount of polyfills are included in your final bundle. Additionally, I set [`proposals: true`](https://babeljs.io/docs/babel-preset-env#corejs) for proposals like `Iterator.zip`.
 
   ```js
   presets: [
@@ -390,13 +401,13 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
       '@babel/preset-env',
       {
         useBuiltIns: 'usage',
-        corejs: { version: '3.33', proposals: true }, // The version string can be any supported core-js versions
+        corejs: { version: '3.49', proposals: true }, // The version string can be any supported core-js versions
       },
     ],
   ]
   ```
 
-- [`webpack.production.js`](./config/webpack.production.js)
+- [`webpack.production.js`](./config/webpack/webpack.production.js)
 
   Set these options in `TerserPlugin` to remove comments from code and prevent `LICENSE.txt` files creation.
 
@@ -419,7 +430,7 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
 
   In production mode eg `HTMLWebpackPlugin` minify your HTML code by default
 
-  I'm decide to remove [`context`](https://webpack.js.org/configuration/entry-context/#context) field from config, since [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) & [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) incorrectly infer root directory, while set context to `src` folder.
+  I decided to remove the [`context`](https://webpack.js.org/configuration/entry-context/#context) field from the config, since [`@pmmmwh/react-refresh-webpack-plugin`](https://github.com/pmmmwh/react-refresh-webpack-plugin) and [`fork-ts-checker-webpack-plugin`](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin) incorrectly infer the root directory when `context` is set to the `src` folder.
 
   - **Formatting & Linting commands**
 
@@ -449,13 +460,13 @@ Both environments use [`webpack.config.js`](./webpack.config.js), but each envir
   git commit -m "chore(no-release): message"
   ```
 
-  If you want to skip [`release job`](<(./.github/workflows/release.yml)>) for commit, you could add `[skip ci]` text in your commit message. For example:
+  If you want to skip the [release workflow](./.github/workflows/release.yml) for a commit, add `[skip ci]` to your commit message. For example:
 
   ```bash
   git commit -m "chore: message [skip ci]"
   ```
 
-  If you want ti skip all above:
+  If you want to skip all of the above:
 
   ```bash
   git commit -n -m "chore(no-release): message [skip ci]"

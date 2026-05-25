@@ -29,7 +29,8 @@ const productionConfig = {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        terserOptions: {
+        minimizerOptions: {
+          // previous (terser-webpack-plugin < 5.6.0) terserOptions:
           format: {
             comments: false,
           },

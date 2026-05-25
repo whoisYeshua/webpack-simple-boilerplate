@@ -1,7 +1,6 @@
 // @ts-check
 import path from 'node:path'
 import webpack from 'webpack'
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 
 import { paths } from './config/webpack/webpack.paths.js'
@@ -26,7 +25,7 @@ const commonConfig = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
-    plugins: [new TsconfigPathsPlugin()],
+    tsconfig: path.join(import.meta.dirname, 'tsconfig.json'),
   },
   target: 'browserslist',
   optimization: {
