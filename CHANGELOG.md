@@ -1,3 +1,10 @@
+## [1.7.7](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.6...v1.7.7) (2026-05-25)
+
+
+### Other changes
+
+* update dependencies and use native webpack tsconfig resolution ([f3294a6](https://github.com/whoisYeshua/webpack-simple-boilerplate/commit/f3294a686eae92a133f59425e2aaa2982522c46b))
+
 ## [1.7.6](https://github.com/whoisYeshua/webpack-simple-boilerplate/compare/v1.7.5...v1.7.6) (2026-05-10)
 
 
